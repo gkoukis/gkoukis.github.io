@@ -21,12 +21,62 @@
         }
         
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background: #f8f9ff;
+            padding: 30px 20px;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+            border-right: 2px solid #e0e4ff;
+        }
+        
+        .sidebar h3 {
+            color: #667eea;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .sidebar nav ul {
+            list-style: none;
+        }
+        
+        .sidebar nav ul li {
+            margin-bottom: 12px;
+        }
+        
+        .sidebar nav ul li a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.3s ease, padding-left 0.3s ease;
+            display: block;
+            padding: 5px 0;
+        }
+        
+        .sidebar nav ul li a:hover {
+            color: #667eea;
+            padding-left: 10px;
+        }
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .header {
@@ -299,6 +349,18 @@
         }
         
         @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                position: relative;
+                max-height: none;
+                border-right: none;
+                border-bottom: 2px solid #e0e4ff;
+            }
+            
             .header h1 {
                 font-size: 2em;
             }
@@ -315,6 +377,24 @@
 </head>
 <body>
     <div class="container">
+        <div class="sidebar">
+            <h3>Navigation</h3>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Work Experience</a></li>
+                    <li><a href="#teaching">Teaching & Mentoring</a></li>
+                    <li><a href="#memberships">Professional Memberships</a></li>
+                    <li><a href="#research">Research Topics</a></li>
+                    <li><a href="#publications">Selected Publications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Technical Skills</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="main-content">
         <div class="header">
             <h1>Georgios Koukis</h1>
             <div class="title">PhD Researcher in Electrical & Computer Engineering</div>
@@ -337,14 +417,14 @@
         </div>
         
         <div class="content">
-            <div class="section">
+            <div class="section" id="about">
                 <h2>About Me</h2>
                 <p class="bio">
                     Georgios Koukis is a PhD candidate at the School of Electrical and Computer Engineering of Democritus University of Thrace (DUTH) and a researcher at the ATHENA Research Center. His research interests focus on network and satellite communications for smart cities and IoT, as well as orchestration and automation of services in cloud and cloud/edge environments. He has conducted experimental evaluations and publications on container-based architectures, utilizing Docker and Kubernetes for development and scaling of microservices. He holds an M.Eng. degree from the Department of Production and Management Engineering and an M.Sc. degree from the Department of Electrical and Computer Engineering (specialization in Microelectronics and Information Systems Technologies / Networks and Internet Systems).
                 </p>
             </div>
             
-            <div class="section">
+            <div class="section" id="education">
                 <h2>Education</h2>
                 <div class="education-item">
                     <h3>PhD in Electrical and Computer Engineering</h3>
@@ -359,13 +439,13 @@
                     <p class="period">2020 – 2022</p>
                 </div>
                 <div class="education-item">
-                    <h3>M.Eng. in Production and Management Engineering</h3>
+                    <h3>M.Sc. in Production and Management Engineering</h3>
                     <p class="institution">Democritus University of Thrace</p>
                     <p class="period">2014 – 2020</p>
                 </div>
             </div>
 
-            <div class="section">
+            <div class="section" id="experience">
                 <h2>Work Experience</h2>
                 <div class="experience-item">
                     <h3>Research Associate</h3>
@@ -381,16 +461,21 @@
                 </div>
             </div>   
 
-            <div class="section">
+            <div class="section" id="teaching">
                 <h2>Teaching & Mentoring</h2>
                 <div class="teaching-item">
-                    <h3>Lab Manager - Internetworked Systems Lab</h3>
+                    <h3>Lab Associate - Internetworked Systems Lab</h3>
                     <p class="institution">Democritus University of Thrace</p>
-                    <p class="description">Laboratory manager for Networks and Computer Networks courses, specializing in NS-3 and Omnet++ simulation tools.</p>
+                    <p class="description">Laboratory associate for Networks and Computer Networks courses, specializing in NS-3 and Omnet++ simulation tools.</p>
                     <p class="links-inline">
                         <a href="http://www.intersys-lab.org/" target="_blank">🌐 Lab Website</a> | 
                         <a href="https://github.com/Intersys-Lab-ee-DUTH" target="_blank">💻 GitHub</a>
                     </p>
+                </div>
+                <div class="teaching-item">
+                    <h3>Thesis Supervision</h3>
+                    <p class="institution">Department of Electrical and Computer Engineering, DUTH</p>
+                    <p class="description">Assisted in supervising over 5 undergraduate and graduate theses in areas including network simulation, IoT systems, and cloud technologies.</p>
                 </div>
                 <div class="teaching-item">
                     <h3>Data Security and Privacy</h3>
@@ -399,13 +484,13 @@
                 </div>
             </div>
 
-            <div class="section">
+            <div class="section" id="memberships">
                 <h2>Professional Memberships</h2>
                 <div class="membership-item">
                     <p><strong>IEEE</strong> - Student Member</p>
                 </div>
             </div>
-            <div class="section">
+            <div class="section" id="research">
 
                 <h2>Research Topics</h2>
                 <div class="research-topics">
@@ -420,7 +505,7 @@
                 </div>
             </div>
             
-            <div class="section">
+            <div class="section" id="publications">
                 <h2>Selected Publications</h2>
                 <ul class="publications">
                     <li><strong>All about Delay-Tolerant Networking (DTN) Contributions to Future Internet</strong> - Future Internet 2024</li>
@@ -431,8 +516,8 @@
                 </ul>
             </div>
             
-            <div class="section">
-                <h2>Current Projects</h2>
+            <div class="section" id="projects">
+                <h2>Projects</h2>
                 <div class="research-topics">
                     <div class="topic"><strong>CODECO:</strong> Cognitive Decentralised Edge Cloud Orchestration (on-going)</div>
                     <div class="topic"><strong>REWIRE:</strong> SDN-based Adaptable Non-IP Protocol Stacks in Smart-City Environments</div>
@@ -440,7 +525,7 @@
                 </div>
             </div>
             
-            <div class="section">
+            <div class="section" id="skills">
                 <h2>Technical Skills</h2>
                 <div class="skills">
                     <span class="skill-tag">Python</span>
