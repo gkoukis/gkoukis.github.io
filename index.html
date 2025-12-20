@@ -51,6 +51,42 @@
         .header .affiliation {
             font-size: 0.95em;
             opacity: 0.85;
+            margin-bottom: 25px;
+        }
+        
+        .header-contact {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .contact-line {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+        
+        .header-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .header-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        
+        .header-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
         }
         
         .content {
@@ -196,6 +232,63 @@
             font-size: 0.9em;
             font-weight: 500;
         }
+
+        .education-item, .experience-item, .teaching-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .education-item h3, .experience-item h3, .teaching-item h3 {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+
+        .institution {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .period {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .details, .description {
+            color: #555;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+
+        .membership-item p {
+            padding: 15px;
+            background: #f8f9ff;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .links-inline {
+            margin-top: 10px;
+            font-size: 0.95em;
+        }
+
+        .links-inline a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .links-inline a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
         
         footer {
             background: #f8f9ff;
@@ -226,6 +319,21 @@
             <h1>Georgios Koukis</h1>
             <div class="title">PhD Researcher in Electrical & Computer Engineering</div>
             <div class="affiliation">Democritus University of Thrace | ATHENA Research Center</div>
+            
+            <div class="header-contact">
+                <div class="contact-line">
+                    📧 george.koukis@athenarc.gr | 📱 +30 6946045121 | 📍 Xanthi, Greece
+                </div>
+            </div>
+            
+            <div class="header-links">
+                <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" class="header-link">Google Scholar</a>
+                <a href="https://orcid.org/0009-0005-0116-7296" target="_blank" class="header-link">ORCID</a>
+                <a href="https://www.researchgate.net/profile/Georgios-Koukis" target="_blank" class="header-link">ResearchGate</a>
+                <a href="https://linkedin.com/in/georgios-koukis-67876b13a" target="_blank" class="header-link">LinkedIn</a>
+                <a href="https://github.com/gkoukis" target="_blank" class="header-link">GitHub</a>
+                <a href="mailto:georgekouk29702970@hotmail.gr" class="header-link">Personal Email</a>
+            </div>
         </div>
         
         <div class="content">
@@ -237,6 +345,68 @@
             </div>
             
             <div class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>PhD in Electrical and Computer Engineering</h3>
+                    <p class="institution">Democritus University of Thrace</p>
+                    <p class="details">Specialization: Microelectronics and Information Systems Technologies / Networks and Internet Systems</p>
+                    <p class="period">2022 – Present</p>
+                </div>
+                <div class="education-item">
+                    <h3>M.Sc. in Electrical and Computer Engineering</h3>
+                    <p class="institution">Democritus University of Thrace</p>
+                    <p class="details">Specialization: Microelectronics and Information Systems Technologies / Networks and Internet Systems</p>
+                    <p class="period">2020 – 2022</p>
+                </div>
+                <div class="education-item">
+                    <h3>M.Eng. in Production and Management Engineering</h3>
+                    <p class="institution">Democritus University of Thrace</p>
+                    <p class="period">2014 – 2020</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Work Experience</h2>
+                <div class="experience-item">
+                    <h3>Research Associate</h3>
+                    <p class="institution">ATHENA Research & Innovation Information Technologies</p>
+                    <p class="period">2022 – Present | Xanthi, Greece</p>
+                    <p class="description">Working on EU-funded projects including REWIRE, Feed4Cloud, and CODECO, focusing on SDN-based protocols, blockchain for cloud services, and cognitive edge cloud orchestration.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Assistant Production and Management Engineer (Intern)</h3>
+                    <p class="institution">IKTINOS HELLAS S.A. - Marble Production and Processing Factory</p>
+                    <p class="period">June 2019 – August 2019 | Drama, Greece</p>
+                    <p class="description">Production management, information processing & storage, Excel & ERP operations, creation of production monitoring and improvement structures.</p>
+                </div>
+            </div>   
+
+            <div class="section">
+                <h2>Teaching & Mentoring</h2>
+                <div class="teaching-item">
+                    <h3>Lab Manager - Internetworked Systems Lab</h3>
+                    <p class="institution">Democritus University of Thrace</p>
+                    <p class="description">Laboratory manager for Networks and Computer Networks courses, specializing in NS-3 and Omnet++ simulation tools.</p>
+                    <p class="links-inline">
+                        <a href="http://www.intersys-lab.org/" target="_blank">🌐 Lab Website</a> | 
+                        <a href="https://github.com/Intersys-Lab-ee-DUTH" target="_blank">💻 GitHub</a>
+                    </p>
+                </div>
+                <div class="teaching-item">
+                    <h3>Data Security and Privacy</h3>
+                    <p class="institution">MSc in Biomedical Informatics (BMI), DUTH</p>
+                    <p class="period">4th Cycle | 2025-2026</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Professional Memberships</h2>
+                <div class="membership-item">
+                    <p><strong>IEEE</strong> - Student Member</p>
+                </div>
+            </div>
+            <div class="section">
+
                 <h2>Research Topics</h2>
                 <div class="research-topics">
                     <div class="topic">Network & Satellite Communications</div>
@@ -251,23 +421,12 @@
             </div>
             
             <div class="section">
-                <h2>Connect With Me</h2>
-                <div class="links-grid">
-                    <a href="mailto:georgekouk29702970@hotmail.gr" class="link-card email">📧 Email</a>
-                    <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" class="link-card scholar">🎓 Google Scholar</a>
-                    <a href="https://orcid.org/0009-0005-0116-7296" target="_blank" class="link-card orcid">🔬 ORCID</a>
-                    <a href="https://linkedin.com/in/georgios-koukis-67876b13a" target="_blank" class="link-card linkedin">💼 LinkedIn</a>
-                    <a href="https://www.researchgate.net/profile/Georgios-Koukis" target="_blank" class="link-card researchgate">📚 ResearchGate</a>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2>Recent Publications</h2>
+                <h2>Selected Publications</h2>
                 <ul class="publications">
-                    <li><strong>Performance Evaluation of Kubernetes Networking Approaches across Constraint Edge Environments</strong> - IEEE ISCC 2024</li>
-                    <li><strong>Evaluating CNI Plugins Features & Tradeoffs for Edge Cloud Applications</strong> - IEEE ISCC 2024</li>
-                    <li><strong>An Open-Source Experimentation Framework for the Edge Cloud Continuum</strong> - IEEE INFOCOM 2024</li>
                     <li><strong>All about Delay-Tolerant Networking (DTN) Contributions to Future Internet</strong> - Future Internet 2024</li>
+                    <li><strong>Performance Evaluation of Kubernetes Networking Approaches across Constraint Edge Environments</strong> - IEEE ISCC 2024</li>
+                    <li><strong>An Open-Source Experimentation Framework for the Edge Cloud Continuum</strong> - IEEE INFOCOM 2024</li>
+                    <li><strong>CNI Telco-Cloud Benchmarking Considerations</strong> - IETF Benchmarking Methodology Working Group (IETF BMWG)</li>
                     <li><strong>Satellite-Assisted Disrupted Communications: IoT Case Study</strong> - Electronics 2024</li>
                 </ul>
             </div>
@@ -293,21 +452,6 @@
                     <span class="skill-tag">NS-3</span>
                     <span class="skill-tag">GIS</span>
                     <span class="skill-tag">SPSS</span>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2>Contact Information</h2>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <strong>Email:</strong> georgekouk29702970@hotmail.gr
-                    </div>
-                    <div class="contact-item">
-                        <strong>Phone:</strong> +30 6946045121
-                    </div>
-                    <div class="contact-item">
-                        <strong>Location:</strong> Xanthi, Greece
-                    </div>
                 </div>
             </div>
         </div>
