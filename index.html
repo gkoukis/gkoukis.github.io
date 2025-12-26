@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Georgios Koukis - PhD Researcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
     <style>
         * {
             margin: 0;
@@ -67,7 +68,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
+            background: var(--bg-color);
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
@@ -77,17 +78,22 @@
         
         .sidebar {
             width: 250px;
-            background: #f8f9ff;
+            background: var(--section-bg);
             padding: 30px 20px;
-            border-right: 2px solid #e0e4ff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 2px solid var(--border-color);
         }
         
         .sidebar h3 {
-            color: #667eea;
+            color: var(--primary-color);
             font-size: 1.1em;
             margin-bottom: 15px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #667eea;
+            border-bottom: 2px solid var(--primary-color);
         }
         
         .sidebar nav ul {
@@ -99,7 +105,7 @@
         }
         
         .sidebar nav ul li a {
-            color: #555;
+            color: var(--text-color);
             text-decoration: none;
             font-size: 0.95em;
             transition: all 0.3s ease;
@@ -109,14 +115,14 @@
         }
         
         .sidebar nav ul li a:hover {
-            color: #667eea;
+            color: var(--primary-color);
             background: rgba(102, 126, 234, 0.1);
             padding-left: 15px;
         }
         
         .sidebar nav ul li a.active {
             color: white;
-            background: #667eea;
+            background: var(--primary-color);
             font-weight: 600;
         }
         
@@ -124,6 +130,7 @@
             flex: 1;
             display: flex;
             flex-direction: column;
+            margin-left: 250px;
         }
         
         .header {
@@ -238,52 +245,6 @@
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
         }
         
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .link-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            font-weight: 600;
-            text-align: center;
-        }
-        
-        .link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
-        
-        .link-card.email {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        }
-        
-        .link-card.scholar {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
-        
-        .link-card.orcid {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-        }
-        
-        .link-card.linkedin {
-            background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
-        }
-        
-        .link-card.researchgate {
-            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
-        }
-        
         .publications {
             list-style: none;
         }
@@ -318,28 +279,6 @@
             margin-top: 5px;
         }
         
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .contact-item {
-            flex: 1;
-            min-width: 200px;
-            padding: 15px;
-            background: #f8f9ff;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .contact-item strong {
-            color: #667eea;
-        }
-        
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -356,7 +295,7 @@
             font-weight: 500;
         }
 
-        .education-item, .experience-item, .teaching-item {
+        .education-item, .experience-item, .teaching-item, .skill-item {
             padding: 20px;
             margin-bottom: 20px;
             background: var(--section-bg);
@@ -364,7 +303,7 @@
             border-left: 4px solid var(--primary-color);
         }
 
-        .education-item h3, .experience-item h3, .teaching-item h3 {
+        .education-item h3, .experience-item h3, .teaching-item h3, .skill-item h3 {
             color: var(--text-color);
             font-size: 1.2em;
             margin-bottom: 8px;
@@ -417,7 +356,7 @@
         
         .metrics-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
@@ -479,6 +418,46 @@
             text-decoration: underline;
         }
         
+        #conference-map {
+            width: 100%;
+            height: 500px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 2px solid var(--border-color);
+        }
+        
+        .conference-list {
+            margin-top: 30px;
+        }
+        
+        .conference-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            background: var(--section-bg);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .conference-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .conference-details {
+            color: var(--text-color);
+            opacity: 0.9;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .conference-location {
+            color: var(--text-color);
+            opacity: 0.7;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
         footer {
             background: var(--section-bg);
             padding: 30px 40px;
@@ -520,7 +499,7 @@
                 width: 100%;
                 height: auto;
                 border-right: none;
-                border-bottom: 2px solid #e0e4ff;
+                border-bottom: 2px solid var(--border-color);
             }
             
             .main-content {
@@ -559,6 +538,8 @@
                     <li><a href="#experience">Work Experience</a></li>
                     <li><a href="#teaching">Teaching & Mentoring</a></li>
                     <li><a href="#memberships">Professional Memberships</a></li>
+                    <li><a href="#professional-skills">Professional Skills</a></li>
+                    <li><a href="#conferences">Conferences & Outreach</a></li>
                     <li><a href="#research">Research Topics</a></li>
                     <li><a href="#publications">Selected Publications</a></li>
                     <li><a href="#projects">Projects</a></li>
@@ -707,8 +688,71 @@
                     <p><strong>IEEE</strong> - Student Member</p>
                 </div>
             </div>
+            
+            <div class="section" id="professional-skills">
+                <h2>Professional Skills</h2>
+                <div class="skill-item">
+                    <h3>🎯 Project Management & Leadership</h3>
+                    <p class="description">Led Work Packages (WP) in multiple EU-funded research projects, coordinating technical activities, managing deliverables, and ensuring alignment with project objectives and timelines.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>📝 Technical Writing & Documentation</h3>
+                    <p class="description">Extensive experience in writing EU project proposals, technical deliverables, and research documentation. Skilled in articulating complex technical concepts for diverse audiences including funding agencies, technical partners, and academic communities.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>🤝 Collaboration & Communication</h3>
+                    <p class="description">Proven ability to work in multidisciplinary and multinational teams, facilitating effective communication between technical and non-technical stakeholders across research and industry partnerships.</p>
+                </div>
+            </div>
+            
+            <div class="section" id="conferences">
+                <h2>Conferences & Outreach</h2>
+                <div id="conference-map"></div>
+                
+                <div class="conference-list">
+                    <h3 style="color: var(--primary-color); margin-bottom: 20px;">Conference Presentations</h3>
+                    
+                    <div class="conference-item">
+                        <h4>📍 IEEE ISCC 2024 - Paris, France</h4>
+                        <p class="conference-details">
+                            <strong>Edge to Cloud Orchestration (ECO) Workshop</strong><br>
+                            Presented research on Kubernetes networking and edge computing at the IEEE Symposium on Computers and Communications.
+                        </p>
+                        <p class="conference-location">Paris, France | June 2024</p>
+                    </div>
+                    
+                    <div class="conference-item">
+                        <h4>📍 IEEE INFOCOM 2024 - Vancouver, Canada</h4>
+                        <p class="conference-details">
+                            <strong>Computer and Networking Experimental Research using Testbeds (CNERT) Workshop</strong><br>
+                            Demonstrated open-source experimentation framework for edge-cloud continuum research.
+                        </p>
+                        <p class="conference-location">Vancouver, BC, Canada | May 2024</p>
+                    </div>
+                    
+                    <div class="conference-item">
+                        <h4>📍 HiPEAC 2024 - Munich, Germany</h4>
+                        <p class="conference-details">
+                            <strong>High Performance and Embedded Architecture and Compilation</strong><br>
+                            Participated in Europe's premier computing systems conference.
+                        </p>
+                        <p class="conference-location">Munich, Germany | January 2024</p>
+                    </div>
+                    
+                    <h3 style="color: var(--primary-color); margin: 30px 0 20px 0;">Science Communication</h3>
+                    
+                    <div class="conference-item">
+                        <h4>📍 MEDNIGHT 2025 - Xanthi, Greece</h4>
+                        <p class="conference-details">
+                            <strong>Mediterranean Researchers' Night</strong><br>
+                            Public outreach event showcasing research to the local community.
+                        </p>
+                        <p class="conference-location">Xanthi, Greece | 2025</p>
+                    </div>
+                </div>
+            </div>
+            
             <div class="section" id="research">
-
                 <h2>Research Topics</h2>
                 <div class="research-topics">
                     <div class="topic">Network & Satellite Communications</div>
@@ -784,7 +828,7 @@
         
         <footer>
             <p>&copy; <span id="current-year"></span> Georgios Koukis. All rights reserved.</p>
-            <p>Last updated: December 2025</p>
+            <p>Last updated: <span id="last-updated"></span></p>
             
             <div class="footer-links">
                 <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" title="Google Scholar">
@@ -807,6 +851,123 @@
                 </a>
             </div>
         </footer>
+        </div>
     </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script>
+        // Update copyright year and last updated date automatically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        const lastUpdated = new Date();
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"];
+        document.getElementById('last-updated').textContent = 
+            monthNames[lastUpdated.getMonth()] + ' ' + lastUpdated.getFullYear();
+        
+        // Dark mode toggle (using in-memory storage for Claude artifacts)
+        let darkModeEnabled = false;
+        
+        function toggleDarkMode() {
+            darkModeEnabled = !darkModeEnabled;
+            document.body.classList.toggle('dark-mode');
+            
+            // Update toggle button icon
+            const toggle = document.querySelector('.dark-mode-toggle');
+            toggle.textContent = darkModeEnabled ? '☀️' : '🌙';
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.sidebar nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        
+        // Highlight active section while scrolling
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('.sidebar nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Initialize conference map
+        window.addEventListener('load', () => {
+            // Initialize map centered on Europe
+            const map = L.map('conference-map').setView([50.0, 10.0], 3);
+            
+            // Add OpenStreetMap tiles (most reliable)
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Custom icon
+            const customIcon = L.divIcon({
+                className: 'custom-marker',
+                html: '<div style="background-color: #667eea; width: 30px; height: 30px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 16px;">📍</div>',
+                iconSize: [30, 30],
+                iconAnchor: [15, 15]
+            });
+            
+            // Conference locations
+            const conferences = [
+                {
+                    name: 'IEEE ISCC 2024',
+                    location: 'Paris, France',
+                    lat: 48.8566,
+                    lon: 2.3522,
+                    details: 'Edge to Cloud Orchestration (ECO) Workshop<br>June 2024'
+                },
+                {
+                    name: 'IEEE INFOCOM 2024',
+                    location: 'Vancouver, Canada',
+                    lat: 49.2827,
+                    lon: -123.1207,
+                    details: 'CNERT Workshop<br>May 2024'
+                },
+                {
+                    name: 'HiPEAC 2024',
+                    location: 'Munich, Germany',
+                    lat: 48.1351,
+                    lon: 11.5820,
+                    details: 'High Performance Computing Conference<br>January 2024'
+                },
+                {
+                    name: 'MEDNIGHT 2025',
+                    location: 'Xanthi, Greece',
+                    lat: 41.1354,
+                    lon: 24.8882,
+                    details: 'Mediterranean Researchers\' Night<br>2025'
+                }
+            ];
+            
+            // Add markers for each conference
+            conferences.forEach(conf => {
+                const marker = L.marker([conf.lat, conf.lon], {icon: customIcon}).addTo(map);
+                marker.bindPopup(`<div style="font-family: 'Segoe UI', sans-serif; padding: 5px;"><strong style="color: #667eea;">${conf.name}</strong><br>${conf.location}<br><em style="color: #666;">${conf.details}</em></div>`);
+            });
+            
+            // Fit map to show all markers
+            const group = L.featureGroup(conferences.map(c => L.marker([c.lat, c.lon])));
+            map.fitBounds(group.getBounds().pad(0.2));
+        });
+    </script>
 </body>
 </html>
