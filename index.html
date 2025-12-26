@@ -12,17 +12,6 @@
             box-sizing: border-box;
         }
         
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background: var(--bg-gradient);
-            min-height: 100vh;
-            padding: 20px;
-            padding-left: 270px;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-        
         :root {
             --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --bg-color: white;
@@ -32,6 +21,17 @@
             --border-color: #e0e4ff;
             --primary-color: #667eea;
             --secondary-color: #764ba2;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            padding: 20px;
+            padding-left: 270px;
+            transition: padding-left 0.3s ease, background 0.3s ease, color 0.3s ease;
         }
         
         body.dark-mode {
@@ -45,6 +45,11 @@
             --secondary-color: #a78bfa;
         }
         
+        body.sidebar-collapsed {
+            padding-left: 20px;
+        }
+        
+        /* Dark mode toggle */
         .dark-mode-toggle {
             position: fixed;
             top: 20px;
@@ -66,48 +71,22 @@
             background: var(--secondary-color);
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: var(--bg-color);
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        
-        .sidebar {
-            width: 250px;
-            background: var(--section-bg);
-            padding: 30px 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            overflow-y: auto;
-            border-right: 2px solid var(--border-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            z-index: 100;
-        }
-        
-        .sidebar.collapsed {
-            transform: translateX(-100%);
-        }
-        
+        /* Sidebar toggle */
         .sidebar-toggle {
             position: fixed;
             top: 20px;
-            left: 20px;
-            z-index: 101;
+            left: 260px;
+            z-index: 1001;
             background: var(--primary-color);
             color: white;
             border: none;
-            width: 45px;
-            height: 45px;
-            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 20px;
+            font-size: 18px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, background 0.3s ease, left 0.3s ease;
+            transition: left 0.3s ease, transform 0.3s ease, background 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -118,12 +97,37 @@
             background: var(--secondary-color);
         }
         
-        .sidebar-toggle.sidebar-open {
-            left: 260px;
+        .sidebar-toggle.collapsed {
+            left: 20px;
         }
         
-        body.sidebar-collapsed {
-            padding-left: 20px;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--bg-color);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            transition: background 0.3s ease;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: var(--section-bg);
+            padding: 30px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 2px solid var(--border-color);
+            transition: transform 0.3s ease, background 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .sidebar.collapsed {
+            transform: translateX(-100%);
         }
         
         .sidebar h3 {
@@ -455,14 +459,7 @@
             text-decoration: underline;
         }
         
-        #conference-map {
-            width: 100%;
-            height: 500px;
-            border-radius: 12px;
-            margin: 20px 0;
-            border: 2px solid var(--border-color);
-        }
-        
+        /* Map and Legend */
         .map-container {
             display: grid;
             grid-template-columns: 1fr 300px;
@@ -470,10 +467,11 @@
             margin: 20px 0;
         }
         
-        @media (max-width: 900px) {
-            .map-container {
-                grid-template-columns: 1fr;
-            }
+        #conference-map {
+            width: 100%;
+            height: 500px;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
         }
         
         .map-legend {
@@ -637,6 +635,20 @@
             height: 28px;
         }
         
+        .dark-mode .footer-links a svg {
+            fill: var(--primary-color) !important;
+        }
+        
+        @media (max-width: 900px) {
+            .map-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-legend {
+                max-height: none;
+            }
+        }
+        
         @media (max-width: 768px) {
             body {
                 padding-left: 20px;
@@ -644,28 +656,18 @@
             
             .sidebar {
                 transform: translateX(-100%);
-                box-shadow: none;
             }
             
             .sidebar.open {
                 transform: translateX(0);
-                box-shadow: 5px 0 20px rgba(0,0,0,0.3);
             }
             
             .sidebar-toggle {
-                left: 20px !important;
+                left: 20px;
             }
             
-            .sidebar-toggle.sidebar-open {
-                left: 260px !important;
-            }
-            
-            .main-content {
-                margin-left: 0;
-            }
-            
-            .container {
-                flex-direction: column;
+            .sidebar-toggle.open {
+                left: 260px;
             }
             
             .header h1 {
@@ -683,30 +685,30 @@
     </style>
 </head>
 <body>
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
-    <button class="sidebar-toggle sidebar-open" onclick="toggleSidebar()" title="Toggle Navigation">☰</button>
+    <button class="dark-mode-toggle" id="darkModeBtn" title="Toggle Dark Mode">🌙</button>
+    <button class="sidebar-toggle" id="sidebarBtn" title="Toggle Navigation">✕</button>
+    
+    <div class="sidebar" id="sidebar">
+        <h3>Navigation</h3>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#metrics">Research Metrics</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Work Experience</a></li>
+                <li><a href="#teaching">Teaching & Mentoring</a></li>
+                <li><a href="#memberships">Professional Memberships</a></li>
+                <li><a href="#professional-skills">Professional Skills</a></li>
+                <li><a href="#conferences">Conferences & Outreach</a></li>
+                <li><a href="#research">Research Topics</a></li>
+                <li><a href="#publications">Selected Publications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Technical Skills</a></li>
+            </ul>
+        </nav>
+    </div>
     
     <div class="container">
-        <div class="sidebar">
-            <h3>Navigation</h3>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#metrics">Research Metrics</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#experience">Work Experience</a></li>
-                    <li><a href="#teaching">Teaching & Mentoring</a></li>
-                    <li><a href="#memberships">Professional Memberships</a></li>
-                    <li><a href="#professional-skills">Professional Skills</a></li>
-                    <li><a href="#conferences">Conferences & Outreach</a></li>
-                    <li><a href="#research">Research Topics</a></li>
-                    <li><a href="#publications">Selected Publications</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Technical Skills</a></li>
-                </ul>
-            </nav>
-        </div>
-        
         <div class="main-content">
         <div class="header">
             <h1>Georgios Koukis</h1>
@@ -715,7 +717,7 @@
             
             <div class="header-contact">
                 <div class="contact-line">
-                    📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="97f0f2f8e5f0f2b9fcf8e2fcfee4d7f6e3fff2f9f6e5f4b9f0e5">[email&#160;protected]</a> | 📍 Xanthi, Greece
+                    📧 george.koukis@athenarc.gr | 📍 Xanthi, Greece
                 </div>
             </div>
             
@@ -740,7 +742,7 @@
                     <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                     GitHub
                 </a>
-                <a href="/cdn-cgi/l/email-protection#563133392431333d39233d646f6166646f6166163e39223b373f3a783124" class="header-link">
+                <a href="mailto:georgekouk29702970@hotmail.gr" class="header-link">
                     <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     Personal Email
                 </a>
@@ -876,27 +878,27 @@
                                 <span class="legend-marker conference">📍</span>
                                 Conferences
                             </div>
-                            <div class="legend-item" onclick="panToLocation(48.8566, 2.3522)">
+                            <div class="legend-item" data-lat="48.8566" data-lon="2.3522">
                                 <div class="legend-item-name">IEEE ISCC 2024</div>
                                 <div class="legend-item-location">Paris, France</div>
                                 <div class="legend-item-date">June 2024</div>
                             </div>
-                            <div class="legend-item" onclick="panToLocation(49.2827, -123.1207)">
+                            <div class="legend-item" data-lat="49.2827" data-lon="-123.1207">
                                 <div class="legend-item-name">IEEE INFOCOM 2024</div>
                                 <div class="legend-item-location">Vancouver, Canada</div>
                                 <div class="legend-item-date">May 2024</div>
                             </div>
-                            <div class="legend-item" onclick="panToLocation(48.1351, 11.5820)">
+                            <div class="legend-item" data-lat="48.1351" data-lon="11.5820">
                                 <div class="legend-item-name">HiPEAC 2024</div>
                                 <div class="legend-item-location">Munich, Germany</div>
                                 <div class="legend-item-date">January 2024</div>
                             </div>
-                            <div class="legend-item" onclick="panToLocation(37.9421, 23.6463)">
+                            <div class="legend-item" data-lat="37.9421" data-lon="23.6463">
                                 <div class="legend-item-name">BalkanCom 2025</div>
                                 <div class="legend-item-location">Piraeus, Greece</div>
                                 <div class="legend-item-date">2025</div>
                             </div>
-                            <div class="legend-item" onclick="panToLocation(41.1354, 24.8882)">
+                            <div class="legend-item" data-lat="41.1354" data-lon="24.8882">
                                 <div class="legend-item-name">MEDNIGHT 2025</div>
                                 <div class="legend-item-location">Xanthi, Greece</div>
                                 <div class="legend-item-date">2025</div>
@@ -908,15 +910,15 @@
                                 <span class="legend-marker plenary">🎤</span>
                                 Project Plenaries
                             </div>
-                            <div class="legend-item" onclick="panToLocation(40.4168, -3.7038)">
+                            <div class="legend-item" data-lat="40.4168" data-lon="-3.7038">
                                 <div class="legend-item-name">CODECO Plenary</div>
                                 <div class="legend-item-location">Madrid, Spain</div>
                             </div>
-                            <div class="legend-item" onclick="panToLocation(37.9838, 23.7275)">
+                            <div class="legend-item" data-lat="37.9838" data-lon="23.7275">
                                 <div class="legend-item-name">CODECO Plenary</div>
                                 <div class="legend-item-location">Athens, Greece</div>
                             </div>
-                            <div class="legend-item" onclick="panToLocation(37.9421, 23.6463)">
+                            <div class="legend-item" data-lat="37.9421" data-lon="23.6463">
                                 <div class="legend-item-name">CODECO Plenary</div>
                                 <div class="legend-item-location">Piraeus, Greece</div>
                             </div>
@@ -1061,7 +1063,7 @@
                 <a href="https://github.com/gkoukis" target="_blank" title="GitHub">
                     <svg viewBox="0 0 24 24" fill="#333"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                 </a>
-                <a href="/cdn-cgi/l/email-protection#a0c7c5cfd2c7c5cbcfd5cb9299979092999790e0c8cfd4cdc1c9cc8ec7d2" title="Personal Email">
+                <a href="mailto:georgekouk29702970@hotmail.gr" title="Personal Email">
                     <svg viewBox="0 0 24 24" fill="#667eea"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 </a>
             </div>
@@ -1069,7 +1071,7 @@
         </div>
     </div>
     
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
     <script>
         // Update copyright year and last updated date automatically
         document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -1080,65 +1082,73 @@
         document.getElementById('last-updated').textContent = 
             monthNames[lastUpdated.getMonth()] + ' ' + lastUpdated.getFullYear();
         
-        // Dark mode toggle (using in-memory storage for Claude artifacts)
+        // Dark mode toggle
+        const darkModeBtn = document.getElementById('darkModeBtn');
         let darkModeEnabled = false;
-        let sidebarOpen = true;
         
-        function toggleDarkMode() {
+        darkModeBtn.addEventListener('click', function() {
             darkModeEnabled = !darkModeEnabled;
             document.body.classList.toggle('dark-mode');
-            
-            // Update toggle button icon
-            const toggle = document.querySelector('.dark-mode-toggle');
-            toggle.textContent = darkModeEnabled ? '☀️' : '🌙';
-        }
+            this.textContent = darkModeEnabled ? '☀️' : '🌙';
+            this.title = darkModeEnabled ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+        });
         
-        function toggleSidebar() {
+        // Sidebar toggle
+        const sidebarBtn = document.getElementById('sidebarBtn');
+        const sidebar = document.getElementById('sidebar');
+        let sidebarOpen = true;
+        
+        sidebarBtn.addEventListener('click', function() {
             sidebarOpen = !sidebarOpen;
-            const sidebar = document.querySelector('.sidebar');
-            const toggle = document.querySelector('.sidebar-toggle');
-            const body = document.body;
             
             if (sidebarOpen) {
                 sidebar.classList.remove('collapsed');
-                sidebar.classList.add('open');
-                toggle.classList.add('sidebar-open');
-                toggle.textContent = '☰';
-                toggle.title = 'Close Navigation';
-                body.classList.remove('sidebar-collapsed');
+                this.classList.remove('collapsed');
+                document.body.classList.remove('sidebar-collapsed');
+                this.textContent = '✕';
+                this.title = 'Close Navigation';
             } else {
                 sidebar.classList.add('collapsed');
-                sidebar.classList.remove('open');
-                toggle.classList.remove('sidebar-open');
-                toggle.textContent = '☰';
-                toggle.title = 'Open Navigation';
-                body.classList.add('sidebar-collapsed');
+                this.classList.add('collapsed');
+                document.body.classList.add('sidebar-collapsed');
+                this.textContent = '☰';
+                this.title = 'Open Navigation';
             }
-        }
+        });
         
         // Smooth scrolling for navigation links
-        document.querySelectorAll('.sidebar nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        document.querySelectorAll('.sidebar nav a').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                
+                // Close sidebar on mobile after clicking
+                if (window.innerWidth <= 768) {
+                    sidebarOpen = false;
+                    sidebar.classList.add('collapsed');
+                    sidebarBtn.classList.add('collapsed');
+                    document.body.classList.add('sidebar-collapsed');
+                    sidebarBtn.textContent = '☰';
+                }
             });
         });
         
         // Highlight active section while scrolling
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', function() {
             let current = '';
             const sections = document.querySelectorAll('.section');
             
-            sections.forEach(section => {
+            sections.forEach(function(section) {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
                 if (window.pageYOffset >= sectionTop - 200) {
                     current = section.getAttribute('id');
                 }
             });
             
-            document.querySelectorAll('.sidebar nav a').forEach(link => {
+            document.querySelectorAll('.sidebar nav a').forEach(function(link) {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === '#' + current) {
                     link.classList.add('active');
@@ -1149,26 +1159,24 @@
         // Initialize conference map
         let conferenceMap = null;
         
-        function panToLocation(lat, lon) {
-            if (conferenceMap) {
-                conferenceMap.setView([lat, lon], 10, { animate: true });
-            }
-        }
-        
-        window.addEventListener('load', () => {
-            // Initialize map centered on Europe
-            conferenceMap = L.map('conference-map').setView([50.0, 10.0], 3);
+        function initMap() {
+            // Check if map container exists
+            const mapContainer = document.getElementById('conference-map');
+            if (!mapContainer) return;
             
-            // Add OpenStreetMap tiles (most reliable)
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors',
+            // Initialize map centered on Europe
+            conferenceMap = L.map('conference-map').setView([45.0, 10.0], 3);
+            
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
                 maxZoom: 19
             }).addTo(conferenceMap);
             
             // Custom icon for conferences
             const conferenceIcon = L.divIcon({
                 className: 'custom-marker',
-                html: '<div style="background-color: #667eea; width: 30px; height: 30px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 16px;">📍</div>',
+                html: '<div style="background-color: #667eea; width: 30px; height: 30px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">📍</div>',
                 iconSize: [30, 30],
                 iconAnchor: [15, 15]
             });
@@ -1176,7 +1184,7 @@
             // Custom icon for plenaries
             const plenaryIcon = L.divIcon({
                 className: 'custom-marker',
-                html: '<div style="background-color: #f5576c; width: 30px; height: 30px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 16px;">🎤</div>',
+                html: '<div style="background-color: #f5576c; width: 30px; height: 30px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">🎤</div>',
                 iconSize: [30, 30],
                 iconAnchor: [15, 15]
             });
@@ -1188,7 +1196,7 @@
                     location: 'Paris, France',
                     lat: 48.8566,
                     lon: 2.3522,
-                    details: 'Edge to Cloud Orchestration (ECO) Workshop<br>June 2024',
+                    details: 'Edge to Cloud Orchestration (ECO) Workshop - June 2024',
                     icon: conferenceIcon
                 },
                 {
@@ -1196,7 +1204,7 @@
                     location: 'Vancouver, Canada',
                     lat: 49.2827,
                     lon: -123.1207,
-                    details: 'CNERT Workshop<br>May 2024',
+                    details: 'CNERT Workshop - May 2024',
                     icon: conferenceIcon
                 },
                 {
@@ -1204,15 +1212,15 @@
                     location: 'Munich, Germany',
                     lat: 48.1351,
                     lon: 11.5820,
-                    details: 'High Performance Computing Conference<br>January 2024',
+                    details: 'High Performance Computing Conference - January 2024',
                     icon: conferenceIcon
                 },
                 {
                     name: 'BalkanCom 2025',
-                    location: 'Piraeus, Athens, Greece',
+                    location: 'Piraeus, Greece',
                     lat: 37.9421,
                     lon: 23.6463,
-                    details: '8th International Balkan Conference on Communications and Networking<br>2025',
+                    details: '8th International Balkan Conference on Communications and Networking - 2025',
                     icon: conferenceIcon
                 },
                 {
@@ -1220,7 +1228,7 @@
                     location: 'Xanthi, Greece',
                     lat: 41.1354,
                     lon: 24.8882,
-                    details: 'Mediterranean Researchers\' Night<br>2025',
+                    details: 'Mediterranean Researchers\' Night - 2025',
                     icon: conferenceIcon
                 },
                 {
@@ -1228,7 +1236,7 @@
                     location: 'Madrid, Spain',
                     lat: 40.4168,
                     lon: -3.7038,
-                    details: 'CODECO Project Plenary Meeting<br>Madrid, Spain',
+                    details: 'CODECO Project Plenary Meeting',
                     icon: plenaryIcon
                 },
                 {
@@ -1236,7 +1244,7 @@
                     location: 'Athens, Greece',
                     lat: 37.9838,
                     lon: 23.7275,
-                    details: 'CODECO Project Plenary Meeting<br>Athens, Greece',
+                    details: 'CODECO Project Plenary Meeting',
                     icon: plenaryIcon
                 },
                 {
@@ -1244,12 +1252,35 @@
                     location: 'Piraeus, Greece',
                     lat: 37.9421,
                     lon: 23.6463,
-                    details: 'CODECO Project Plenary Meeting<br>Piraeus, Greece',
+                    details: 'CODECO Project Plenary Meeting',
                     icon: plenaryIcon
                 }
             ];
             
             // Add markers for each conference
-            conferences.forEach(conf => {
+            conferences.forEach(function(conf) {
                 const marker = L.marker([conf.lat, conf.lon], {icon: conf.icon}).addTo(conferenceMap);
-                marker.bindPopup(`<div style="font-family: 'Segoe UI', sans-serif; padding: 5px;"><strong style="color: #667eea;">${conf.name}</strong><br>${co
+                marker.bindPopup('<div style="font-family: Segoe UI, sans-serif; padding: 5px;"><strong style="color: #667eea;">' + conf.name + '</strong><br>' + conf.location + '<br><em style="color: #666;">' + conf.details + '</em></div>');
+            });
+            
+            // Fit map to show all markers
+            const bounds = L.latLngBounds(conferences.map(function(c) { return [c.lat, c.lon]; }));
+            conferenceMap.fitBounds(bounds.pad(0.2));
+        }
+        
+        // Pan to location when clicking legend items
+        document.querySelectorAll('.legend-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                const lat = parseFloat(this.getAttribute('data-lat'));
+                const lon = parseFloat(this.getAttribute('data-lon'));
+                if (conferenceMap && !isNaN(lat) && !isNaN(lon)) {
+                    conferenceMap.setView([lat, lon], 10, { animate: true });
+                }
+            });
+        });
+        
+        // Initialize map when page loads
+        window.addEventListener('load', initMap);
+    </script>
+</body>
+</html>
