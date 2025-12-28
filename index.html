@@ -71,6 +71,29 @@
             background: var(--secondary-color);
         }
         
+        /* Language toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 80px;
+            z-index: 1000;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .lang-toggle:hover {
+            transform: scale(1.1);
+            background: var(--secondary-color);
+        }
+        
         /* Sidebar toggle */
         .sidebar-toggle {
             position: fixed;
@@ -681,29 +704,41 @@
             .section h2 {
                 font-size: 1.5em;
             }
+            
+            .lang-toggle {
+                right: 70px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+            .dark-mode-toggle {
+                padding: 8px 12px;
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
     <button class="dark-mode-toggle" id="darkModeBtn" title="Toggle Dark Mode">🌙</button>
+    <button class="lang-toggle" id="langBtn" title="Switch to Greek">EN</button>
     <button class="sidebar-toggle" id="sidebarBtn" title="Toggle Navigation">✕</button>
     
     <div class="sidebar" id="sidebar">
-        <h3>Navigation</h3>
+        <h3 id="nav-title">Navigation</h3>
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#metrics">Research Metrics</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Work Experience</a></li>
-                <li><a href="#teaching">Teaching & Mentoring</a></li>
-                <li><a href="#memberships">Professional Memberships</a></li>
-                <li><a href="#professional-skills">Professional Skills</a></li>
-                <li><a href="#conferences">Conferences & Outreach</a></li>
-                <li><a href="#research">Research Topics</a></li>
-                <li><a href="#publications">Selected Publications</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Technical Skills</a></li>
+                <li><a href="#about" id="nav-about">About Me</a></li>
+                <li><a href="#metrics" id="nav-metrics">Research Metrics</a></li>
+                <li><a href="#education" id="nav-education">Education</a></li>
+                <li><a href="#experience" id="nav-experience">Work Experience</a></li>
+                <li><a href="#teaching" id="nav-teaching">Teaching & Mentoring</a></li>
+                <li><a href="#memberships" id="nav-memberships">Professional Memberships</a></li>
+                <li><a href="#professional-skills" id="nav-profskills">Professional Skills</a></li>
+                <li><a href="#conferences" id="nav-conferences">Conferences & Outreach</a></li>
+                <li><a href="#research" id="nav-research">Research Topics</a></li>
+                <li><a href="#publications" id="nav-publications">Selected Publications</a></li>
+                <li><a href="#projects" id="nav-projects">Projects</a></li>
+                <li><a href="#skills" id="nav-skills">Technical Skills</a></li>
             </ul>
         </nav>
     </div>
@@ -712,8 +747,8 @@
         <div class="main-content">
         <div class="header">
             <h1>Georgios Koukis</h1>
-            <div class="title">PhD(c) and Researcher in Electrical & Computer Engineering</div>
-            <div class="affiliation">Democritus University of Thrace (DUTH) | ATHENA Research Center</div>
+            <div class="title" id="header-title">PhD(c) and Researcher in Electrical & Computer Engineering</div>
+            <div class="affiliation" id="header-affiliation">Democritus University of Thrace (DUTH) | ATHENA Research Center</div>
             
             <div class="header-contact">
                 <div class="contact-line">
@@ -742,143 +777,151 @@
                     <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                     GitHub
                 </a>
-                <a href="mailto:georgekouk29702970@hotmail.gr" class="header-link">
+                <a href="mailto:georgekouk29702970@hotmail.gr" class="header-link" id="header-email">
                     <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    Personal Email
+                    <span>Personal Email</span>
                 </a>
             </div>
         </div>
         
         <div class="content">
+            <!-- About Section -->
             <div class="section" id="about">
-                <h2>About Me</h2>
-                <p class="bio">
+                <h2 id="section-about">About Me</h2>
+                <p class="bio" id="bio-text">
                     Georgios Koukis is a PhD candidate at the School of Electrical and Computer Engineering of Democritus University of Thrace (DUTH) and a researcher at the ATHENA Research Center. His research interests focus on network and satellite communications for smart cities and IoT, as well as orchestration and automation of services in cloud and cloud/edge environments. He has conducted experimental evaluations and publications on container-based architectures, utilizing Docker and Kubernetes for development and scaling of microservices. He holds an M.Sc. degree from the Department of Production and Management Engineering and an M.Sc. degree from the Department of Electrical and Computer Engineering (specialization in Microelectronics and Information Systems Technologies / Networks and Internet Systems).
                 </p>
             </div>
             
+            <!-- Metrics Section -->
             <div class="section" id="metrics">
-                <h2>Research Metrics</h2>
+                <h2 id="section-metrics">Research Metrics</h2>
                 <div class="metrics-section">
                     <div class="metric-card">
-                        <div class="metric-label">Publications</div>
+                        <div class="metric-label" id="metric-pub-label">Publications</div>
                         <div class="metric-value">11</div>
-                        <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" class="metric-link">View on Google Scholar</a>
+                        <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" class="metric-link" id="metric-pub-link">View on Google Scholar</a>
                     </div>
                     <div class="metric-card">
-                        <div class="metric-label">Citations</div>
+                        <div class="metric-label" id="metric-cite-label">Citations</div>
                         <div class="metric-value">63</div>
-                        <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" class="metric-link">View Live Stats</a>
+                        <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" class="metric-link" id="metric-cite-link">View Live Stats</a>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">h-index</div>
                         <div class="metric-value">3</div>
-                        <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" class="metric-link">View Profile</a>
+                        <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" class="metric-link" id="metric-h-link">View Profile</a>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">i10-index</div>
                         <div class="metric-value">3</div>
-                        <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" class="metric-link">View Profile</a>
+                        <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" class="metric-link" id="metric-i10-link">View Profile</a>
                     </div>
                 </div>
             </div>
             
+            <!-- Education Section -->
             <div class="section" id="education">
-                <h2>Education</h2>
+                <h2 id="section-education">Education</h2>
                 <div class="education-item">
-                    <h3>PhD in Electrical and Computer Engineering</h3>
-                    <p class="institution">Democritus University of Thrace (DUTH), Xanthi, Greece</p>
-                    <p class="details">Specialization: Microelectronics and Information Systems Technologies / Networks and Internet Systems</p>
-                    <p class="period">2022 – Present</p>
+                    <h3 id="edu-phd-title">PhD in Electrical and Computer Engineering</h3>
+                    <p class="institution" id="edu-phd-inst">Democritus University of Thrace (DUTH), Xanthi, Greece</p>
+                    <p class="details" id="edu-phd-spec">Specialization: Microelectronics and Information Systems Technologies / Networks and Internet Systems</p>
+                    <p class="period">2022 – <span id="edu-phd-present">Present</span></p>
                 </div>
                 <div class="education-item">
-                    <h3>M.Sc. in Electrical and Computer Engineering</h3>
-                    <p class="institution">Democritus University of Thrace (DUTH), Xanthi, Greece</p>
-                    <p class="details">Specialization: Microelectronics and Information Systems Technologies / Networks and Internet Systems</p>
+                    <h3 id="edu-msc-title">M.Sc. in Electrical and Computer Engineering</h3>
+                    <p class="institution" id="edu-msc-inst">Democritus University of Thrace (DUTH), Xanthi, Greece</p>
+                    <p class="details" id="edu-msc-spec">Specialization: Microelectronics and Information Systems Technologies / Networks and Internet Systems</p>
                     <p class="period">2020 – 2022</p>
                 </div>
                 <div class="education-item">
-                    <h3>M.Sc. in Production and Management Engineering</h3>
-                    <p class="institution">Democritus University of Thrace (DUTH), Xanthi, Greece </p>
+                    <h3 id="edu-eng-title">M.Sc. in Production and Management Engineering</h3>
+                    <p class="institution" id="edu-eng-inst">Democritus University of Thrace (DUTH), Xanthi, Greece</p>
                     <p class="period">2014 – 2020</p>
                 </div>
             </div>
 
+            <!-- Experience Section -->
             <div class="section" id="experience">
-                <h2>Work Experience</h2>
+                <h2 id="section-experience">Work Experience</h2>
                 <div class="experience-item">
-                    <h3>Research Associate</h3>
+                    <h3 id="exp-research-title">Research Associate</h3>
                     <p class="institution">ATHENA Research & Innovation Information Technologies</p>
-                    <p class="period">2022 – Present | Xanthi, Greece</p>
-                    <p class="description">Working on EU-funded projects including REWIRE, Feed4Cloud, and CODECO, focusing on SDN-based protocols, blockchain for cloud services, and cognitive edge cloud orchestration.</p>
+                    <p class="period">2022 – <span id="exp-research-present">Present</span> | Xanthi, Greece</p>
+                    <p class="description" id="exp-research-desc">Working on EU-funded projects including REWIRE, Feed4Cloud, and CODECO, focusing on SDN-based protocols, blockchain for cloud services, and cognitive edge cloud orchestration.</p>
                 </div>
                 <div class="experience-item">
-                    <h3>Assistant Production and Management Engineer (Intern)</h3>
+                    <h3 id="exp-intern-title">Assistant Production and Management Engineer (Intern)</h3>
                     <p class="institution">IKTINOS HELLAS S.A. - Marble Production and Processing Factory</p>
                     <p class="period">June 2019 – August 2019 | Drama, Greece</p>
-                    <p class="description">Production management, information processing & storage, Excel & ERP operations, creation of production monitoring and improvement structures.</p>
+                    <p class="description" id="exp-intern-desc">Production management, information processing & storage, Excel & ERP operations, creation of production monitoring and improvement structures.</p>
                 </div>
             </div>   
 
+            <!-- Teaching Section -->
             <div class="section" id="teaching">
-                <h2>Teaching & Mentoring</h2>
+                <h2 id="section-teaching">Teaching & Mentoring</h2>
                 <div class="teaching-item">
-                    <h3>Lab Associate - Internetworked Systems Lab</h3>
-                    <p class="institution">Democritus University of Thrace</p>
-                    <p class="description">Laboratory associate for Networks and Computer Networks courses, specializing in NS-3 and Omnet++ simulation tools.</p>
+                    <h3 id="teach-lab-title">Lab Associate - Internetworked Systems Lab</h3>
+                    <p class="institution" id="teach-lab-inst">Democritus University of Thrace</p>
+                    <p class="description" id="teach-lab-desc">Laboratory associate for Networks and Computer Networks courses, specializing in NS-3 and Omnet++ simulation tools.</p>
                     <p class="links-inline">
-                        <a href="http://www.intersys-lab.org/" target="_blank">🌐 Lab Website</a> | 
+                        <a href="http://www.intersys-lab.org/" target="_blank" id="teach-lab-web">🌐 Lab Website</a> | 
                         <a href="https://github.com/Intersys-Lab-ee-DUTH" target="_blank">💻 GitHub</a>
                     </p>
                 </div>
                 <div class="teaching-item">
-                    <h3>Theses Lab Assistant</h3>
-                    <p class="institution">Department of Electrical and Computer Engineering, DUTH</p>
-                    <p class="description">Lab assistance for over 5 undergraduate theses and paper writing in areas including network simulation, IoT systems, and cloud technologies.</p>
+                    <h3 id="teach-thesis-title">Theses Lab Assistant</h3>
+                    <p class="institution" id="teach-thesis-inst">Department of Electrical and Computer Engineering, DUTH</p>
+                    <p class="description" id="teach-thesis-desc">Lab assistance for over 5 undergraduate theses and paper writing in areas including network simulation, IoT systems, and cloud technologies.</p>
                 </div>
                 <div class="teaching-item">
-                    <h3>Data Security and Privacy</h3>
-                    <p class="institution">MSc in Biomedical Informatics (BMI), DUTH & ATHENA RC</p>
+                    <h3 id="teach-security-title">Data Security and Privacy</h3>
+                    <p class="institution" id="teach-security-inst">MSc in Biomedical Informatics (BMI), DUTH & ATHENA RC</p>
                     <p class="period">4th Cycle | 2025-2026</p>
-                    <p class="description">Lecturer/Teaching for the Data Security and Privacy course, covering topics such as encryption, GDPR compliance, healthcare data protection, etc.</p>
+                    <p class="description" id="teach-security-desc">Lecturer/Teaching for the Data Security and Privacy course, covering topics such as encryption, GDPR compliance, healthcare data protection, etc.</p>
                     <p class="links-inline">
-                        <a href="https://bmi.med.duth.gr/" target="_blank">🌐 MSc Website</a>
+                        <a href="https://bmi.med.duth.gr/" target="_blank" id="teach-security-web">🌐 MSc Website</a>
                     </p>
                 </div>
             </div>
 
+            <!-- Memberships Section -->
             <div class="section" id="memberships">
-                <h2>Professional Memberships</h2>
+                <h2 id="section-memberships">Professional Memberships</h2>
                 <div class="membership-item">
-                    <p><strong>IEEE</strong> - Student Member</p>
+                    <p><strong>IEEE</strong> - <span id="membership-ieee">Student Member</span></p>
                 </div>
             </div>
             
+            <!-- Professional Skills Section -->
             <div class="section" id="professional-skills">
-                <h2>Professional Skills</h2>
+                <h2 id="section-profskills">Professional Skills</h2>
                 <div class="skill-item">
-                    <h3>🎯 Project Management & Leadership</h3>
-                    <p class="description">Led Work Packages (WP) in EU-funded research projects, coordinating technical activities, managing deliverables, and ensuring alignment with project objectives and timelines.</p>
+                    <h3 id="skill-pm-title">🎯 Project Management & Leadership</h3>
+                    <p class="description" id="skill-pm-desc">Led Work Packages (WP) in EU-funded research projects, coordinating technical activities, managing deliverables, and ensuring alignment with project objectives and timelines.</p>
                 </div>
                 <div class="skill-item">
-                    <h3>📝 Technical Writing & Documentation</h3>
-                    <p class="description">Extensive experience in writing EU project proposals, technical deliverables, and research documentation. Skilled in articulating complex technical concepts for diverse audiences including funding agencies, technical partners, and academic communities.</p>
+                    <h3 id="skill-writing-title">📝 Technical Writing & Documentation</h3>
+                    <p class="description" id="skill-writing-desc">Extensive experience in writing EU project proposals, technical deliverables, and research documentation. Skilled in articulating complex technical concepts for diverse audiences including funding agencies, technical partners, and academic communities.</p>
                 </div>
                 <div class="skill-item">
-                    <h3>🤝 Collaboration & Communication</h3>
-                    <p class="description">Proven ability to work in multidisciplinary and multinational teams, facilitating effective communication between technical and non-technical stakeholders across research and industry partnerships.</p>
+                    <h3 id="skill-collab-title">🤝 Collaboration & Communication</h3>
+                    <p class="description" id="skill-collab-desc">Proven ability to work in multidisciplinary and multinational teams, facilitating effective communication between technical and non-technical stakeholders across research and industry partnerships.</p>
                 </div>
             </div>
             
+            <!-- Conferences Section -->
             <div class="section" id="conferences">
-                <h2>Conferences & Outreach</h2>
+                <h2 id="section-conferences">Conferences & Outreach</h2>
                 <div class="map-container">
                     <div id="conference-map"></div>
                     <div class="map-legend">
-                        <h4>📍 Locations</h4>
+                        <h4 id="legend-title">📍 Locations</h4>
                         
                         <div class="legend-section">
-                            <div class="legend-title">
+                            <div class="legend-title" id="legend-conf-title">
                                 <span class="legend-marker conference">📍</span>
                                 Conferences
                             </div>
@@ -915,7 +958,7 @@
                         </div>
                         
                         <div class="legend-section">
-                            <div class="legend-title">
+                            <div class="legend-title" id="legend-plenary-title">
                                 <span class="legend-marker plenary">🎤</span>
                                 Project Plenaries
                             </div>
@@ -936,13 +979,13 @@
                 </div>
                 
                 <div class="conference-list">
-                    <h3 style="color: var(--primary-color); margin-bottom: 20px;">Conference Presentations</h3>
+                    <h3 style="color: var(--primary-color); margin-bottom: 20px;" id="conf-presentations-title">Conference Presentations</h3>
                     
                     <div class="conference-item">
                         <h4>📍 IEEE INFOCOM 2024 - Vancouver, Canada</h4>
                         <p class="conference-details">
                             <strong>Computer and Networking Experimental Research using Testbeds (CNERT) and Intelligent Cloud Computing and Networking (ICCN) Workshops</strong><br>
-                            Demonstrated open-source experimentation framework for edge-cloud continuum research (CODEF). Also presented  anomaly detection evaluation schemes in edge cloud systems.
+                            <span id="conf-infocom-desc">Demonstrated open-source experimentation framework for edge-cloud continuum research (CODEF). Also presented anomaly detection evaluation schemes in edge cloud systems.</span>
                         </p>
                         <p class="conference-location">Vancouver, BC, Canada | May 2024</p>
                     </div>
@@ -951,7 +994,7 @@
                         <h4>📍 IEEE ISCC 2024 - Paris, France</h4>
                         <p class="conference-details">
                             <strong>Edge to Cloud Orchestration (ECO) and Next-Generation Multimedia Services at the Edge (NGMSE) Workshops</strong><br>
-                            Presented research on Kubernetes networking and edge computing at the IEEE Symposium on Computers and Communications.
+                            <span id="conf-iscc-desc">Presented research on Kubernetes networking and edge computing at the IEEE Symposium on Computers and Communications.</span>
                         </p>
                         <p class="conference-location">Paris, France | June 2024</p>
                     </div>
@@ -960,7 +1003,7 @@
                         <h4>📍 BalkanCom 2025 - Piraeus, Greece</h4>
                         <p class="conference-details">
                             <strong>IEEE 8th International Balkan Conference on Communications and Networking</strong><br>
-                            Presented a Comparative Stress Testing work on Kubernetes Distributions and CNI Plugins under realistic stress-intensive workloads.
+                            <span id="conf-balkancom-desc">Presented a Comparative Stress Testing work on Kubernetes Distributions and CNI Plugins under realistic stress-intensive workloads.</span>
                         </p>
                         <p class="conference-location">Piraeus, Greece | June 2025</p>
                     </div>
@@ -969,36 +1012,36 @@
                         <h4>📍 HiPEAC 2024 - Munich, Germany</h4>
                         <p class="conference-details">
                             <strong>High Performance and Embedded Architecture and Compilation</strong><br>
-                            Presented CODEF in Europe's premier computing systems conference.
+                            <span id="conf-hipeac-desc">Presented CODEF in Europe's premier computing systems conference.</span>
                         </p>
                         <p class="conference-location">Munich, Germany | January 2024</p>
                     </div>
 
-                    <h3 style="color: var(--primary-color); margin: 30px 0 20px 0;">Science Communication</h3>
+                    <h3 style="color: var(--primary-color); margin: 30px 0 20px 0;" id="conf-science-title">Science Communication</h3>
                     
                     <div class="conference-item">
                         <h4>📍 MEDNIGHT 2025 - Xanthi, Greece</h4>
                         <p class="conference-details">
                             <strong>Mediterranean Researchers' Night</strong><br>
-                            Public outreach event showcasing research to the local community.
+                            <span id="conf-mednight-desc">Public outreach event showcasing research to the local community.</span>
                         </p>
                         <p class="conference-location">Xanthi, Greece | 2025</p>
                     </div>
 
                     <div class="conference-item">
-                        <h4>📍 DUTH/ATH 2025 Democamp CODEF challenges - Xanthi, Greece</h4>
+                        <h4>📍 DUTH/ATH Democamp 2025 - Xanthi, Greece</h4>
                         <p class="conference-details">
                             <strong>DUTH/ATH Democamp CODEF challenges</strong><br>
-                            Presentation of CODEF and challenges to students and local Democamp.
+                            <span id="conf-democamp-desc">Presentation of CODEF and challenges to students and local Democamp.</span>
                         </p>
                         <p class="conference-location">Xanthi, Greece | 2025</p>
                     </div>
 
                     <div class="conference-item">
-                        <h4>📍 IRCEP 2025 - CODEF challenges - Online </h4>
+                        <h4>📍 IRCEP 2025 - Online</h4>
                         <p class="conference-details">
-                            <strong>IRCEP - CODEF challenges - Online</strong><br>
-                            Presentation of CODEF and challenges to students and local Democamp.
+                            <strong>IRCEP - CODEF challenges</strong><br>
+                            <span id="conf-ircep-desc">Presentation of CODEF and challenges to students online.</span>
                         </p>
                         <p class="conference-location">Online | 2025</p>
                     </div>
@@ -1006,22 +1049,24 @@
                 </div>
             </div>
             
+            <!-- Research Topics Section -->
             <div class="section" id="research">
-                <h2>Research Topics</h2>
+                <h2 id="section-research">Research Topics</h2>
                 <div class="research-topics">
-                    <div class="topic">Network & Satellite Communications</div>
-                    <div class="topic">Smart Cities & IoT</div>
-                    <div class="topic">Cloud/Edge Orchestration</div>
-                    <div class="topic">Container Technologies (Docker, Kubernetes)</div>
-                    <div class="topic">Microservices Architecture</div>
-                    <div class="topic">Delay-Tolerant Networking (DTN)</div>
-                    <div class="topic">Software-Defined Networking (SDN)</div>
-                    <div class="topic">Edge Computing</div>
+                    <div class="topic" id="topic-1">Network & Satellite Communications</div>
+                    <div class="topic" id="topic-2">Smart Cities & IoT</div>
+                    <div class="topic" id="topic-3">Cloud/Edge Orchestration</div>
+                    <div class="topic" id="topic-4">Container Technologies (Docker, Kubernetes)</div>
+                    <div class="topic" id="topic-5">Microservices Architecture</div>
+                    <div class="topic" id="topic-6">Delay-Tolerant Networking (DTN)</div>
+                    <div class="topic" id="topic-7">Software-Defined Networking (SDN)</div>
+                    <div class="topic" id="topic-8">Edge Computing</div>
                 </div>
             </div>
             
+            <!-- Publications Section -->
             <div class="section" id="publications">
-                <h2>Selected Publications</h2>
+                <h2 id="section-publications">Selected Publications</h2>
                 <ul class="publications">
                     <li>
                         <a href="https://doi.org/10.3390/fi16040129" target="_blank">All about Delay-Tolerant Networking (DTN) Contributions to Future Internet</a>
@@ -1046,26 +1091,28 @@
                 </ul>
             </div>
             
+            <!-- Projects Section -->
             <div class="section" id="projects">
-                <h2>Projects</h2>
+                <h2 id="section-projects">Projects</h2>
                 <div class="research-topics">
                     <div class="topic">
-                        <strong>CODECO:</strong> Cognitive Decentralised Edge Cloud Orchestration (on-going)
+                        <strong>CODECO:</strong> <span id="project-codeco-desc">Cognitive Decentralised Edge Cloud Orchestration (on-going)</span>
                         <br><a href="https://he-codeco.eu/" target="_blank" class="project-link">🔗 Project Website</a>
                     </div>
                     <div class="topic">
-                        <strong>REWIRE:</strong> SDN-based Adaptable Non-IP Protocol Stacks in Smart-City Environments
+                        <strong>REWIRE:</strong> <span id="project-rewire-desc">SDN-based Adaptable Non-IP Protocol Stacks in Smart-City Environments</span>
                         <br><a href="https://www.fed4fire.eu/demo-stories/oc9/rewire/" target="_blank" class="project-link">🔗 Project Website</a>
                     </div>
                     <div class="topic">
-                        <strong>Feed4Cloud:</strong> Trustworthy user feedback for cloud-native services using blockchain
+                        <strong>Feed4Cloud:</strong> <span id="project-feed4cloud-desc">Trustworthy user feedback for cloud-native services using blockchain</span>
                         <br><a href="https://www.trublo.eu/feed4cloud/" target="_blank" class="project-link">🔗 Project Website</a>
                     </div>
                 </div>
             </div>
             
+            <!-- Technical Skills Section -->
             <div class="section" id="skills">
-                <h2>Technical Skills</h2>
+                <h2 id="section-skills">Technical Skills</h2>
                 <div class="skills">
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">C/C++</span>
@@ -1081,8 +1128,8 @@
         </div>
         
         <footer>
-            <p>&copy; <span id="current-year"></span> Georgios Koukis. All rights reserved.</p>
-            <p>Last updated: <span id="last-updated"></span></p>
+            <p>© <span id="current-year"></span> Georgios Koukis. <span id="footer-rights">All rights reserved.</span></p>
+            <p><span id="footer-updated">Last updated:</span> <span id="last-updated"></span></p>
             
             <div class="footer-links">
                 <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" title="Google Scholar">
@@ -1110,14 +1157,274 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
     <script>
-        // Update copyright year and last updated date automatically
+        // Translations object
+        const translations = {
+            en: {
+                // Navigation
+                navTitle: "Navigation",
+                navAbout: "About Me",
+                navMetrics: "Research Metrics",
+                navEducation: "Education",
+                navExperience: "Work Experience",
+                navTeaching: "Teaching & Mentoring",
+                navMemberships: "Professional Memberships",
+                navProfSkills: "Professional Skills",
+                navConferences: "Conferences & Outreach",
+                navResearch: "Research Topics",
+                navPublications: "Selected Publications",
+                navProjects: "Projects",
+                navSkills: "Technical Skills",
+                
+                // Header
+                headerTitle: "PhD(c) and Researcher in Electrical & Computer Engineering",
+                headerAffiliation: "Democritus University of Thrace (DUTH) | ATHENA Research Center",
+                headerEmail: "Personal Email",
+                
+                // Section titles
+                sectionAbout: "About Me",
+                sectionMetrics: "Research Metrics",
+                sectionEducation: "Education",
+                sectionExperience: "Work Experience",
+                sectionTeaching: "Teaching & Mentoring",
+                sectionMemberships: "Professional Memberships",
+                sectionProfSkills: "Professional Skills",
+                sectionConferences: "Conferences & Outreach",
+                sectionResearch: "Research Topics",
+                sectionPublications: "Selected Publications",
+                sectionProjects: "Projects",
+                sectionSkills: "Technical Skills",
+                
+                // Bio
+                bio: "Georgios Koukis is a PhD candidate at the School of Electrical and Computer Engineering of Democritus University of Thrace (DUTH) and a researcher at the ATHENA Research Center. His research interests focus on network and satellite communications for smart cities and IoT, as well as orchestration and automation of services in cloud and cloud/edge environments. He has conducted experimental evaluations and publications on container-based architectures, utilizing Docker and Kubernetes for development and scaling of microservices. He holds an M.Sc. degree from the Department of Production and Management Engineering and an M.Sc. degree from the Department of Electrical and Computer Engineering (specialization in Microelectronics and Information Systems Technologies / Networks and Internet Systems).",
+                
+                // Metrics
+                metricPubLabel: "Publications",
+                metricCiteLabel: "Citations",
+                metricPubLink: "View on Google Scholar",
+                metricCiteLink: "View Live Stats",
+                metricProfileLink: "View Profile",
+                
+                // Education
+                eduPhdTitle: "PhD in Electrical and Computer Engineering",
+                eduPhdInst: "Democritus University of Thrace (DUTH), Xanthi, Greece",
+                eduPhdSpec: "Specialization: Microelectronics and Information Systems Technologies / Networks and Internet Systems",
+                eduMscTitle: "M.Sc. in Electrical and Computer Engineering",
+                eduMscInst: "Democritus University of Thrace (DUTH), Xanthi, Greece",
+                eduMscSpec: "Specialization: Microelectronics and Information Systems Technologies / Networks and Internet Systems",
+                eduEngTitle: "M.Sc. in Production and Management Engineering",
+                eduEngInst: "Democritus University of Thrace (DUTH), Xanthi, Greece",
+                present: "Present",
+                
+                // Experience
+                expResearchTitle: "Research Associate",
+                expResearchDesc: "Working on EU-funded projects including REWIRE, Feed4Cloud, and CODECO, focusing on SDN-based protocols, blockchain for cloud services, and cognitive edge cloud orchestration.",
+                expInternTitle: "Assistant Production and Management Engineer (Intern)",
+                expInternDesc: "Production management, information processing & storage, Excel & ERP operations, creation of production monitoring and improvement structures.",
+                
+                // Teaching
+                teachLabTitle: "Lab Associate - Internetworked Systems Lab",
+                teachLabInst: "Democritus University of Thrace",
+                teachLabDesc: "Laboratory associate for Networks and Computer Networks courses, specializing in NS-3 and Omnet++ simulation tools.",
+                teachLabWeb: "🌐 Lab Website",
+                teachThesisTitle: "Theses Lab Assistant",
+                teachThesisInst: "Department of Electrical and Computer Engineering, DUTH",
+                teachThesisDesc: "Lab assistance for over 5 undergraduate theses and paper writing in areas including network simulation, IoT systems, and cloud technologies.",
+                teachSecurityTitle: "Data Security and Privacy",
+                teachSecurityInst: "MSc in Biomedical Informatics (BMI), DUTH & ATHENA RC",
+                teachSecurityDesc: "Lecturer/Teaching for the Data Security and Privacy course, covering topics such as encryption, GDPR compliance, healthcare data protection, etc.",
+                teachSecurityWeb: "🌐 MSc Website",
+                
+                // Memberships
+                membershipIeee: "Student Member",
+                
+                // Professional Skills
+                skillPmTitle: "🎯 Project Management & Leadership",
+                skillPmDesc: "Led Work Packages (WP) in EU-funded research projects, coordinating technical activities, managing deliverables, and ensuring alignment with project objectives and timelines.",
+                skillWritingTitle: "📝 Technical Writing & Documentation",
+                skillWritingDesc: "Extensive experience in writing EU project proposals, technical deliverables, and research documentation. Skilled in articulating complex technical concepts for diverse audiences including funding agencies, technical partners, and academic communities.",
+                skillCollabTitle: "🤝 Collaboration & Communication",
+                skillCollabDesc: "Proven ability to work in multidisciplinary and multinational teams, facilitating effective communication between technical and non-technical stakeholders across research and industry partnerships.",
+                
+                // Map Legend
+                legendTitle: "📍 Locations",
+                legendConfTitle: "Conferences",
+                legendPlenaryTitle: "Project Plenaries",
+                
+                // Conference descriptions
+                confPresentationsTitle: "Conference Presentations",
+                confScienceTitle: "Science Communication",
+                confInfocomDesc: "Demonstrated open-source experimentation framework for edge-cloud continuum research (CODEF). Also presented anomaly detection evaluation schemes in edge cloud systems.",
+                confIsccDesc: "Presented research on Kubernetes networking and edge computing at the IEEE Symposium on Computers and Communications.",
+                confBalkancomDesc: "Presented a Comparative Stress Testing work on Kubernetes Distributions and CNI Plugins under realistic stress-intensive workloads.",
+                confHipeacDesc: "Presented CODEF in Europe's premier computing systems conference.",
+                confMednightDesc: "Public outreach event showcasing research to the local community.",
+                confDemocampDesc: "Presentation of CODEF and challenges to students and local Democamp.",
+                confIrcepDesc: "Presentation of CODEF and challenges to students online.",
+                
+                // Research Topics
+                topic1: "Network & Satellite Communications",
+                topic2: "Smart Cities & IoT",
+                topic3: "Cloud/Edge Orchestration",
+                topic4: "Container Technologies (Docker, Kubernetes)",
+                topic5: "Microservices Architecture",
+                topic6: "Delay-Tolerant Networking (DTN)",
+                topic7: "Software-Defined Networking (SDN)",
+                topic8: "Edge Computing",
+                
+                // Projects
+                projectCodecoDesc: "Cognitive Decentralised Edge Cloud Orchestration (on-going)",
+                projectRewireDesc: "SDN-based Adaptable Non-IP Protocol Stacks in Smart-City Environments",
+                projectFeed4cloudDesc: "Trustworthy user feedback for cloud-native services using blockchain",
+                
+                // Footer
+                footerRights: "All rights reserved.",
+                footerUpdated: "Last updated:",
+                
+                // Button
+                langBtnTitle: "Switch to Greek"
+            },
+            el: {
+                // Navigation
+                navTitle: "Πλοήγηση",
+                navAbout: "Σχετικά με Εμένα",
+                navMetrics: "Ερευνητικοί Δείκτες",
+                navEducation: "Εκπαίδευση",
+                navExperience: "Επαγγελματική Εμπειρία",
+                navTeaching: "Διδασκαλία & Καθοδήγηση",
+                navMemberships: "Επαγγελματικές Συμμετοχές",
+                navProfSkills: "Επαγγελματικές Δεξιότητες",
+                navConferences: "Συνέδρια & Δράσεις",
+                navResearch: "Ερευνητικά Θέματα",
+                navPublications: "Επιλεγμένες Δημοσιεύσεις",
+                navProjects: "Έργα",
+                navSkills: "Τεχνικές Δεξιότητες",
+                
+                // Header
+                headerTitle: "Υποψήφιος Διδάκτορας και Ερευνητής Ηλεκτρολόγων Μηχανικών & Μηχανικών Υπολογιστών",
+                headerAffiliation: "Δημοκρίτειο Πανεπιστήμιο Θράκης (ΔΠΘ) | Ερευνητικό Κέντρο ΑΘΗΝΑ",
+                headerEmail: "Προσωπικό Email",
+                
+                // Section titles
+                sectionAbout: "Σχετικά με Εμένα",
+                sectionMetrics: "Ερευνητικοί Δείκτες",
+                sectionEducation: "Εκπαίδευση",
+                sectionExperience: "Επαγγελματική Εμπειρία",
+                sectionTeaching: "Διδασκαλία & Καθοδήγηση",
+                sectionMemberships: "Επαγγελματικές Συμμετοχές",
+                sectionProfSkills: "Επαγγελματικές Δεξιότητες",
+                sectionConferences: "Συνέδρια & Δράσεις",
+                sectionResearch: "Ερευνητικά Θέματα",
+                sectionPublications: "Επιλεγμένες Δημοσιεύσεις",
+                sectionProjects: "Έργα",
+                sectionSkills: "Τεχνικές Δεξιότητες",
+                
+                // Bio
+                bio: "Ο Γεώργιος Κουκής είναι υποψήφιος διδάκτορας στη Σχολή Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών του Δημοκρίτειου Πανεπιστημίου Θράκης (ΔΠΘ) και ερευνητής στο Ερευνητικό Κέντρο ΑΘΗΝΑ. Τα ερευνητικά του ενδιαφέροντα επικεντρώνονται στις δικτυακές και δορυφορικές επικοινωνίες για έξυπνες πόλεις και IoT, καθώς και στην ενορχήστρωση και αυτοματοποίηση υπηρεσιών σε περιβάλλοντα cloud και cloud/edge. Έχει πραγματοποιήσει πειραματικές αξιολογήσεις και δημοσιεύσεις σε αρχιτεκτονικές βασισμένες σε containers, χρησιμοποιώντας Docker και Kubernetes για την ανάπτυξη και κλιμάκωση microservices. Κατέχει μεταπτυχιακό δίπλωμα από το Τμήμα Μηχανικών Παραγωγής και Διοίκησης και μεταπτυχιακό δίπλωμα από το Τμήμα Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών (ειδίκευση: Μικροηλεκτρονική και Τεχνολογίες Πληροφοριακών Συστημάτων / Δίκτυα και Συστήματα Διαδικτύου).",
+                
+                // Metrics
+                metricPubLabel: "Δημοσιεύσεις",
+                metricCiteLabel: "Αναφορές",
+                metricPubLink: "Προβολή στο Google Scholar",
+                metricCiteLink: "Προβολή Στατιστικών",
+                metricProfileLink: "Προβολή Προφίλ",
+                
+                // Education
+                eduPhdTitle: "Διδακτορικό στην Ηλεκτρολογία και Μηχανική Υπολογιστών",
+                eduPhdInst: "Δημοκρίτειο Πανεπιστήμιο Θράκης (ΔΠΘ), Ξάνθη, Ελλάδα",
+                eduPhdSpec: "Ειδίκευση: Μικροηλεκτρονική και Τεχνολογίες Πληροφοριακών Συστημάτων / Δίκτυα και Συστήματα Διαδικτύου",
+                eduMscTitle: "Μ.Δ.Ε. στην Ηλεκτρολογία και Μηχανική Υπολογιστών",
+                eduMscInst: "Δημοκρίτειο Πανεπιστήμιο Θράκης (ΔΠΘ), Ξάνθη, Ελλάδα",
+                eduMscSpec: "Ειδίκευση: Μικροηλεκτρονική και Τεχνολογίες Πληροφοριακών Συστημάτων / Δίκτυα και Συστήματα Διαδικτύου",
+                eduEngTitle: "Δίπλωμα Μηχανικού Παραγωγής και Διοίκησης",
+                eduEngInst: "Δημοκρίτειο Πανεπιστήμιο Θράκης (ΔΠΘ), Ξάνθη, Ελλάδα",
+                present: "Σήμερα",
+                
+                // Experience
+                expResearchTitle: "Ερευνητής Συνεργάτης",
+                expResearchDesc: "Εργασία σε χρηματοδοτούμενα από την ΕΕ έργα, συμπεριλαμβανομένων των REWIRE, Feed4Cloud και CODECO, με επίκεντρο τα πρωτόκολλα SDN, το blockchain για υπηρεσίες cloud και τη γνωστική ενορχήστρωση edge cloud.",
+                expInternTitle: "Βοηθός Μηχανικός Παραγωγής και Διοίκησης (Πρακτική Άσκηση)",
+                expInternDesc: "Διαχείριση παραγωγής, επεξεργασία και αποθήκευση πληροφοριών, λειτουργίες Excel & ERP, δημιουργία δομών παρακολούθησης και βελτίωσης παραγωγής.",
+                
+                // Teaching
+                teachLabTitle: "Συνεργάτης Εργαστηρίου - Εργαστήριο Διασυνδεδεμένων Συστημάτων",
+                teachLabInst: "Δημοκρίτειο Πανεπιστήμιο Θράκης",
+                teachLabDesc: "Συνεργάτης εργαστηρίου για μαθήματα Δικτύων και Δικτύων Υπολογιστών, με εξειδίκευση σε εργαλεία προσομοίωσης NS-3 και Omnet++.",
+                teachLabWeb: "🌐 Ιστοσελίδα Εργαστηρίου",
+                teachThesisTitle: "Βοηθός Εργαστηρίου Διπλωματικών",
+                teachThesisInst: "Τμήμα Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών, ΔΠΘ",
+                teachThesisDesc: "Εργαστηριακή υποστήριξη για πάνω από 5 προπτυχιακές διπλωματικές εργασίες και συγγραφή άρθρων σε τομείς όπως προσομοίωση δικτύων, συστήματα IoT και τεχνολογίες cloud.",
+                teachSecurityTitle: "Ασφάλεια και Ιδιωτικότητα Δεδομένων",
+                teachSecurityInst: "ΠΜΣ Βιοϊατρική Πληροφορική (BMI), ΔΠΘ & ΑΘΗΝΑ ΕΚ",
+                teachSecurityDesc: "Διδασκαλία για το μάθημα Ασφάλεια και Ιδιωτικότητα Δεδομένων, καλύπτοντας θέματα όπως κρυπτογράφηση, συμμόρφωση GDPR, προστασία δεδομένων υγείας κ.λπ.",
+                teachSecurityWeb: "🌐 Ιστοσελίδα ΠΜΣ",
+                
+                // Memberships
+                membershipIeee: "Φοιτητικό Μέλος",
+                
+                // Professional Skills
+                skillPmTitle: "🎯 Διαχείριση Έργων & Ηγεσία",
+                skillPmDesc: "Επικεφαλής Πακέτων Εργασίας (WP) σε ερευνητικά έργα χρηματοδοτούμενα από την ΕΕ, συντονίζοντας τεχνικές δραστηριότητες, διαχειριζόμενος παραδοτέα και διασφαλίζοντας την ευθυγράμμιση με τους στόχους και τα χρονοδιαγράμματα των έργων.",
+                skillWritingTitle: "📝 Τεχνική Συγγραφή & Τεκμηρίωση",
+                skillWritingDesc: "Εκτεταμένη εμπειρία στη συγγραφή προτάσεων έργων ΕΕ, τεχνικών παραδοτέων και ερευνητικής τεκμηρίωσης. Ικανότητα διατύπωσης σύνθετων τεχνικών εννοιών για διαφορετικά κοινά, συμπεριλαμβανομένων φορέων χρηματοδότησης, τεχνικών εταίρων και ακαδημαϊκών κοινοτήτων.",
+                skillCollabTitle: "🤝 Συνεργασία & Επικοινωνία",
+                skillCollabDesc: "Αποδεδειγμένη ικανότητα εργασίας σε διεπιστημονικές και πολυεθνικές ομάδες, διευκολύνοντας την αποτελεσματική επικοινωνία μεταξύ τεχνικών και μη τεχνικών ενδιαφερομένων σε ερευνητικές και βιομηχανικές συνεργασίες.",
+                
+                // Map Legend
+                legendTitle: "📍 Τοποθεσίες",
+                legendConfTitle: "Συνέδρια",
+                legendPlenaryTitle: "Ολομέλειες Έργων",
+                
+                // Conference descriptions
+                confPresentationsTitle: "Παρουσιάσεις Συνεδρίων",
+                confScienceTitle: "Επιστημονική Επικοινωνία",
+                confInfocomDesc: "Παρουσίαση του ανοιχτού πλαισίου πειραματισμού για έρευνα edge-cloud continuum (CODEF). Επίσης παρουσίαση σχημάτων αξιολόγησης ανίχνευσης ανωμαλιών σε edge cloud συστήματα.",
+                confIsccDesc: "Παρουσίαση έρευνας για δικτύωση Kubernetes και edge computing στο IEEE Symposium on Computers and Communications.",
+                confBalkancomDesc: "Παρουσίαση συγκριτικής δοκιμασίας stress σε Kubernetes Distributions και CNI Plugins υπό ρεαλιστικούς φόρτους εργασίας.",
+                confHipeacDesc: "Παρουσίαση του CODEF στο κορυφαίο συνέδριο υπολογιστικών συστημάτων της Ευρώπης.",
+                confMednightDesc: "Εκδήλωση δημόσιας προβολής έρευνας στην τοπική κοινότητα.",
+                confDemocampDesc: "Παρουσίαση του CODEF και προκλήσεων σε φοιτητές και τοπικό Democamp.",
+                confIrcepDesc: "Παρουσίαση του CODEF και προκλήσεων σε φοιτητές διαδικτυακά.",
+                
+                // Research Topics
+                topic1: "Δικτυακές & Δορυφορικές Επικοινωνίες",
+                topic2: "Έξυπνες Πόλεις & IoT",
+                topic3: "Ενορχήστρωση Cloud/Edge",
+                topic4: "Τεχνολογίες Containers (Docker, Kubernetes)",
+                topic5: "Αρχιτεκτονική Microservices",
+                topic6: "Δικτύωση Ανοχής Καθυστέρησης (DTN)",
+                topic7: "Προγραμματιζόμενη Δικτύωση (SDN)",
+                topic8: "Edge Computing",
+                
+                // Projects
+                projectCodecoDesc: "Γνωστική Αποκεντρωμένη Ενορχήστρωση Edge Cloud (σε εξέλιξη)",
+                projectRewireDesc: "Προσαρμοστικές Στοίβες Πρωτοκόλλων μη-IP βασισμένες σε SDN για Περιβάλλοντα Έξυπνων Πόλεων",
+                projectFeed4cloudDesc: "Αξιόπιστη ανατροφοδότηση χρηστών για cloud-native υπηρεσίες με χρήση blockchain",
+                
+                // Footer
+                footerRights: "Με επιφύλαξη παντός δικαιώματος.",
+                footerUpdated: "Τελευταία ενημέρωση:",
+                
+                // Button
+                langBtnTitle: "Switch to English"
+            }
+        };
+
+        // Update copyright year and last updated date
         document.getElementById('current-year').textContent = new Date().getFullYear();
         
         const lastUpdated = new Date();
-        const monthNames = ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"];
-        document.getElementById('last-updated').textContent = 
-            monthNames[lastUpdated.getMonth()] + ' ' + lastUpdated.getFullYear();
+        const monthNames = {
+            en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+            el: ["Ιανουάριος", "Φεβρουάριος", "Μάρτιος", "Απρίλιος", "Μάιος", "Ιούνιος", "Ιούλιος", "Αύγουστος", "Σεπτέμβριος", "Οκτώβριος", "Νοέμβριος", "Δεκέμβριος"]
+        };
+        
+        let currentLang = 'en';
+        
+        function updateLastUpdated() {
+            document.getElementById('last-updated').textContent = 
+                monthNames[currentLang][lastUpdated.getMonth()] + ' ' + lastUpdated.getFullYear();
+        }
+        updateLastUpdated();
         
         // Dark mode toggle
         const darkModeBtn = document.getElementById('darkModeBtn');
@@ -1127,7 +1434,151 @@
             darkModeEnabled = !darkModeEnabled;
             document.body.classList.toggle('dark-mode');
             this.textContent = darkModeEnabled ? '☀️' : '🌙';
-            this.title = darkModeEnabled ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+        });
+        
+        // Language toggle
+        const langBtn = document.getElementById('langBtn');
+        
+        function applyTranslations(lang) {
+            const t = translations[lang];
+            currentLang = lang;
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Update button
+            langBtn.textContent = lang === 'en' ? 'EN' : 'EL';
+            langBtn.title = t.langBtnTitle;
+            
+            // Navigation
+            document.getElementById('nav-title').textContent = t.navTitle;
+            document.getElementById('nav-about').textContent = t.navAbout;
+            document.getElementById('nav-metrics').textContent = t.navMetrics;
+            document.getElementById('nav-education').textContent = t.navEducation;
+            document.getElementById('nav-experience').textContent = t.navExperience;
+            document.getElementById('nav-teaching').textContent = t.navTeaching;
+            document.getElementById('nav-memberships').textContent = t.navMemberships;
+            document.getElementById('nav-profskills').textContent = t.navProfSkills;
+            document.getElementById('nav-conferences').textContent = t.navConferences;
+            document.getElementById('nav-research').textContent = t.navResearch;
+            document.getElementById('nav-publications').textContent = t.navPublications;
+            document.getElementById('nav-projects').textContent = t.navProjects;
+            document.getElementById('nav-skills').textContent = t.navSkills;
+            
+            // Header
+            document.getElementById('header-title').textContent = t.headerTitle;
+            document.getElementById('header-affiliation').textContent = t.headerAffiliation;
+            document.querySelector('#header-email span').textContent = t.headerEmail;
+            
+            // Section titles
+            document.getElementById('section-about').textContent = t.sectionAbout;
+            document.getElementById('section-metrics').textContent = t.sectionMetrics;
+            document.getElementById('section-education').textContent = t.sectionEducation;
+            document.getElementById('section-experience').textContent = t.sectionExperience;
+            document.getElementById('section-teaching').textContent = t.sectionTeaching;
+            document.getElementById('section-memberships').textContent = t.sectionMemberships;
+            document.getElementById('section-profskills').textContent = t.sectionProfSkills;
+            document.getElementById('section-conferences').textContent = t.sectionConferences;
+            document.getElementById('section-research').textContent = t.sectionResearch;
+            document.getElementById('section-publications').textContent = t.sectionPublications;
+            document.getElementById('section-projects').textContent = t.sectionProjects;
+            document.getElementById('section-skills').textContent = t.sectionSkills;
+            
+            // Bio
+            document.getElementById('bio-text').textContent = t.bio;
+            
+            // Metrics
+            document.getElementById('metric-pub-label').textContent = t.metricPubLabel;
+            document.getElementById('metric-cite-label').textContent = t.metricCiteLabel;
+            document.getElementById('metric-pub-link').textContent = t.metricPubLink;
+            document.getElementById('metric-cite-link').textContent = t.metricCiteLink;
+            document.getElementById('metric-h-link').textContent = t.metricProfileLink;
+            document.getElementById('metric-i10-link').textContent = t.metricProfileLink;
+            
+            // Education
+            document.getElementById('edu-phd-title').textContent = t.eduPhdTitle;
+            document.getElementById('edu-phd-inst').textContent = t.eduPhdInst;
+            document.getElementById('edu-phd-spec').textContent = t.eduPhdSpec;
+            document.getElementById('edu-phd-present').textContent = t.present;
+            document.getElementById('edu-msc-title').textContent = t.eduMscTitle;
+            document.getElementById('edu-msc-inst').textContent = t.eduMscInst;
+            document.getElementById('edu-msc-spec').textContent = t.eduMscSpec;
+            document.getElementById('edu-eng-title').textContent = t.eduEngTitle;
+            document.getElementById('edu-eng-inst').textContent = t.eduEngInst;
+            
+            // Experience
+            document.getElementById('exp-research-title').textContent = t.expResearchTitle;
+            document.getElementById('exp-research-present').textContent = t.present;
+            document.getElementById('exp-research-desc').textContent = t.expResearchDesc;
+            document.getElementById('exp-intern-title').textContent = t.expInternTitle;
+            document.getElementById('exp-intern-desc').textContent = t.expInternDesc;
+            
+            // Teaching
+            document.getElementById('teach-lab-title').textContent = t.teachLabTitle;
+            document.getElementById('teach-lab-inst').textContent = t.teachLabInst;
+            document.getElementById('teach-lab-desc').textContent = t.teachLabDesc;
+            document.getElementById('teach-lab-web').textContent = t.teachLabWeb;
+            document.getElementById('teach-thesis-title').textContent = t.teachThesisTitle;
+            document.getElementById('teach-thesis-inst').textContent = t.teachThesisInst;
+            document.getElementById('teach-thesis-desc').textContent = t.teachThesisDesc;
+            document.getElementById('teach-security-title').textContent = t.teachSecurityTitle;
+            document.getElementById('teach-security-inst').textContent = t.teachSecurityInst;
+            document.getElementById('teach-security-desc').textContent = t.teachSecurityDesc;
+            document.getElementById('teach-security-web').textContent = t.teachSecurityWeb;
+            
+            // Memberships
+            document.getElementById('membership-ieee').textContent = t.membershipIeee;
+            
+            // Professional Skills
+            document.getElementById('skill-pm-title').textContent = t.skillPmTitle;
+            document.getElementById('skill-pm-desc').textContent = t.skillPmDesc;
+            document.getElementById('skill-writing-title').textContent = t.skillWritingTitle;
+            document.getElementById('skill-writing-desc').textContent = t.skillWritingDesc;
+            document.getElementById('skill-collab-title').textContent = t.skillCollabTitle;
+            document.getElementById('skill-collab-desc').textContent = t.skillCollabDesc;
+            
+            // Map Legend
+            document.getElementById('legend-title').textContent = t.legendTitle;
+            document.getElementById('legend-conf-title').innerHTML = '<span class="legend-marker conference">📍</span> ' + t.legendConfTitle;
+            document.getElementById('legend-plenary-title').innerHTML = '<span class="legend-marker plenary">🎤</span> ' + t.legendPlenaryTitle;
+            
+            // Conference descriptions
+            document.getElementById('conf-presentations-title').textContent = t.confPresentationsTitle;
+            document.getElementById('conf-science-title').textContent = t.confScienceTitle;
+            document.getElementById('conf-infocom-desc').textContent = t.confInfocomDesc;
+            document.getElementById('conf-iscc-desc').textContent = t.confIsccDesc;
+            document.getElementById('conf-balkancom-desc').textContent = t.confBalkancomDesc;
+            document.getElementById('conf-hipeac-desc').textContent = t.confHipeacDesc;
+            document.getElementById('conf-mednight-desc').textContent = t.confMednightDesc;
+            document.getElementById('conf-democamp-desc').textContent = t.confDemocampDesc;
+            document.getElementById('conf-ircep-desc').textContent = t.confIrcepDesc;
+            
+            // Research Topics
+            document.getElementById('topic-1').textContent = t.topic1;
+            document.getElementById('topic-2').textContent = t.topic2;
+            document.getElementById('topic-3').textContent = t.topic3;
+            document.getElementById('topic-4').textContent = t.topic4;
+            document.getElementById('topic-5').textContent = t.topic5;
+            document.getElementById('topic-6').textContent = t.topic6;
+            document.getElementById('topic-7').textContent = t.topic7;
+            document.getElementById('topic-8').textContent = t.topic8;
+            
+            // Projects
+            document.getElementById('project-codeco-desc').textContent = t.projectCodecoDesc;
+            document.getElementById('project-rewire-desc').textContent = t.projectRewireDesc;
+            document.getElementById('project-feed4cloud-desc').textContent = t.projectFeed4cloudDesc;
+            
+            // Footer
+            document.getElementById('footer-rights').textContent = t.footerRights;
+            document.getElementById('footer-updated').textContent = t.footerUpdated;
+            
+            // Update last updated with correct month name
+            updateLastUpdated();
+        }
+        
+        langBtn.addEventListener('click', function() {
+            const newLang = currentLang === 'en' ? 'el' : 'en';
+            applyTranslations(newLang);
         });
         
         // Sidebar toggle
@@ -1197,20 +1648,16 @@
         let conferenceMap = null;
         
         function initMap() {
-            // Check if map container exists
             const mapContainer = document.getElementById('conference-map');
             if (!mapContainer) return;
             
-            // Initialize map centered on Europe
             conferenceMap = L.map('conference-map').setView([45.0, 10.0], 3);
             
-            // Add OpenStreetMap tiles
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
                 maxZoom: 19
             }).addTo(conferenceMap);
             
-            // Custom icon for conferences
             const conferenceIcon = L.divIcon({
                 className: 'custom-marker',
                 html: '<div style="background-color: #667eea; width: 30px; height: 30px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">📍</div>',
@@ -1218,7 +1665,6 @@
                 iconAnchor: [15, 15]
             });
             
-            // Custom icon for plenaries
             const plenaryIcon = L.divIcon({
                 className: 'custom-marker',
                 html: '<div style="background-color: #f5576c; width: 30px; height: 30px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">🎤</div>',
@@ -1226,89 +1672,23 @@
                 iconAnchor: [15, 15]
             });
             
-            // Conference locations
             const conferences = [
-                {
-                    name: 'IEEE ISCC 2024',
-                    location: 'Paris, France',
-                    lat: 48.8566,
-                    lon: 2.3522,
-                    details: 'Edge to Cloud Orchestration (ECO) Workshop - June 2024',
-                    icon: conferenceIcon
-                },
-                {
-                    name: 'IEEE INFOCOM 2024',
-                    location: 'Vancouver, Canada',
-                    lat: 49.2827,
-                    lon: -123.1207,
-                    details: 'CNERT Workshop - May 2024',
-                    icon: conferenceIcon
-                },
-                {
-                    name: 'HiPEAC 2024',
-                    location: 'Munich, Germany',
-                    lat: 48.1351,
-                    lon: 11.5820,
-                    details: 'High Performance Computing Conference - January 2024',
-                    icon: conferenceIcon
-                },
-                {
-                    name: 'BalkanCom 2025',
-                    location: 'Piraeus, Greece',
-                    lat: 37.9421,
-                    lon: 23.6463,
-                    details: '8th International Balkan Conference on Communications and Networking - 2025',
-                    icon: conferenceIcon
-                },
-                {
-                    name: 'MEDNIGHT 2025',
-                    location: 'Xanthi, Greece',
-                    lat: 41.1354,
-                    lon: 24.8882,
-                    details: 'Mediterranean Researchers\' Night - 2025',
-                    icon: conferenceIcon
-                },
-                {
-                    name: 'DUTH/ATH Democamp 2025',
-                    location: 'Xanthi, Greece',
-                    lat: 41.1429037,
-                    lon: 24.889284,
-                    details: 'CODEF Challenges Presentation - 2025',
-                    icon: conferenceIcon
-                },                
-                {
-                    name: 'CODECO Plenary',
-                    location: 'Madrid, Spain',
-                    lat: 40.4168,
-                    lon: -3.7038,
-                    details: 'CODECO Project Plenary Meeting',
-                    icon: plenaryIcon
-                },
-                {
-                    name: 'CODECO Plenary',
-                    location: 'Athens, Greece',
-                    lat: 37.9838,
-                    lon: 23.7275,
-                    details: 'CODECO Project Plenary Meeting',
-                    icon: plenaryIcon
-                },
-                {
-                    name: 'CODECO Plenary',
-                    location: 'Piraeus, Greece',
-                    lat: 37.9421,
-                    lon: 23.6463,
-                    details: 'CODECO Project Plenary Meeting',
-                    icon: plenaryIcon
-                }
+                { name: 'IEEE ISCC 2024', location: 'Paris, France', lat: 48.8566, lon: 2.3522, details: 'ECO & NGMSE Workshops - June 2024', icon: conferenceIcon },
+                { name: 'IEEE INFOCOM 2024', location: 'Vancouver, Canada', lat: 49.2827, lon: -123.1207, details: 'CNERT & ICCN Workshops - May 2024', icon: conferenceIcon },
+                { name: 'HiPEAC 2024', location: 'Munich, Germany', lat: 48.1351, lon: 11.5820, details: 'HPC Conference - January 2024', icon: conferenceIcon },
+                { name: 'BalkanCom 2025', location: 'Piraeus, Greece', lat: 37.9421, lon: 23.6463, details: 'IEEE BalkanCom - June 2025', icon: conferenceIcon },
+                { name: 'MEDNIGHT 2025', location: 'Xanthi, Greece', lat: 41.1355, lon: 24.9207, details: 'Mediterranean Researchers Night - 2025', icon: conferenceIcon },
+                { name: 'DUTH/ATH Democamp 2025', location: 'Xanthi, Greece', lat: 41.1429037, lon: 24.889284, details: 'CODEF Challenges - 2025', icon: conferenceIcon },
+                { name: 'CODECO Plenary', location: 'Madrid, Spain', lat: 40.4168, lon: -3.7038, details: 'CODECO Project Plenary Meeting', icon: plenaryIcon },
+                { name: 'CODECO Plenary', location: 'Athens, Greece', lat: 37.9838, lon: 23.7275, details: 'CODECO Project Plenary Meeting', icon: plenaryIcon },
+                { name: 'CODECO Plenary', location: 'Piraeus, Greece', lat: 37.9421, lon: 23.6463, details: 'CODECO Project Plenary Meeting', icon: plenaryIcon }
             ];
             
-            // Add markers for each conference
             conferences.forEach(function(conf) {
                 const marker = L.marker([conf.lat, conf.lon], {icon: conf.icon}).addTo(conferenceMap);
                 marker.bindPopup('<div style="font-family: Segoe UI, sans-serif; padding: 5px;"><strong style="color: #667eea;">' + conf.name + '</strong><br>' + conf.location + '<br><em style="color: #666;">' + conf.details + '</em></div>');
             });
             
-            // Fit map to show all markers
             const bounds = L.latLngBounds(conferences.map(function(c) { return [c.lat, c.lon]; }));
             conferenceMap.fitBounds(bounds.pad(0.2));
         }
