@@ -394,6 +394,16 @@
             margin-top: 8px;
         }
 
+        .thesis-list {
+            margin: 12px 0 0 22px;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        .thesis-list li {
+            margin-bottom: 8px;
+        }
+
         .membership-item p {
             padding: 15px;
             background: var(--section-bg);
@@ -884,6 +894,12 @@
                     <h3 id="teach-thesis-title">Theses Lab Assistant</h3>
                     <p class="institution" id="teach-thesis-inst">Department of Electrical and Computer Engineering, DUTH</p>
                     <p class="description" id="teach-thesis-desc">Lab assistance for over 5 undergraduate theses and paper writing in areas including network simulation, IoT systems, and cloud technologies.</p>
+                    <ul class="thesis-list">
+                        <li>Implementation and evaluation of Kubernetes technologies (k0s, k3s, microshift, microk8s) in resource-constrained environments</li>
+                        <li>Simulation and Performance Evaluation of Intermittent Internet of Things (IoT) Communication Scenarios (DTN, MQTT)</li>
+                        <li>Container Network Interface (CNI) Plugins Using Kubernetes Software: A Study and Performance Evaluation</li>
+                        <li>A Study of the Reliability (stability, recovery time, responsiveness) of Kubernetes software using chaos engineering tools</li>
+                    </ul>
                 </div>
                 <div class="teaching-item">
                     <h3 id="teach-security-title">Data Security and Privacy</h3>
@@ -982,6 +998,10 @@
                             <div class="legend-item" data-lat="37.9421" data-lon="23.6463">
                                 <div class="legend-item-name">CODECO Plenary</div>
                                 <div class="legend-item-location">Piraeus, Greece</div>
+                            </div>
+                            <div class="legend-item" data-lat="48.174858" data-lon="11.595968">
+                                <div class="legend-item-name">CODECO Final Event</div>
+                                <div class="legend-item-location">fortiss GmbH Headquarters, Munich, Germany</div>
                             </div>
                         </div>
                     </div>
@@ -1728,7 +1748,8 @@
                 { name: 'DUTH/ATH Democamp 2025', location: 'Xanthi, Greece', lat: 41.1429037, lon: 24.889284, details: 'CODEF Challenges - 2025', icon: conferenceIcon },
                 { name: 'CODECO Plenary', location: 'Madrid, Spain', lat: 40.4168, lon: -3.7038, details: 'CODECO Project Plenary Meeting', icon: plenaryIcon },
                 { name: 'CODECO Plenary', location: 'Athens, Greece', lat: 37.9838, lon: 23.7275, details: 'CODECO Project Plenary Meeting', icon: plenaryIcon },
-                { name: 'CODECO Plenary', location: 'Piraeus, Greece', lat: 37.9421, lon: 23.6463, details: 'CODECO Project Plenary Meeting', icon: plenaryIcon }
+                { name: 'CODECO Plenary', location: 'Piraeus, Greece', lat: 37.9421, lon: 23.6463, details: 'CODECO Project Plenary Meeting', icon: plenaryIcon },
+                { name: 'CODECO Final Event', location: 'fortiss GmbH Headquarters, Munich, Germany', lat: 48.174858, lon: 11.595968, details: 'CODECO Final Event at fortiss GmbH headquarters', icon: plenaryIcon }
             ];
             
             conferences.forEach(function(conf) {
