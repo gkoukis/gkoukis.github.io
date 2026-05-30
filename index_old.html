@@ -452,14 +452,6 @@
             opacity: 0.8;
             margin-bottom: 15px;
         }
-
-        .metrics-status {
-            margin-top: 12px;
-            color: var(--text-color);
-            font-size: 0.9em;
-            opacity: 0.75;
-            text-align: right;
-        }
         
         .metric-link {
             display: inline-block;
@@ -807,26 +799,25 @@
                 <div class="metrics-section">
                     <div class="metric-card">
                         <div class="metric-label" id="metric-pub-label">Publications</div>
-                        <div class="metric-value" id="metric-publications">15</div>
+                        <div class="metric-value">11</div>
                         <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" class="metric-link" id="metric-pub-link">View on Google Scholar</a>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label" id="metric-cite-label">Citations</div>
-                        <div class="metric-value" id="metric-citations">88</div>
+                        <div class="metric-value">63</div>
                         <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" class="metric-link" id="metric-cite-link">View Live Stats</a>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">h-index</div>
-                        <div class="metric-value" id="metric-h-index">4</div>
+                        <div class="metric-value">3</div>
                         <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" class="metric-link" id="metric-h-link">View Profile</a>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">i10-index</div>
-                        <div class="metric-value" id="metric-i10-index">3</div>
+                        <div class="metric-value">3</div>
                         <a href="https://scholar.google.com/citations?user=E2bGWsUAAAAJ" target="_blank" class="metric-link" id="metric-i10-link">View Profile</a>
                     </div>
                 </div>
-                <p class="metrics-status" id="metrics-status" aria-live="polite">Loading the latest Google Scholar snapshot...</p>
             </div>
             
             <!-- Education Section -->
@@ -1166,44 +1157,6 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
     <script>
-        async function loadScholarMetrics() {
-            const status = document.getElementById('metrics-status');
-
-            try {
-                const response = await fetch('./scholar_metrics.json', { cache: 'no-store' });
-                if (!response.ok) {
-                    throw new Error('Metrics request failed with status ' + response.status);
-                }
-
-                const metrics = await response.json();
-                const requiredMetrics = ['publications', 'citations', 'h_index', 'i10_index'];
-
-                requiredMetrics.forEach(function(metric) {
-                    if (!Number.isInteger(metrics[metric]) || metrics[metric] < 0) {
-                        throw new Error('Invalid Google Scholar metric: ' + metric);
-                    }
-                });
-
-                document.getElementById('metric-publications').textContent = metrics.publications;
-                document.getElementById('metric-citations').textContent = metrics.citations;
-                document.getElementById('metric-h-index').textContent = metrics.h_index;
-                document.getElementById('metric-i10-index').textContent = metrics.i10_index;
-
-                if (metrics.fetched_at) {
-                    const fetchedAt = new Date(metrics.fetched_at);
-                    status.textContent = 'Updated automatically from Google Scholar: ' +
-                        fetchedAt.toLocaleString(document.documentElement.lang || 'en');
-                } else {
-                    status.textContent = 'Google Scholar snapshot loaded. The scheduled updater has not run yet.';
-                }
-            } catch (error) {
-                console.warn('Could not load Google Scholar metrics snapshot.', error);
-                status.textContent = 'Showing bundled metrics because the Google Scholar snapshot could not be loaded.';
-            }
-        }
-
-        loadScholarMetrics();
-
         // Translations object
         const translations = {
             en: {
