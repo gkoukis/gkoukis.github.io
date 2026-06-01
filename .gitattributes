@@ -1,0 +1,5 @@
+# Normalize all text files to LF so Windows git and WSL git agree.
+* text=auto eol=lf
+
+# Explicitly keep shell scripts LF (redundant with above, but clear intent).
+*.sh text eol=lf
