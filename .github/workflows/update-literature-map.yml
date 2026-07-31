@@ -1,0 +1,56 @@
+name: Update literature map
+
+# Kept separate from the Scholar workflow on purpose: OpenAlex is a different
+# source with different failure modes, so a Scholar CAPTCHA must not stop the
+# citation network from refreshing (or vice versa). Scheduled later in the day
+# than the Scholar job so the two never race to push.
+
+on:
+  schedule:
+    - cron: "41 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-site-data
+  cancel-in-progress: false
+
+jobs:
+  update-literature-map:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Expected to soft-skip here: Scholar serves runners a CAPTCHA, so this
+      # refreshes the snapshot only when it happens to get through. The build
+      # below reads whatever snapshot is committed either way.
+      - name: Refresh the Google Scholar citation snapshot
+        run: python scripts/fetch_scholar_citations.py
+
+      - name: Rebuild the citation network from OpenAlex
+        run: python scripts/build_literature_map.py
+
+      - name: Commit changed snapshots
+        run: |
+          if git diff --quiet -- literature_map.json scholar_citations.json; then
+            echo "Literature map is already current."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add literature_map.json scholar_citations.json
+          git commit -m "Update literature map"
+
+          # Another scheduled job may have pushed since checkout.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push

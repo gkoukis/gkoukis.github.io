@@ -1,2 +1,10 @@
 backup_index.html
 index_old.html
+preview.html
+
+# Raw Scholar HTML captured by scripts/collect_scholar_pages.js: an input to the
+# crawl, several MB, and never worth committing.
+scholar_pages.json
+
+# Python bytecode from scripts/
+__pycache__/

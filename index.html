@@ -680,16 +680,246 @@
             fill: var(--primary-color) !important;
         }
         
+        /* Literature Map */
+        .litmap {
+            /* Categorical slots, one per node layer. Validated all-pairs for
+               CVD and normal-vision separation against each mode's surface. */
+            --litmap-core: #5a4bd4;
+            --litmap-citing: #e0632a;
+            --litmap-reference: #0f9b6c;
+            --litmap-surface: #f8f9ff;
+            --litmap-ink: #52514e;
+            --litmap-edge: rgba(60, 64, 110, 0.22);
+        }
+
+        .dark-mode .litmap {
+            --litmap-core: #8b83f5;
+            --litmap-citing: #dd6b3c;
+            --litmap-reference: #1fa87c;
+            --litmap-surface: #1a1f2e;
+            --litmap-ink: #a9b0c5;
+            --litmap-edge: rgba(168, 180, 226, 0.20);
+        }
+
+        .litmap-intro {
+            color: var(--text-color);
+            opacity: 0.85;
+            margin-bottom: 15px;
+        }
+
+        .litmap-shell {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--litmap-surface);
+        }
+
+        .litmap-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .litmap-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .litmap-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 12px;
+            font: inherit;
+            font-size: 0.85em;
+            color: var(--text-color);
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            cursor: pointer;
+            opacity: 0.45;
+            transition: opacity 0.2s ease, border-color 0.2s ease;
+        }
+
+        .litmap-chip[aria-pressed="true"] {
+            opacity: 1;
+            border-color: var(--primary-color);
+        }
+
+        .litmap-chip:hover {
+            opacity: 0.85;
+        }
+
+        .litmap-chip[aria-pressed="true"]:hover {
+            opacity: 1;
+        }
+
+        .litmap-chip .litmap-count {
+            font-variant-numeric: tabular-nums;
+            opacity: 0.65;
+        }
+
+        .litmap-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .litmap-dot.core { background: var(--litmap-core); }
+        .litmap-dot.citing { background: var(--litmap-citing); }
+        .litmap-dot.reference { background: var(--litmap-reference); }
+
+        .litmap-tools {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .litmap-search {
+            font: inherit;
+            font-size: 0.85em;
+            padding: 6px 10px;
+            width: 170px;
+            max-width: 40vw;
+            color: var(--text-color);
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+        }
+
+        .litmap-search:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 1px;
+        }
+
+        .litmap-btn {
+            font: inherit;
+            font-size: 0.95em;
+            line-height: 1;
+            padding: 7px 10px;
+            color: var(--text-color);
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+
+        .litmap-btn:hover {
+            border-color: var(--primary-color);
+        }
+
+        .litmap-stage {
+            position: relative;
+            height: 560px;
+        }
+
+        .litmap-canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+            touch-action: none;
+        }
+
+        .litmap-canvas.is-grabbing { cursor: grabbing; }
+        .litmap-canvas.is-target { cursor: pointer; }
+
+        .litmap-status {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: var(--litmap-ink);
+            font-size: 0.9em;
+            pointer-events: none;
+        }
+
+        .litmap-status[hidden] { display: none; }
+
+        .litmap-tip {
+            position: absolute;
+            z-index: 5;
+            max-width: 320px;
+            padding: 10px 12px;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--primary-color);
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(15, 20, 40, 0.18);
+            font-size: 0.82em;
+            line-height: 1.45;
+            pointer-events: none;
+        }
+
+        .litmap-tip[hidden] { display: none; }
+
+        .litmap-tip .litmap-tip-title {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 4px;
+        }
+
+        .litmap-tip .litmap-tip-meta {
+            color: var(--litmap-ink);
+        }
+
+        .litmap-tip .litmap-tip-layer {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        .litmap-foot {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+            padding: 10px 12px;
+            border-top: 1px solid var(--border-color);
+            color: var(--litmap-ink);
+            font-size: 0.78em;
+        }
+
+        .litmap-shell.is-fullscreen {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            border-radius: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .litmap-shell.is-fullscreen .litmap-stage {
+            flex: 1;
+            height: auto;
+        }
+
         @media (max-width: 900px) {
             .map-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .map-legend {
                 max-height: none;
             }
+
+            .litmap-stage {
+                height: 420px;
+            }
         }
-        
+
         @media (max-width: 768px) {
             body {
                 padding-left: 20px;
@@ -747,6 +977,7 @@
             <ul>
                 <li><a href="#about" id="nav-about">About Me</a></li>
                 <li><a href="#metrics" id="nav-metrics">Research Metrics</a></li>
+                <li><a href="#litmap" id="nav-litmap">Literature Map</a></li>
                 <li><a href="#education" id="nav-education">Education</a></li>
                 <li><a href="#experience" id="nav-experience">Work Experience</a></li>
                 <li><a href="#teaching" id="nav-teaching">Teaching & Mentoring</a></li>
@@ -795,7 +1026,7 @@
                     <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                     GitHub
                 </a>
-                <a href="mailto:georgekouk29702970@hotmail.gr" class="header-link" id="header-email">
+                <a href="mailto:gkoukis@ee.duth.gr" class="header-link" id="header-email">
                     <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     <span>Personal Email</span>
                 </a>
@@ -839,6 +1070,50 @@
                 <p class="metrics-status" id="metrics-status" aria-live="polite">Loading the latest Google Scholar snapshot...</p>
             </div>
             
+            <!-- Literature Map Section -->
+            <div class="section litmap" id="litmap">
+                <h2 id="section-litmap">Literature Map</h2>
+                <p class="litmap-intro" id="litmap-intro">An interactive citation network of my work: each node is a paper, each link a citation.</p>
+
+                <div class="litmap-shell" id="litmap-shell">
+                    <div class="litmap-toolbar">
+                        <div class="litmap-filters" id="litmap-filters">
+                            <button type="button" class="litmap-chip" data-layer="core" aria-pressed="true">
+                                <span class="litmap-dot core" aria-hidden="true"></span>
+                                <span id="litmap-label-core">My papers</span>
+                                <span class="litmap-count" data-count="core">0</span>
+                            </button>
+                            <button type="button" class="litmap-chip" data-layer="citing" aria-pressed="true">
+                                <span class="litmap-dot citing" aria-hidden="true"></span>
+                                <span id="litmap-label-citing">Cite my work</span>
+                                <span class="litmap-count" data-count="citing">0</span>
+                            </button>
+                            <button type="button" class="litmap-chip" data-layer="reference" aria-pressed="true">
+                                <span class="litmap-dot reference" aria-hidden="true"></span>
+                                <span id="litmap-label-reference">I cite them</span>
+                                <span class="litmap-count" data-count="reference">0</span>
+                            </button>
+                        </div>
+                        <div class="litmap-tools">
+                            <input type="search" class="litmap-search" id="litmap-search" placeholder="Search papers…" aria-label="Search papers in the literature map">
+                            <button type="button" class="litmap-btn" id="litmap-reset" title="Reset view">⟳</button>
+                            <button type="button" class="litmap-btn" id="litmap-full" title="Toggle fullscreen" aria-pressed="false">⛶</button>
+                        </div>
+                    </div>
+
+                    <div class="litmap-stage" id="litmap-stage">
+                        <canvas class="litmap-canvas" id="litmap-canvas" role="img" aria-label="Force-directed citation network of Georgios Koukis' publications"></canvas>
+                        <div class="litmap-status" id="litmap-status">Loading citation network…</div>
+                        <div class="litmap-tip" id="litmap-tip" hidden></div>
+                    </div>
+
+                    <div class="litmap-foot">
+                        <span id="litmap-hint">Node size reflects citation count.</span>
+                        <span id="litmap-updated"></span>
+                    </div>
+                </div>
+            </div>
+
             <!-- Education Section -->
             <div class="section" id="education">
                 <h2 id="section-education">Education</h2>
@@ -1119,7 +1394,7 @@
                     </li>
                 </ul>
             </div>
-            
+
             <!-- Projects Section -->
             <div class="section" id="projects">
                 <h2 id="section-projects">Projects</h2>
@@ -1176,7 +1451,7 @@
                 <a href="https://github.com/gkoukis" target="_blank" title="GitHub">
                     <svg viewBox="0 0 24 24" fill="#333"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                 </a>
-                <a href="mailto:georgekouk29702970@hotmail.gr" title="Personal Email">
+                <a href="mailto:gkoukis@ee.duth.gr" title="Personal Email">
                     <svg viewBox="0 0 24 24" fill="#667eea"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 </a>
             </div>
@@ -1343,10 +1618,15 @@
                 projectRewireDesc: "SDN-based Adaptable Non-IP Protocol Stacks in Smart-City Environments",
                 projectFeed4cloudDesc: "Trustworthy user feedback for cloud-native services using blockchain",
                 
+                // Literature Map
+                navLitmap: "Literature Map",
+                sectionLitmap: "Literature Map",
+                litmapIntro: "An interactive citation network of my work: each node is a paper, each link a citation. Hover a node for details, click to open it, drag to rearrange, scroll to zoom.",
+
                 // Footer
                 footerRights: "All rights reserved.",
                 footerUpdated: "Last updated:",
-                
+
                 // Button
                 langBtnTitle: "Switch to Greek"
             },
@@ -1467,10 +1747,15 @@
                 projectRewireDesc: "Προσαρμοστικές Στοίβες Πρωτοκόλλων μη-IP βασισμένες σε SDN για Περιβάλλοντα Έξυπνων Πόλεων",
                 projectFeed4cloudDesc: "Αξιόπιστη ανατροφοδότηση χρηστών για cloud-native υπηρεσίες με χρήση blockchain",
                 
+                // Literature Map
+                navLitmap: "Χάρτης Βιβλιογραφίας",
+                sectionLitmap: "Χάρτης Βιβλιογραφίας",
+                litmapIntro: "Ένα διαδραστικό δίκτυο αναφορών του έργου μου: κάθε κόμβος είναι μια δημοσίευση και κάθε σύνδεση μια βιβλιογραφική αναφορά. Περάστε τον δείκτη πάνω από έναν κόμβο για λεπτομέρειες, κάντε κλικ για να τον ανοίξετε, σύρετε για αναδιάταξη και κυλήστε για μεγέθυνση.",
+
                 // Footer
                 footerRights: "Με επιφύλαξη παντός δικαιώματος.",
                 footerUpdated: "Τελευταία ενημέρωση:",
-                
+
                 // Button
                 langBtnTitle: "Switch to English"
             }
@@ -1521,6 +1806,7 @@
             document.getElementById('nav-title').textContent = t.navTitle;
             document.getElementById('nav-about').textContent = t.navAbout;
             document.getElementById('nav-metrics').textContent = t.navMetrics;
+            document.getElementById('nav-litmap').textContent = t.navLitmap;
             document.getElementById('nav-education').textContent = t.navEducation;
             document.getElementById('nav-experience').textContent = t.navExperience;
             document.getElementById('nav-teaching').textContent = t.navTeaching;
@@ -1540,6 +1826,7 @@
             // Section titles
             document.getElementById('section-about').textContent = t.sectionAbout;
             document.getElementById('section-metrics').textContent = t.sectionMetrics;
+            document.getElementById('section-litmap').textContent = t.sectionLitmap;
             document.getElementById('section-education').textContent = t.sectionEducation;
             document.getElementById('section-experience').textContent = t.sectionExperience;
             document.getElementById('section-teaching').textContent = t.sectionTeaching;
@@ -1635,10 +1922,16 @@
             document.getElementById('project-rewire-desc').textContent = t.projectRewireDesc;
             document.getElementById('project-feed4cloud-desc').textContent = t.projectFeed4cloudDesc;
             
+            // Literature Map
+            document.getElementById('litmap-intro').textContent = t.litmapIntro;
+            if (typeof window.__litmapApplyLang === 'function') {
+                window.__litmapApplyLang();
+            }
+
             // Footer
             document.getElementById('footer-rights').textContent = t.footerRights;
             document.getElementById('footer-updated').textContent = t.footerUpdated;
-            
+
             // Update last updated with correct month name
             updateLastUpdated();
         }
@@ -1774,6 +2067,1067 @@
         
         // Initialize map when page loads
         window.addEventListener('load', initMap);
+
+        // ------------------------------------------------------------------
+        // Literature Map: force-directed citation network from OpenAlex.
+        // Data is regenerated by scripts/build_literature_map.py, so this only
+        // has to read literature_map.json and lay it out.
+        // ------------------------------------------------------------------
+        (function () {
+            const shell = document.getElementById('litmap-shell');
+            const canvas = document.getElementById('litmap-canvas');
+            if (!shell || !canvas || !canvas.getContext) return;
+
+            const stage = document.getElementById('litmap-stage');
+            const statusEl = document.getElementById('litmap-status');
+            const tip = document.getElementById('litmap-tip');
+            const searchEl = document.getElementById('litmap-search');
+            const updatedEl = document.getElementById('litmap-updated');
+            const ctx = canvas.getContext('2d');
+
+            const LAYERS = ['core', 'citing', 'reference'];
+            const BASE_RADIUS = { core: 8, citing: 4.6, reference: 3.2 };
+            // Charge / link / gravity model. Gravity is what keeps the graph
+            // together, so there are no boundary walls for sparse nodes to
+            // pile up against.
+            const CHARGE = 155;
+            const LINK_DISTANCE = 32;
+            const LINK_STRENGTH = 0.4;
+            // Each node is pulled toward its own topic cluster's anchor rather
+            // than toward the origin: that is what separates the regions, and
+            // it doubles as the bounding force that keeps the graph on screen.
+            const CLUSTER_PULL = 0.24;
+            const VELOCITY_DECAY = 0.62;
+            const ALPHA_DECAY = 0.021;
+            const SETTLE_TICKS = 300;   // run to convergence before the first paint
+            const HULL_PADDING = 26;
+
+            // Cluster tints are a grouping aid only - every region carries a
+            // text label, so identity never rests on hue. Node colour stays
+            // with the three validated layer colours.
+            const CLUSTER_HUES = [20, 71, 123, 174, 226, 277, 329, 255];
+
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            let nodes = [];
+            let edges = [];
+            let byId = new Map();
+            let clusters = [];
+            let anchors = [];
+            let onScreen = false;
+            let simNodes = [];
+            let simEdges = [];
+            let adjacency = new Map();
+            let visible = new Set(LAYERS);
+            let theme = {};
+            let view = { k: 1, x: 0, y: 0 };
+            let viewTarget = null;
+            let refitPending = false;
+            let alpha = 0;
+            let hovered = null;
+            let dragNode = null;
+            let panFrom = null;
+            let pointerMoved = false;
+            let query = '';
+            let pulses = [];
+            let width = 0;
+            let height = 0;
+            let running = false;
+            let generatedAt = null;
+            const pointers = new Map();
+
+            const strings = {
+                en: {
+                    loading: 'Loading citation network…',
+                    failed: 'The citation network could not be loaded.',
+                    empty: 'No papers match the current filters.',
+                    hint: 'Node size reflects citation count.',
+                    updated: function (d) { return 'Built from OpenAlex on ' + d; },
+                    layer: { core: 'My papers', citing: 'Cite my work', reference: 'I cite them' },
+                    citations: function (n) { return n === 1 ? '1 citation' : n + ' citations'; },
+                    links: function (n) { return n === 1 ? '1 link' : n + ' links'; },
+                    searchPlaceholder: 'Search papers…', resetTitle: 'Reset view', fullTitle: 'Toggle fullscreen'
+                },
+                el: {
+                    loading: 'Φόρτωση δικτύου αναφορών…',
+                    failed: 'Το δίκτυο αναφορών δεν ήταν δυνατό να φορτωθεί.',
+                    empty: 'Καμία δημοσίευση δεν ταιριάζει με τα φίλτρα.',
+                    hint: 'Το μέγεθος του κόμβου αντιστοιχεί στις αναφορές.',
+                    updated: function (d) { return 'Από το OpenAlex, ' + d; },
+                    layer: { core: 'Δημοσιεύσεις μου', citing: 'Με αναφέρουν', reference: 'Αναφέρω' },
+                    citations: function (n) { return n === 1 ? '1 αναφορά' : n + ' αναφορές'; },
+                    links: function (n) { return n === 1 ? '1 σύνδεση' : n + ' συνδέσεις'; },
+                    searchPlaceholder: 'Αναζήτηση δημοσιεύσεων…', resetTitle: 'Επαναφορά προβολής', fullTitle: 'Εναλλαγή πλήρους οθόνης'
+                }
+            };
+
+            function lang() {
+                return strings[document.documentElement.lang] ? document.documentElement.lang : 'en';
+            }
+
+            function t() { return strings[lang()]; }
+
+            // Deterministic per-id noise, so the map opens the same way every time.
+            function noise(str) {
+                let h = 2166136261;
+                for (let i = 0; i < str.length; i++) {
+                    h ^= str.charCodeAt(i);
+                    h = Math.imul(h, 16777619);
+                }
+                return (h >>> 0) / 4294967295;
+            }
+
+            function readTheme() {
+                const cs = getComputedStyle(shell);
+                theme = {
+                    core: cs.getPropertyValue('--litmap-core').trim() || '#5a4bd4',
+                    citing: cs.getPropertyValue('--litmap-citing').trim() || '#e0632a',
+                    reference: cs.getPropertyValue('--litmap-reference').trim() || '#0f9b6c',
+                    surface: cs.getPropertyValue('--litmap-surface').trim() || '#f8f9ff',
+                    ink: cs.getPropertyValue('--litmap-ink').trim() || '#52514e',
+                    edge: cs.getPropertyValue('--litmap-edge').trim() || 'rgba(60,64,110,0.22)'
+                };
+            }
+
+            function resize() {
+                const rect = stage.getBoundingClientRect();
+                if (!rect.width || !rect.height) return false;
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                width = rect.width;
+                height = rect.height;
+                canvas.width = Math.round(width * dpr);
+                canvas.height = Math.round(height * dpr);
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                return true;
+            }
+
+            function rebuildSimulation() {
+                simNodes = nodes.filter(function (n) { return visible.has(n.group); });
+                const live = new Set(simNodes.map(function (n) { return n.id; }));
+
+                // Degree within the *visible* subgraph decides how much each
+                // endpoint of a link yields: hubs hold station, leaves swing.
+                const degree = new Map();
+                const kept = edges.filter(function (e) { return live.has(e.s) && live.has(e.t); });
+                for (const e of kept) {
+                    degree.set(e.s, (degree.get(e.s) || 0) + 1);
+                    degree.set(e.t, (degree.get(e.t) || 0) + 1);
+                }
+
+                simEdges = kept.map(function (e) {
+                    const da = degree.get(e.s) || 1;
+                    const db = degree.get(e.t) || 1;
+                    const a = byId.get(e.s);
+                    const b = byId.get(e.t);
+                    return {
+                        a: a,
+                        b: b,
+                        wa: db / (da + db),
+                        // Links crossing a cluster boundary pull much more
+                        // weakly, so a paper stays with its own topic instead
+                        // of being dragged into a neighbouring region. The link
+                        // is still drawn - it just does not dominate the layout.
+                        strength: LINK_STRENGTH * (a.cluster === b.cluster ? 1 : 0.12)
+                    };
+                });
+
+                // Papers OpenAlex has not wired up yet (typically the newest
+                // ones) have nothing pulling them in, so repulsion alone would
+                // fling them into the corners and blow out the viewport. Extra
+                // gravity keeps them orbiting the main body instead.
+                for (const node of simNodes) {
+                    node.isolated = !degree.has(node.id);
+                }
+            }
+
+            function reheat(amount) {
+                alpha = Math.max(alpha, amount);
+                start();
+            }
+
+            function tick() {
+                const n = simNodes.length;
+
+                // Repulsion between every pair (n is a few hundred, so the
+                // quadratic pass is cheaper than maintaining a quadtree).
+                for (let i = 0; i < n; i++) {
+                    const a = simNodes[i];
+                    for (let j = i + 1; j < n; j++) {
+                        const b = simNodes[j];
+                        let dx = a.x - b.x;
+                        let dy = a.y - b.y;
+                        let d2 = dx * dx + dy * dy;
+                        if (d2 < 1) {
+                            // Coincident nodes: nudge them apart deterministically.
+                            dx = noise(a.id + b.id) - 0.5;
+                            dy = noise(b.id + a.id) - 0.5;
+                            d2 = dx * dx + dy * dy || 1;
+                        }
+                        const w = CHARGE * alpha * a.charge * b.charge / d2;
+                        a.vx += dx * w;
+                        a.vy += dy * w;
+                        b.vx -= dx * w;
+                        b.vy -= dy * w;
+                    }
+                }
+
+                // Springs along citation links.
+                for (let i = 0; i < simEdges.length; i++) {
+                    const e = simEdges[i];
+                    const a = e.a;
+                    const b = e.b;
+                    const dx = b.x - a.x;
+                    const dy = b.y - a.y;
+                    const d = Math.sqrt(dx * dx + dy * dy) || 1;
+                    const l = (d - LINK_DISTANCE) / d * alpha * e.strength;
+                    a.vx += dx * l * e.wa;
+                    a.vy += dy * l * e.wa;
+                    b.vx -= dx * l * (1 - e.wa);
+                    b.vy -= dy * l * (1 - e.wa);
+                }
+
+                for (let i = 0; i < n; i++) {
+                    const a = simNodes[i];
+                    // Pull toward the node's own cluster anchor. Isolated papers
+                    // get extra pull so they settle beside their cluster rather
+                    // than drifting off into the corners.
+                    const anchor = anchors[a.cluster] || { x: 0, y: 0 };
+                    const g = (a.isolated ? CLUSTER_PULL * 2.2 : CLUSTER_PULL) * alpha;
+                    a.vx -= (a.x - anchor.x) * g;
+                    a.vy -= (a.y - anchor.y) * g;
+
+                    if (a === dragNode) {
+                        a.vx = 0;
+                        a.vy = 0;
+                        continue;
+                    }
+                    a.vx *= VELOCITY_DECAY;
+                    a.vy *= VELOCITY_DECAY;
+                    a.x += a.vx;
+                    a.y += a.vy;
+                }
+
+                alpha -= alpha * ALPHA_DECAY;
+                if (alpha < 0.002) alpha = 0;
+            }
+
+            function fitView(animate) {
+                if (!simNodes.length || !width) return;
+                let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+                for (const n of simNodes) {
+                    if (n.x < minX) minX = n.x;
+                    if (n.x > maxX) maxX = n.x;
+                    if (n.y < minY) minY = n.y;
+                    if (n.y > maxY) maxY = n.y;
+                }
+                const pad = 40 + HULL_PADDING;
+                const k = Math.max(0.25, Math.min(3, Math.min(
+                    (width - pad * 2) / Math.max(maxX - minX, 1),
+                    (height - pad * 2) / Math.max(maxY - minY, 1)
+                )));
+                const target = {
+                    k: k,
+                    x: width / 2 - ((minX + maxX) / 2) * k,
+                    y: height / 2 - ((minY + maxY) / 2) * k
+                };
+
+                if (animate) {
+                    viewTarget = target;
+                    start();
+                } else {
+                    view = target;
+                    viewTarget = null;
+                }
+            }
+
+            function matchesQuery(node) {
+                if (!query) return false;
+                return (node.title + ' ' + node.author + ' ' + node.venue + ' ' +
+                        (clusters[node.cluster] || '') + ' ' +
+                        (node.year || '')).toLowerCase().indexOf(query) !== -1;
+            }
+
+            function spawnPulse() {
+                if (reduceMotion || !simEdges.length || pulses.length >= 16) return;
+                const candidates = simEdges;
+                const e = candidates[(Math.random() * candidates.length) | 0];
+                if (e.a.group !== 'core' && e.b.group !== 'core') return;
+                pulses.push({ a: e.a, b: e.b, p: 0, speed: 0.006 + Math.random() * 0.008 });
+            }
+
+            function convexHull(points) {
+                if (points.length < 3) return points.slice();
+                const pts = points.slice().sort(function (a, b) { return a.x - b.x || a.y - b.y; });
+                const cross = function (o, a, b) {
+                    return (a.x - o.x) * (b.y - o.y) - (a.y - o.y) * (b.x - o.x);
+                };
+                const lower = [];
+                for (const p of pts) {
+                    while (lower.length >= 2 &&
+                           cross(lower[lower.length - 2], lower[lower.length - 1], p) <= 0) lower.pop();
+                    lower.push(p);
+                }
+                const upper = [];
+                for (let i = pts.length - 1; i >= 0; i--) {
+                    const p = pts[i];
+                    while (upper.length >= 2 &&
+                           cross(upper[upper.length - 2], upper[upper.length - 1], p) <= 0) upper.pop();
+                    upper.push(p);
+                }
+                lower.pop();
+                upper.pop();
+                return lower.concat(upper);
+            }
+
+            function clusterTint(index, part) {
+                const hue = CLUSTER_HUES[index % CLUSTER_HUES.length];
+                const dark = document.body.classList.contains('dark-mode');
+                if (part === 'fill') return 'hsla(' + hue + ',65%,' + (dark ? '58%,0.10' : '52%,0.07') + ')';
+                if (part === 'line') return 'hsla(' + hue + ',60%,' + (dark ? '62%,0.30' : '42%,0.24') + ')';
+                return 'hsl(' + hue + ',' + (dark ? '55%,68%' : '52%,34%') + ')';
+            }
+
+            function drawClusters(dimming) {
+                // Group the visible nodes, then wrap each group in a rounded
+                // hull. Recomputed per frame so it tracks drags and filtering.
+                const groups = new Map();
+                for (const node of simNodes) {
+                    if (!groups.has(node.cluster)) groups.set(node.cluster, []);
+                    groups.get(node.cluster).push({
+                        x: node.x * view.k + view.x,
+                        y: node.y * view.k + view.y
+                    });
+                }
+
+                // Centre of the whole map, used to push each label outward.
+                let gx = 0;
+                let gy = 0;
+                for (const node of simNodes) {
+                    gx += node.x * view.k + view.x;
+                    gy += node.y * view.k + view.y;
+                }
+                gx /= simNodes.length;
+                gy /= simNodes.length;
+
+                const labels = [];
+                for (const [index, points] of groups) {
+                    if (points.length < 2) continue;
+
+                    let cx = 0;
+                    let cy = 0;
+                    for (const p of points) { cx += p.x; cy += p.y; }
+                    cx /= points.length;
+                    cy /= points.length;
+
+                    ctx.beginPath();
+                    const hull = convexHull(points);
+                    if (hull.length < 3) {
+                        const r = Math.max(
+                            HULL_PADDING,
+                            Math.hypot(hull[0].x - cx, hull[0].y - cy) + HULL_PADDING
+                        );
+                        ctx.arc(cx, cy, r, 0, Math.PI * 2);
+                    } else {
+                        // Push each vertex out from the centroid, then round the
+                        // corners by curving through the edge midpoints.
+                        const out = hull.map(function (p) {
+                            const dx = p.x - cx;
+                            const dy = p.y - cy;
+                            const d = Math.hypot(dx, dy) || 1;
+                            return { x: p.x + dx / d * HULL_PADDING, y: p.y + dy / d * HULL_PADDING };
+                        });
+                        const mid = function (a, b) { return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 }; };
+                        const start = mid(out[out.length - 1], out[0]);
+                        ctx.moveTo(start.x, start.y);
+                        for (let i = 0; i < out.length; i++) {
+                            const cur = out[i];
+                            const m = mid(cur, out[(i + 1) % out.length]);
+                            ctx.quadraticCurveTo(cur.x, cur.y, m.x, m.y);
+                        }
+                        ctx.closePath();
+                    }
+
+                    ctx.globalAlpha = dimming ? 0.45 : 1;
+                    ctx.fillStyle = clusterTint(index, 'fill');
+                    ctx.fill();
+                    ctx.lineWidth = 1;
+                    ctx.strokeStyle = clusterTint(index, 'line');
+                    ctx.stroke();
+
+                    // Clusters sit in a ring, so a label above the region would
+                    // often land on top of a neighbour. Push it outward from
+                    // the map's centre instead, where there is empty space.
+                    let spread = 0;
+                    for (const p of points) {
+                        spread = Math.max(spread, Math.hypot(p.x - cx, p.y - cy));
+                    }
+                    let ox = cx - gx;
+                    let oy = cy - gy;
+                    const away = Math.hypot(ox, oy);
+                    if (away < 1) { ox = 0; oy = -1; } else { ox /= away; oy /= away; }
+
+                    const reach = spread + HULL_PADDING + 12;
+                    labels.push({
+                        index: index,
+                        x: cx + ox * reach,
+                        y: cy + oy * reach - 7
+                    });
+                }
+                ctx.globalAlpha = 1;
+
+                // Labels last, so no hull fill paints over them.
+                ctx.font = '600 12px "Segoe UI", Tahoma, Geneva, Verdana, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'top';
+                // Regions can sit close together, so nudge a colliding label
+                // upward until it clears the ones already drawn.
+                const taken = [];
+                labels.sort(function (a, b) { return a.y - b.y; });
+                for (const label of labels) {
+                    const text = clusters[label.index] || '';
+                    const w = ctx.measureText(text).width;
+                    const x = Math.max(w / 2 + 6, Math.min(width - w / 2 - 6, label.x));
+
+                    // Nudge downward, into the region's own space, so a label
+                    // never drifts away from the cluster it names.
+                    let y = Math.max(4, label.y);
+                    let placed = false;
+                    for (let attempt = 0; attempt < 6 && !placed; attempt++) {
+                        const box = { x1: x - w / 2 - 5, y1: y - 2, x2: x + w / 2 + 5, y2: y + 15 };
+                        const clash = taken.some(function (p) {
+                            return !(box.x2 < p.x1 || box.x1 > p.x2 || box.y2 < p.y1 || box.y1 > p.y2);
+                        });
+                        if (clash) { y += 18; } else { taken.push(box); placed = true; }
+                    }
+                    if (!placed || y > height - 14) continue;
+
+                    ctx.fillStyle = hexToRgba(theme.surface, 0.78);
+                    ctx.fillRect(x - w / 2 - 5, y - 2, w + 10, 17);
+                    ctx.fillStyle = clusterTint(label.index, 'text');
+                    ctx.fillText(text, x, y);
+                }
+            }
+
+            function draw() {
+                if (!width) return;
+                ctx.clearRect(0, 0, width, height);
+                if (!simNodes.length) return;
+
+                const focus = hovered;
+                const neighbours = focus ? (adjacency.get(focus.id) || new Set()) : null;
+                const dimming = Boolean(focus) || Boolean(query);
+
+                drawClusters(dimming);
+
+                // --- edges -------------------------------------------------
+                const plain = new Path2D();
+                const crossing = new Path2D();
+                const strong = new Path2D();
+                for (let i = 0; i < simEdges.length; i++) {
+                    const a = simEdges[i].a;
+                    const b = simEdges[i].b;
+                    const hot = focus && (a === focus || b === focus);
+                    // Cross-cluster links all funnel through the middle of the
+                    // ring; drawing them fainter keeps that bundle from
+                    // swamping the structure inside each region.
+                    const path = hot ? strong : (a.cluster === b.cluster ? plain : crossing);
+                    path.moveTo(a.x * view.k + view.x, a.y * view.k + view.y);
+                    path.lineTo(b.x * view.k + view.x, b.y * view.k + view.y);
+                }
+                ctx.lineWidth = 1;
+                ctx.strokeStyle = theme.edge;
+                ctx.globalAlpha = dimming ? 0.1 : 0.35;
+                ctx.stroke(crossing);
+                ctx.globalAlpha = dimming ? 0.25 : 1;
+                ctx.stroke(plain);
+                if (focus) {
+                    ctx.globalAlpha = 1;
+                    ctx.lineWidth = 1.6;
+                    ctx.strokeStyle = theme[focus.group];
+                    ctx.stroke(strong);
+                }
+                ctx.globalAlpha = 1;
+
+                // --- travelling pulses (the "signal" along the network) ----
+                if (!reduceMotion && !dimming) {
+                    for (const pulse of pulses) {
+                        const x = (pulse.a.x + (pulse.b.x - pulse.a.x) * pulse.p) * view.k + view.x;
+                        const y = (pulse.a.y + (pulse.b.y - pulse.a.y) * pulse.p) * view.k + view.y;
+                        const fade = Math.sin(pulse.p * Math.PI);
+                        ctx.globalAlpha = fade * 0.75;
+                        ctx.fillStyle = theme.core;
+                        ctx.beginPath();
+                        ctx.arc(x, y, 1.9, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                    ctx.globalAlpha = 1;
+                }
+
+                // --- nodes -------------------------------------------------
+                // Painted back-to-front so the author's own papers stay legible.
+                const order = { reference: 0, citing: 1, core: 2 };
+                const painted = simNodes.slice().sort(function (a, b) {
+                    return order[a.group] - order[b.group];
+                });
+
+                for (const node of painted) {
+                    const x = node.x * view.k + view.x;
+                    const y = node.y * view.k + view.y;
+                    const r = node.r * Math.min(Math.max(view.k, 0.7), 1.6);
+                    if (x < -40 || y < -40 || x > width + 40 || y > height + 40) continue;
+
+                    const lit = !dimming ||
+                        node === focus ||
+                        (neighbours && neighbours.has(node.id)) ||
+                        matchesQuery(node);
+
+                    ctx.globalAlpha = lit ? 1 : 0.18;
+
+                    // Soft halo gives the network its neural glow; only the
+                    // author's own papers and the focused node carry one.
+                    if (lit && (node.group === 'core' || node === focus)) {
+                        const glow = ctx.createRadialGradient(x, y, r * 0.5, x, y, r * 3.4);
+                        glow.addColorStop(0, hexToRgba(theme[node.group], 0.42));
+                        glow.addColorStop(1, hexToRgba(theme[node.group], 0));
+                        ctx.fillStyle = glow;
+                        ctx.beginPath();
+                        ctx.arc(x, y, r * 3.4, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+
+                    ctx.fillStyle = theme[node.group];
+                    ctx.beginPath();
+                    ctx.arc(x, y, r, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // Surface-coloured ring keeps overlapping nodes separable.
+                    ctx.lineWidth = node.group === 'core' ? 2 : 1.2;
+                    ctx.strokeStyle = theme.surface;
+                    ctx.stroke();
+
+                    if (node === focus || (query && matchesQuery(node))) {
+                        ctx.lineWidth = 2;
+                        ctx.strokeStyle = theme[node.group];
+                        ctx.beginPath();
+                        ctx.arc(x, y, r + 4, 0, Math.PI * 2);
+                        ctx.stroke();
+                    }
+                }
+                ctx.globalAlpha = 1;
+
+                // --- direct labels on the author's own papers --------------
+                ctx.font = '600 11px "Segoe UI", Tahoma, Geneva, Verdana, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'top';
+                const placed = [];
+                for (const node of painted) {
+                    if (node.group !== 'core') continue;
+                    if (dimming && node !== focus && !(neighbours && neighbours.has(node.id)) && !matchesQuery(node)) continue;
+                    const label = shorten(node.title, 26);
+                    const x = node.x * view.k + view.x;
+                    const baseY = node.y * view.k + view.y + node.r * Math.min(Math.max(view.k, 0.7), 1.6) + 6;
+                    const w = ctx.measureText(label).width;
+
+                    // These are the author's own papers, so nudge a colliding
+                    // label down a line or two before giving up on drawing it.
+                    let box = null;
+                    for (const offset of [0, 15, 30, -32]) {
+                        const y = baseY + offset;
+                        const candidate = { x1: x - w / 2 - 3, y1: y - 2, x2: x + w / 2 + 3, y2: y + 14 };
+                        if (candidate.x1 < 0 || candidate.x2 > width || candidate.y2 > height || candidate.y1 < 0) continue;
+                        const clash = placed.some(function (p) {
+                            return !(candidate.x2 < p.x1 || candidate.x1 > p.x2 ||
+                                     candidate.y2 < p.y1 || candidate.y1 > p.y2);
+                        });
+                        if (!clash) { box = candidate; break; }
+                    }
+                    if (!box) continue;
+                    placed.push(box);
+
+                    ctx.fillStyle = hexToRgba(theme.surface, 0.82);
+                    ctx.fillRect(box.x1, box.y1, box.x2 - box.x1, box.y2 - box.y1);
+                    ctx.fillStyle = theme.ink;
+                    ctx.fillText(label, x, box.y1 + 2);
+                }
+            }
+
+            function hexToRgba(hex, alpha) {
+                const value = String(hex).trim();
+                if (value.charAt(0) !== '#') {
+                    // Already a functional colour (the edge token) - blend via globalAlpha instead.
+                    return value;
+                }
+                let h = value.slice(1);
+                if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
+                const num = parseInt(h, 16);
+                return 'rgba(' + ((num >> 16) & 255) + ',' + ((num >> 8) & 255) + ',' + (num & 255) + ',' + alpha + ')';
+            }
+
+            function shorten(text, max) {
+                return text.length > max ? text.slice(0, max - 1).trimEnd() + '…' : text;
+            }
+
+            function frame() {
+                if (alpha > 0) tick();
+
+                // Once a filter change has finished settling, ease the viewport
+                // onto the new bounds rather than leaving the graph adrift.
+                if (alpha === 0 && refitPending) {
+                    refitPending = false;
+                    fitView(true);
+                }
+
+                if (viewTarget) {
+                    view.k += (viewTarget.k - view.k) * 0.16;
+                    view.x += (viewTarget.x - view.x) * 0.16;
+                    view.y += (viewTarget.y - view.y) * 0.16;
+                    if (Math.abs(viewTarget.x - view.x) < 0.4 &&
+                        Math.abs(viewTarget.y - view.y) < 0.4 &&
+                        Math.abs(viewTarget.k - view.k) < 0.002) {
+                        view = viewTarget;
+                        viewTarget = null;
+                    }
+                }
+
+                if (!reduceMotion) {
+                    if (Math.random() < 0.25) spawnPulse();
+                    pulses = pulses.filter(function (p) {
+                        p.p += p.speed;
+                        return p.p < 1;
+                    });
+                }
+
+                draw();
+
+                // Keep animating while the layout settles, or while the pulses
+                // are visible on screen; otherwise idle until something changes.
+                running = alpha > 0 || viewTarget !== null || refitPending ||
+                    (!reduceMotion && onScreen && document.visibilityState === 'visible');
+                if (running) requestAnimationFrame(frame);
+            }
+
+            function start() {
+                if (running) return;
+                running = true;
+                requestAnimationFrame(frame);
+            }
+
+            function nodeAt(px, py) {
+                let best = null;
+                let bestDist = Infinity;
+                for (let i = simNodes.length - 1; i >= 0; i--) {
+                    const node = simNodes[i];
+                    const x = node.x * view.k + view.x;
+                    const y = node.y * view.k + view.y;
+                    const r = node.r * Math.min(Math.max(view.k, 0.7), 1.6) + 5;
+                    const dist = Math.hypot(px - x, py - y);
+                    // Prefer the author's own papers when marks overlap.
+                    const weighted = dist - (node.group === 'core' ? 6 : 0);
+                    if (dist <= r && weighted < bestDist) {
+                        bestDist = weighted;
+                        best = node;
+                    }
+                }
+                return best;
+            }
+
+            // Where clicking a node goes. A DOI is preferred, but papers that
+            // only Google Scholar indexes have none, so they carry a plain URL.
+            function nodeLink(node) {
+                return node.doi ? 'https://doi.org/' + node.doi : (node.url || '');
+            }
+
+            function showTip(node, px, py) {
+                const s = t();
+                const degree = (adjacency.get(node.id) || new Set()).size;
+                const meta = [node.author, node.venue, node.year].filter(Boolean).join(' · ');
+                tip.innerHTML = '';
+
+                const title = document.createElement('div');
+                title.className = 'litmap-tip-title';
+                title.textContent = node.title;
+                tip.appendChild(title);
+
+                if (meta) {
+                    const metaEl = document.createElement('div');
+                    metaEl.className = 'litmap-tip-meta';
+                    metaEl.textContent = meta;
+                    tip.appendChild(metaEl);
+                }
+
+                const stats = document.createElement('div');
+                stats.className = 'litmap-tip-meta';
+                stats.textContent = s.citations(node.citations) + ' · ' + s.links(degree);
+                tip.appendChild(stats);
+
+                if (clusters[node.cluster]) {
+                    const cluster = document.createElement('div');
+                    cluster.className = 'litmap-tip-meta';
+                    cluster.style.color = clusterTint(node.cluster, 'text');
+                    cluster.textContent = clusters[node.cluster];
+                    tip.appendChild(cluster);
+                }
+
+                const layer = document.createElement('div');
+                layer.className = 'litmap-tip-layer';
+                layer.style.color = theme[node.group];
+                const dot = document.createElement('span');
+                dot.className = 'litmap-dot ' + node.group;
+                layer.appendChild(dot);
+                layer.appendChild(document.createTextNode(s.layer[node.group]));
+                tip.appendChild(layer);
+
+                tip.hidden = false;
+                const box = tip.getBoundingClientRect();
+                const left = px + 16 + box.width > width ? px - box.width - 16 : px + 16;
+                const top = py + 16 + box.height > height ? py - box.height - 16 : py + 16;
+                tip.style.left = Math.max(6, left) + 'px';
+                tip.style.top = Math.max(6, top) + 'px';
+            }
+
+            function localPoint(event) {
+                const rect = canvas.getBoundingClientRect();
+                return { x: event.clientX - rect.left, y: event.clientY - rect.top };
+            }
+
+            function zoomAt(px, py, factor) {
+                viewTarget = null;   // a manual zoom wins over any pending fit
+                const next = Math.max(0.25, Math.min(4, view.k * factor));
+                const ratio = next / view.k;
+                view.x = px - (px - view.x) * ratio;
+                view.y = py - (py - view.y) * ratio;
+                view.k = next;
+                start();
+            }
+
+            canvas.addEventListener('pointerdown', function (event) {
+                canvas.setPointerCapture(event.pointerId);
+                const p = localPoint(event);
+                pointers.set(event.pointerId, p);
+                pointerMoved = false;
+
+                if (pointers.size === 1) {
+                    const hit = nodeAt(p.x, p.y);
+                    if (hit) {
+                        dragNode = hit;
+                    } else {
+                        panFrom = { px: p.x, py: p.y, vx: view.x, vy: view.y };
+                    }
+                    canvas.classList.add('is-grabbing');
+                }
+            });
+
+            canvas.addEventListener('pointermove', function (event) {
+                const p = localPoint(event);
+
+                if (pointers.has(event.pointerId)) {
+                    pointers.set(event.pointerId, p);
+                }
+
+                if (pointers.size === 2) {
+                    // Pinch to zoom around the midpoint of the two touches.
+                    const pair = Array.from(pointers.values());
+                    const dist = Math.hypot(pair[0].x - pair[1].x, pair[0].y - pair[1].y);
+                    if (canvas._pinch) {
+                        const mid = { x: (pair[0].x + pair[1].x) / 2, y: (pair[0].y + pair[1].y) / 2 };
+                        zoomAt(mid.x, mid.y, dist / canvas._pinch);
+                    }
+                    canvas._pinch = dist;
+                    pointerMoved = true;
+                    return;
+                }
+
+                if (dragNode) {
+                    pointerMoved = true;
+                    dragNode.x = (p.x - view.x) / view.k;
+                    dragNode.y = (p.y - view.y) / view.k;
+                    reheat(0.35);
+                    return;
+                }
+
+                if (panFrom) {
+                    pointerMoved = true;
+                    viewTarget = null;
+                    view.x = panFrom.vx + (p.x - panFrom.px);
+                    view.y = panFrom.vy + (p.y - panFrom.py);
+                    start();
+                    return;
+                }
+
+                const hit = nodeAt(p.x, p.y);
+                canvas.classList.toggle('is-target', Boolean(hit && nodeLink(hit)));
+                if (hit !== hovered) {
+                    hovered = hit;
+                    if (hit) {
+                        showTip(hit, p.x, p.y);
+                    } else {
+                        tip.hidden = true;
+                    }
+                    start();
+                } else if (hit) {
+                    showTip(hit, p.x, p.y);
+                }
+            });
+
+            function endPointer(event) {
+                const p = localPoint(event);
+                pointers.delete(event.pointerId);
+                if (pointers.size < 2) canvas._pinch = null;
+                canvas.classList.remove('is-grabbing');
+
+                if (!pointerMoved && !panFrom) {
+                    const hit = nodeAt(p.x, p.y);
+                    const href = hit ? nodeLink(hit) : '';
+                    if (href) {
+                        window.open(href, '_blank', 'noopener');
+                    }
+                }
+                dragNode = null;
+                panFrom = null;
+            }
+
+            canvas.addEventListener('pointerup', endPointer);
+            canvas.addEventListener('pointercancel', function (event) {
+                pointers.delete(event.pointerId);
+                canvas._pinch = null;
+                canvas.classList.remove('is-grabbing');
+                dragNode = null;
+                panFrom = null;
+            });
+
+            canvas.addEventListener('pointerleave', function () {
+                hovered = null;
+                tip.hidden = true;
+                start();
+            });
+
+            canvas.addEventListener('wheel', function (event) {
+                event.preventDefault();
+                const p = localPoint(event);
+                zoomAt(p.x, p.y, event.deltaY < 0 ? 1.12 : 1 / 1.12);
+            }, { passive: false });
+
+            document.getElementById('litmap-filters').addEventListener('click', function (event) {
+                const chip = event.target.closest('.litmap-chip');
+                if (!chip) return;
+                const layer = chip.dataset.layer;
+                const on = chip.getAttribute('aria-pressed') === 'true';
+                // Never let the last layer be switched off - an empty canvas
+                // reads as a bug rather than as a filter.
+                if (on && visible.size === 1) return;
+                if (on) visible.delete(layer); else visible.add(layer);
+                chip.setAttribute('aria-pressed', on ? 'false' : 'true');
+                hovered = null;
+                tip.hidden = true;
+                rebuildSimulation();
+                statusEl.textContent = simNodes.length ? '' : t().empty;
+                statusEl.hidden = simNodes.length > 0;
+                refitPending = true;
+                reheat(0.7);
+            });
+
+            searchEl.addEventListener('input', function () {
+                query = this.value.trim().toLowerCase();
+                start();
+            });
+
+            document.getElementById('litmap-reset').addEventListener('click', function () {
+                searchEl.value = '';
+                query = '';
+                hovered = null;
+                tip.hidden = true;
+                seedPositions();
+                rebuildSimulation();
+                alpha = 1;
+                for (let i = 0; i < SETTLE_TICKS; i++) tick();
+                fitView();
+                start();
+            });
+
+            const fullBtn = document.getElementById('litmap-full');
+            fullBtn.addEventListener('click', function () {
+                const on = shell.classList.toggle('is-fullscreen');
+                this.setAttribute('aria-pressed', String(on));
+                document.body.style.overflow = on ? 'hidden' : '';
+                requestAnimationFrame(function () {
+                    if (resize()) fitView();
+                    start();
+                });
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && shell.classList.contains('is-fullscreen')) {
+                    fullBtn.click();
+                }
+            });
+
+            window.addEventListener('resize', function () {
+                if (resize()) {
+                    fitView();
+                    start();
+                }
+            });
+
+            // Re-read the palette when the page's dark mode is toggled.
+            new MutationObserver(function () {
+                readTheme();
+                start();
+            }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+            // Only burn frames while the map is actually on screen.
+            if (window.IntersectionObserver) {
+                new IntersectionObserver(function (entries) {
+                    onScreen = entries[0].isIntersecting;
+                    if (onScreen) start();
+                }, { threshold: 0.05 }).observe(stage);
+            } else {
+                onScreen = true;
+            }
+
+            document.addEventListener('visibilitychange', function () {
+                if (document.visibilityState === 'visible') start();
+            });
+
+            function computeAnchors() {
+                // The biggest cluster takes the middle and the rest ring it,
+                // which fills a landscape canvas better than a plain circle
+                // (that would leave a hole in the centre). Spacing is derived
+                // from each cluster's own size, so a 135-paper region and a
+                // 12-paper one both get room without hand-tuned constants.
+                const k = clusters.length;
+                anchors = new Array(k);
+                if (!k) return;
+
+                const counts = clusters.map(function (_, i) {
+                    return nodes.reduce(function (sum, n) { return sum + (n.cluster === i ? 1 : 0); }, 0);
+                });
+                const radius = counts.map(function (c) { return Math.sqrt(Math.max(c, 1)) * 15; });
+
+                const bySize = clusters.map(function (_, i) { return i; })
+                    .sort(function (a, b) { return counts[b] - counts[a]; });
+
+                // Alternate large and small around the ring so two big regions
+                // are never neighbours - that is what forces the ring wide.
+                const ring = [];
+                for (let lo = 0, hi = bySize.length - 1; lo <= hi; lo++, hi--) {
+                    ring.push(bySize[lo]);
+                    if (lo !== hi) ring.push(bySize[hi]);
+                }
+
+                const total = ring.reduce(function (s, i) { return s + radius[i]; }, 0) || 1;
+                const slice = {};
+                for (const i of ring) slice[i] = (radius[i] / total) * Math.PI * 2;
+
+                // Ring radius wide enough that no two neighbouring regions overlap:
+                // centres an angle apart must be at least the sum of their radii.
+                let ringRadius = 0;
+                for (let n = 0; n < ring.length; n++) {
+                    const i = ring[n];
+                    const j = ring[(n + 1) % ring.length];
+                    const between = (slice[i] + slice[j]) / 4;
+                    const needed = (radius[i] + radius[j]) / (2 * Math.max(Math.sin(between), 0.08));
+                    ringRadius = Math.max(ringRadius, needed);
+                }
+                if (ring.length === 1) ringRadius = 0;
+
+                let angle = -Math.PI / 2;
+                for (const i of ring) {
+                    const at = angle + slice[i] / 2;
+                    anchors[i] = {
+                        x: Math.cos(at) * ringRadius * 1.35,
+                        y: Math.sin(at) * ringRadius * 0.88
+                    };
+                    angle += slice[i];
+                }
+            }
+
+            function seedPositions() {
+                for (const node of nodes) {
+                    const anchor = anchors[node.cluster] || { x: 0, y: 0 };
+                    const angle = noise(node.id) * Math.PI * 2;
+                    const radius = 110 * (0.2 + noise(node.id + '#') * 0.8);
+                    node.x = anchor.x + Math.cos(angle) * radius;
+                    node.y = anchor.y + Math.sin(angle) * radius;
+                }
+            }
+
+            function renderChrome() {
+                const s = t();
+                for (const layer of LAYERS) {
+                    const el = document.querySelector('[data-count="' + layer + '"]');
+                    if (el) el.textContent = nodes.filter(function (n) { return n.group === layer; }).length;
+                }
+                if (generatedAt) {
+                    updatedEl.textContent = s.updated(generatedAt.toLocaleDateString(lang(), {
+                        year: 'numeric', month: 'long', day: 'numeric'
+                    }));
+                }
+            }
+
+            // Called by applyTranslations() so the map follows the EN/EL toggle.
+            window.__litmapApplyLang = function () {
+                const s = t();
+                document.getElementById('litmap-label-core').textContent = s.layer.core;
+                document.getElementById('litmap-label-citing').textContent = s.layer.citing;
+                document.getElementById('litmap-label-reference').textContent = s.layer.reference;
+                document.getElementById('litmap-hint').textContent = s.hint;
+                searchEl.placeholder = s.searchPlaceholder;
+                searchEl.setAttribute('aria-label', s.searchPlaceholder);
+                document.getElementById('litmap-reset').title = s.resetTitle;
+                document.getElementById('litmap-full').title = s.fullTitle;
+                renderChrome();
+                if (hovered) tip.hidden = true;
+                start();
+            };
+
+            fetch('./literature_map.json', { cache: 'no-store' })
+                .then(function (response) {
+                    if (!response.ok) throw new Error('HTTP ' + response.status);
+                    return response.json();
+                })
+                .then(function (graph) {
+                    nodes = graph.nodes.map(function (n) {
+                        // Citations grow the node on a log scale, capped, so a
+                        // 5000-citation classic in the reference layer never
+                        // outsizes the author's own papers.
+                        const boost = 1 + Math.min(1.5, Math.log10(1 + (n.citations || 0)) / 2.2);
+                        const r = BASE_RADIUS[n.group] * boost;
+                        return Object.assign({}, n, {
+                            x: 0, y: 0, vx: 0, vy: 0, r: r,
+                            charge: 0.55 + r / 11
+                        });
+                    });
+                    edges = graph.edges;
+                    clusters = graph.clusters || [];
+                    byId = new Map(nodes.map(function (n) { return [n.id, n]; }));
+                    computeAnchors();
+
+                    adjacency = new Map(nodes.map(function (n) { return [n.id, new Set()]; }));
+                    for (const e of edges) {
+                        if (adjacency.has(e.s)) adjacency.get(e.s).add(e.t);
+                        if (adjacency.has(e.t)) adjacency.get(e.t).add(e.s);
+                    }
+
+                    generatedAt = graph.generated_at ? new Date(graph.generated_at) : null;
+
+                    readTheme();
+                    seedPositions();
+                    rebuildSimulation();
+                    // Settle off-screen so the map opens already laid out
+                    // rather than visibly untangling itself.
+                    alpha = 1;
+                    for (let i = 0; i < SETTLE_TICKS; i++) tick();
+
+                    statusEl.hidden = true;
+                    renderChrome();
+                    if (resize()) fitView();
+                    start();
+                })
+                .catch(function (error) {
+                    console.warn('Could not load the literature map.', error);
+                    statusEl.textContent = t().failed;
+                });
+        })();
     </script>
 </body>
 </html>
