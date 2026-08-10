@@ -1,7 +1,11 @@
 {
  "scholar_id": "E2bGWsUAAAAJ",
  "source": "https://scholar.google.com/citations?user=E2bGWsUAAAAJ&hl=en",
+<<<<<<< HEAD
  "fetched_at": "2026-08-10T06:56:54.544687+00:00",
+=======
+ "fetched_at": "2026-08-10T14:54:29.587296+00:00",
+>>>>>>> 02bee6a (Update Google Scholar citations and literature map)
  "papers": [
   {
    "title": "All about Delay-Tolerant Networking (DTN) Contributions to Future Internet",
@@ -672,7 +676,11 @@
      "venue": "Edge-Enabled 6G",
      "year": null,
      "citations": 0,
+<<<<<<< HEAD
      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=GUb1EQAAQBAJ&amp;oi=fnd&amp;pg=PA209&amp;ots=W4l3NyLSSX&amp;sig=wIX4_mXGovb_nf-0wL5OGlfK4LI"
+=======
+     "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=GUb1EQAAQBAJ&amp;oi=fnd&amp;pg=PA209&amp;ots=W4l3NAQTYX&amp;sig=ESs2MS1xJPcew8jHkk1QpGmEn1E"
+>>>>>>> 02bee6a (Update Google Scholar citations and literature map)
     },
     {
      "id": "COaM-0HjmeAJ",
@@ -733,8 +741,8 @@
      "authors": "LF Bittencourt, R Rodrigues-Filho, J Spillner…",
      "venue": "Computer Science",
      "year": 2025,
-     "citations": 22,
-     "url": "https://www.sciencedirect.com/science/article/pii/S1574013725000589?casa_token=RlKmkPDiZ4gAAAAA:We-XjZ9A3WcjlgIaNVlSe6r6E2tMCwLK6o7-I_FK6VYIxJocHIgE_C6Sq3SA8SJtrea0FArfc08"
+     "citations": 26,
+     "url": "https://www.sciencedirect.com/science/article/pii/S1574013725000589"
     },
     {
      "id": "m_Urew6XxTcJ",
@@ -742,7 +750,7 @@
      "authors": "RC Sofia, J Salomon, S Ferlin-Reiter…",
      "venue": "IEEE",
      "year": 2024,
-     "citations": 35,
+     "citations": 39,
      "url": "https://ieeexplore.ieee.org/abstract/document/10540390/"
     },
     {
@@ -751,8 +759,8 @@
      "authors": "G Koukis, S Skaperas, IA Kapetanidou…",
      "venue": "IEEE Symposium on",
      "year": 2024,
-     "citations": 25,
-     "url": "https://ieeexplore.ieee.org/abstract/document/10733726/?casa_token=4aaY7euD8xIAAAAA:K6r8Bd8JffQ1vNkNqHMxK4jn89Nu-cuaLl2QX9zqWEB3Q1tDDN7pDPPfarqVulCJuRgeX2nnrN4"
+     "citations": 28,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10733726/"
     },
     {
      "id": "R6lqGoQxbBMJ",
@@ -761,7 +769,7 @@
      "venue": "Journal of Network and",
      "year": 2025,
      "citations": 5,
-     "url": "https://idp.springer.com/authorize/casa?redirect_uri=https://link.springer.com/article/10.1007/s10922-025-09964-7&amp;casa_token=1ohUWOf1g3wAAAAA:qyZnelA9M4u7GDRBsOW6l7q4_Ywwy5Rcvl8JcoEms01buCWP2fbpKDPgwd9XjGPze58EhRz4oT06YghYhQ"
+     "url": "https://link.springer.com/article/10.1007/s10922-025-09964-7"
     },
     {
      "id": "Yl24TQj53I8J",
@@ -773,13 +781,22 @@
      "url": "https://www.sciencedirect.com/science/article/pii/S1383762126000706"
     },
     {
-     "id": "PCOyvIajnwEJ",
-     "title": "Towards an API-driven approach for universal and lightweight cloud-edge orchestration",
-     "authors": "S Böhm, G Wirtz",
-     "venue": "2024 IEEE International Conference on",
-     "year": 2024,
-     "citations": 3,
-     "url": "https://ieeexplore.ieee.org/abstract/document/10685337/?casa_token=RNEwkeqhdDkAAAAA:A5fLbVqRxH1Mu0QT9dzLZA9sYWlrmVI0fmhv5EfcUWz6ii4myagBMlF5q7uRtJFidEY39yjbtpc"
+     "id": "t4GDG8f4D0gJ",
+     "title": "Trade-Offs in Kubernetes Security and Energy Consumption",
+     "authors": "I Dermentzis, G Koukis, V Tsaoussidis",
+     "venue": "Urban Science",
+     "year": 2026,
+     "citations": 2,
+     "url": "https://www.mdpi.com/2413-8851/10/2/81"
+    },
+    {
+     "id": "fe3_0NT33FQJ",
+     "title": "Towards Scalable Federated Container Orchestration: The CODECO Approach",
+     "authors": "RC Sofia, J Salomon, R Carrol, L Garcés-Erice…",
+     "venue": "arXiv preprint arXiv",
+     "year": 2026,
+     "citations": 2,
+     "url": "https://arxiv.org/abs/2601.13351"
     },
     {
      "id": "V3MlD4WMko0J",
@@ -788,7 +805,7 @@
      "venue": "IEEE Symposium on",
      "year": 2024,
      "citations": 5,
-     "url": "https://ieeexplore.ieee.org/abstract/document/10733657/?casa_token=27FXKYCKr8IAAAAA:5-XIKjJmjLU9I0xznyh-inkdkQdFC2k7Z_8bYktCPWDnYgVn9AdrpImiYJzfWoB6j2H5DojlXhE"
+     "url": "https://ieeexplore.ieee.org/abstract/document/10733657/"
     },
     {
      "id": "EvsXU3MOYNUJ",
@@ -797,25 +814,16 @@
      "venue": "2024 IEEE",
      "year": 2024,
      "citations": 4,
-     "url": "https://ieeexplore.ieee.org/abstract/document/10621076/?casa_token=tsej8E1gOeYAAAAA:yGl0iqEqR5SCgHfw-e1vTEoc92mbE8y6M22xd7qi6e-G-WcVbf4U055gL9T9AJnpFX8S2Ng9-E4"
+     "url": "https://ieeexplore.ieee.org/abstract/document/10621076/"
     },
     {
-     "id": "fe3_0NT33FQJ",
-     "title": "Towards Scalable Federated Container Orchestration: The CODECO Approach",
-     "authors": "RC Sofia, J Salomon, R Carrol, L Garcés-Erice…",
-     "venue": "arXiv preprint arXiv",
-     "year": 2026,
-     "citations": 1,
-     "url": "https://arxiv.org/abs/2601.13351"
-    },
-    {
-     "id": "t4GDG8f4D0gJ",
-     "title": "Trade-Offs in Kubernetes Security and Energy Consumption",
-     "authors": "I Dermentzis, G Koukis, V Tsaoussidis",
-     "venue": "Urban Science",
-     "year": 2026,
-     "citations": 1,
-     "url": "https://www.mdpi.com/2413-8851/10/2/81"
+     "id": "PCOyvIajnwEJ",
+     "title": "Towards an API-driven approach for universal and lightweight cloud-edge orchestration",
+     "authors": "S Böhm, G Wirtz",
+     "venue": "2024 IEEE International Conference on",
+     "year": 2024,
+     "citations": 3,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10685337/"
     },
     {
      "id": "6YDpptpswCMJ",
@@ -824,7 +832,7 @@
      "venue": "IEEE Symposium on",
      "year": 2024,
      "citations": 2,
-     "url": "https://ieeexplore.ieee.org/abstract/document/10733560/?casa_token=qpK-5r9BDkkAAAAA:33VRKyf4-Q7Vxu5orfRDiR-0qUSVxNaFS0dJxdel1_qebEBZT9z4WeoYB10lOx62LUwJ8wLMHrg"
+     "url": "https://ieeexplore.ieee.org/abstract/document/10733560/"
     },
     {
      "id": "gUdxEbiedXcJ",
@@ -842,7 +850,16 @@
      "venue": "2024 Mediterranean",
      "year": 2024,
      "citations": 2,
-     "url": "https://ieeexplore.ieee.org/abstract/document/10697004/?casa_token=0pBlWKHDUC4AAAAA:fCjYKShI9PF1bXOXRqpDiwlMqCI1VeUYndI98nkYK5YssSkJH6wGmKPt0hm5oQu9r959hr5-Nvo"
+     "url": "https://ieeexplore.ieee.org/abstract/document/10697004/"
+    },
+    {
+     "id": "ubvNLVwKzggJ",
+     "title": "A Scalable Computing Continuum Framework for Ambient Assisted Living",
+     "authors": "J Anowar, K Islam, KS Jagarlamudi…",
+     "venue": "2026 IEEE 26th",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11617666/"
     },
     {
      "id": "xncRKl84CF0J",
@@ -863,15 +880,6 @@
      "url": "https://norma.ncirl.ie/8092/"
     },
     {
-     "id": "ubvNLVwKzggJ",
-     "title": "A Scalable Computing Continuum Framework for Ambient Assisted Living",
-     "authors": "J Anowar, K Islam, KS Jagarlamudi, B Javadi…",
-     "venue": "",
-     "year": null,
-     "citations": 0,
-     "url": "https://koushikur-islam.github.io/publications/CCGrid2026.pdf"
-    },
-    {
      "id": "6zj83QBLHZUJ",
      "title": "Computer Science Review",
      "authors": "LF Bittencourt, A Goldman, ERM Madeira",
@@ -889,6 +897,15 @@
    "cited_by": 5,
    "citations": [
     {
+     "id": "t4GDG8f4D0gJ",
+     "title": "Trade-Offs in Kubernetes Security and Energy Consumption",
+     "authors": "I Dermentzis, G Koukis, V Tsaoussidis",
+     "venue": "Urban Science",
+     "year": 2026,
+     "citations": 2,
+     "url": "https://www.mdpi.com/2413-8851/10/2/81"
+    },
+    {
      "id": "3ZxYkbtJpxYJ",
      "title": "Zero trust architecture for internet of things devices and next-generation networks: tools, trends, and challenges",
      "authors": "GNN Barbosa, M Andreoni, TMT Nguyen…",
@@ -898,13 +915,13 @@
      "url": "https://link.springer.com/article/10.1007/s12243-026-01197-2"
     },
     {
-     "id": "t4GDG8f4D0gJ",
-     "title": "Trade-Offs in Kubernetes Security and Energy Consumption",
-     "authors": "I Dermentzis, G Koukis, V Tsaoussidis",
-     "venue": "Urban Science",
+     "id": "MpFxAWhfg7QJ",
+     "title": "Performance Comparison of Modern CNI Technologies for Microservice Architectures",
+     "authors": "KC Du Perron, DL Pacheco…",
+     "venue": "ICC 2026-IEEE",
      "year": 2026,
-     "citations": 1,
-     "url": "https://www.mdpi.com/2413-8851/10/2/81"
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11587014/"
     },
     {
      "id": "xncRKl84CF0J",
@@ -914,15 +931,6 @@
      "year": 2025,
      "citations": 0,
      "url": "https://ieeexplore.ieee.org/abstract/document/11185952/"
-    },
-    {
-     "id": "MpFxAWhfg7QJ",
-     "title": "Performance Comparison of Modern CNI Technologies for Microservice Architectures",
-     "authors": "KC Du Perron, DL Pacheco…",
-     "venue": "ICC 2026-IEEE",
-     "year": 2026,
-     "citations": 0,
-     "url": "https://ieeexplore.ieee.org/abstract/document/11587014/?casa_token=Cmv77K9tw3YAAAAA:_CEfzlKTuK19CBm9BRmkYrXnQUSp0a9IC46TpcLXxl4IDf3Vr0cWm6_E6CZCEPUcq8_Ws77yS3k"
     },
     {
      "id": "pu57O28Ot90J",
@@ -940,16 +948,143 @@
    "year": 2024,
    "cluster": "13853930539440399489",
    "cited_by": 5,
-   "citations": []
+   "citations": [
+    {
+     "id": "0wI7fvkqQjMJ",
+     "title": "An open-source experimentation framework for the edge cloud continuum",
+     "authors": "G Koukis, S Skaperas, IA Kapetanidou…",
+     "venue": "IEEE Conference on",
+     "year": 2024,
+     "citations": 17,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10620846/"
+    },
+    {
+     "id": "zCiV00Gc42MJ",
+     "title": "Efficient training approaches for performance anomaly detection models in edge computing environments",
+     "authors": "D Fernando, MA Rodriguez, P Arroba, L Ismail…",
+     "venue": "ACM Transactions on",
+     "year": 2025,
+     "citations": 8,
+     "url": "https://dl.acm.org/doi/abs/10.1145/3725736"
+    },
+    {
+     "id": "54RyJbV9xc0J",
+     "title": "iAnomaly: A toolkit for generating performance anomaly datasets in edge-cloud integrated computing environments",
+     "authors": "D Fernando, MA Rodriguez…",
+     "venue": "2024 IEEE/ACM 17th",
+     "year": 2024,
+     "citations": 10,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10971830/"
+    },
+    {
+     "id": "eipj8vfAF7EJ",
+     "title": "Time-aware and lightweight hyperparameter optimization for internet of things via genetic algorithms and dynamic data thinning",
+     "authors": "K Anastasiou, S Skaperas, L Mamatas",
+     "venue": "Applied Soft Computing",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://www.sciencedirect.com/science/article/pii/S1568494626005107"
+    },
+    {
+     "id": "ffDLx0oWHNQJ",
+     "title": "РОЗРОБЛЕННЯ Й ДОСЛІДЖЕННЯ ПІДХОДУ ДО ВИЯВЛЕННЯ АНОМАЛІЙ У ПОТОКОВИХ КОНВЕЄРАХ ДАНИХ НА ОСНОВІ ОПЕРАЦІЙНОЇ ТЕЛЕМЕТРІЇ",
+     "authors": "І Кириченко, В Демчук, В Луценко",
+     "venue": "системи управління та",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://asu-pa.nure.ua/article/view/363106"
+    }
+   ]
   },
   {
    "title": "Satellite-Assisted Disrupted Communications: IoT Case Study",
    "year": 2023,
    "cluster": "3010552518842323975",
    "cited_by": 3,
-   "citations": []
+   "citations": [
+    {
+     "id": "VIPBaKMtVfwJ",
+     "title": "A survey on resource management in joint communication and computing-embedded SAGIN",
+     "authors": "Q Chen, Z Guo, W Meng, S Han, C Li…",
+     "venue": "Surveys & Tutorials",
+     "year": 2024,
+     "citations": 169,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10579820/"
+    },
+    {
+     "id": "Amu2y-8dmXIJ",
+     "title": "Leon: simulating handover integrating non-terrestrial networks with 5g and beyond",
+     "authors": "J Zhang, L Zhong, Y Yang, J Schulz…",
+     "venue": "Proceedings of the 10th",
+     "year": 2024,
+     "citations": 6,
+     "url": "https://dl.acm.org/doi/abs/10.1145/3661810.3663470"
+    },
+    {
+     "id": "h-LTtE9uD-4J",
+     "title": "Inverse-Dash Rectangular Slot 2x4 Array 5.8 GHz Antenna for Multiple Access Integration of IoT Systems and Terrestrial Satellite Communication Networks",
+     "authors": "I Mujahiddin, BB Subagio…",
+     "venue": "International",
+     "year": 2025,
+     "citations": 0,
+     "url": "https://publisher.uthm.edu.my/ojs/index.php/ijie/article/view/19830"
+    }
+   ]
   },
   {
+   "title": "Towards Scalable Federated Container Orchestration: The CODECO Approach",
+   "year": 2026,
+   "cluster": "6115034887473851773",
+   "cited_by": 2,
+   "citations": [
+    {
+     "id": "Znp-TZ6noYoJ",
+     "title": "Building a Low-cost Network Digital Twin for the IoT-Edge-Cloud Continuum Using Open-Source Tooling",
+     "authors": "J Amaral, RC Sofia",
+     "venue": "arXiv preprint arXiv:2606.24853",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://arxiv.org/abs/2606.24853"
+    },
+    {
+     "id": "fFPLZyiohEAJ",
+     "title": "AI-driven resource and service management in the cloud-edge computing continuum, with emphasis on resource optimization and quality of experience",
+     "authors": "EG Paraskevoulakou",
+     "venue": "",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://dione.lib.unipi.gr/xmlui/handle/unipi/19553"
+    }
+   ]
+  },
+  {
+   "title": "Trade-Offs in Kubernetes Security and Energy Consumption",
+   "year": 2026,
+   "cluster": "5192642429425254839",
+   "cited_by": 2,
+   "citations": [
+    {
+     "id": "B68k8shXSaAJ",
+     "title": "Kerberos vs. Public Key Authentication in z/OS Environments: Performance, Scalability, and Security Trade-offs",
+     "authors": "RK Shaw",
+     "venue": "2026 9th International Conference on Computing",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11625111/"
+    },
+    {
+     "id": "wxY6dl2C3-4J",
+     "title": "RESOURCE FOOTPRINT VS SYSTEM STABILITY: TRADE-OFFS IN KUBERNETES API SECURITY",
+     "authors": "K Popow, A Mycek",
+     "venue": "",
+     "year": null,
+     "citations": 0,
+     "url": "https://www.researchgate.net/profile/Andrzej-Mycek/publication/408250324_Resource_Footprint_vs_System_Stability_Trade-Offs_in_Kubernetes_API_Security/links/6a43b9811681584dea2bffd0/Resource-Footprint-vs-System-Stability-Trade-Offs-in-Kubernetes-API-Security.pdf"
+    }
+   ]
+  },
+  {
+<<<<<<< HEAD
    "title": "Towards Scalable Federated Container Orchestration: The CODECO Approach",
    "year": 2026,
    "cluster": "6115034887473851773",
@@ -964,11 +1099,36 @@
    "citations": []
   },
   {
+=======
+>>>>>>> 02bee6a (Update Google Scholar citations and literature map)
    "title": "Satellite assisted disrupted communications in OMNeT++: Experiments and IoT Case Study",
    "year": 2022,
    "cluster": "1979407623313508841",
    "cited_by": 2,
+<<<<<<< HEAD
    "citations": []
+=======
+   "citations": [
+    {
+     "id": "VIPBaKMtVfwJ",
+     "title": "A survey on resource management in joint communication and computing-embedded SAGIN",
+     "authors": "Q Chen, Z Guo, W Meng, S Han, C Li…",
+     "venue": "Surveys & Tutorials",
+     "year": 2024,
+     "citations": 169,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10579820/"
+    },
+    {
+     "id": "Pi1WmkaojXgJ",
+     "title": "A survey of congestion control in vehicular ad-hoc networks (VANET)",
+     "authors": "N Mohammed, RA Kadhim",
+     "venue": "2022 Iraqi International",
+     "year": 2022,
+     "citations": 3,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10010504/"
+    }
+   ]
+>>>>>>> 02bee6a (Update Google Scholar citations and literature map)
   }
  ]
 }
