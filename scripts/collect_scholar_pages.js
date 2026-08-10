@@ -31,6 +31,9 @@
  *   5. It downloads scholar_pages.json.  Point the crawl at it:
  *      python3 scripts/fetch_scholar_citations.py --from-pages ~/Downloads/scholar_pages.json
  *
+ * python3 scripts/fetch_scholar_citations.py --from-pages /mnt/c/XXX/scholar_pages.json
+ * python3 scripts/build_literature_map.py
+ * 
  * Nothing leaves the browser: the fetches are same-origin, a resume file is
  * read locally through a file picker, and the output is written by the
  * browser's own download.  The capture is signed-in HTML, so it can contain

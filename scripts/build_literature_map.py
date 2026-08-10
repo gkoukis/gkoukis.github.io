@@ -51,7 +51,7 @@ from datetime import datetime, timezone
 from html import unescape
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
+from urllib.parse import quote_plus, urlencode
 from urllib.request import Request, urlopen
 
 
@@ -289,21 +289,28 @@ def node_from_scholar(entry: dict, group: str) -> dict:
     """Node for a paper only Google Scholar knows about.
 
     Scholar publishes no identifiers, so the node carries the result URL instead
-    of a DOI and the page links to that; the citing count is Scholar's own.
+    of a DOI and the page links to that; the citing count is Scholar's own.  A
+    "[CITATION]" result -- work Scholar knows about only from other
+    bibliographies -- has no url of its own; a search link keeps it clickable
+    rather than dropping a citation that is otherwise perfectly identifiable.
     """
     authors = [a.strip() for a in (entry.get("authors") or "").split(",") if a.strip()]
     lead = authors[0] if authors else ""
+    title = unescape(entry.get("title") or "")
+    url = entry.get("url") or (
+        f"https://scholar.google.com/scholar?q={quote_plus(title)}" if title else ""
+    )
     return {
         "id": "GS" + str(entry.get("id")),
         "group": group,
-        "title": unescape(entry.get("title") or ""),
+        "title": title,
         "author": f"{lead} et al." if len(authors) > 1 else lead,
         "year": entry.get("year"),
         "venue": (entry.get("venue") or "")[:80],
         "citations": entry.get("citations") or 0,
         "topic": "",
         "doi": "",
-        "url": entry.get("url") or "",
+        "url": url,
     }
 
 

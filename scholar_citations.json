@@ -1,11 +1,7 @@
 {
  "scholar_id": "E2bGWsUAAAAJ",
  "source": "https://scholar.google.com/citations?user=E2bGWsUAAAAJ&hl=en",
-<<<<<<< HEAD
- "fetched_at": "2026-08-10T06:56:54.544687+00:00",
-=======
  "fetched_at": "2026-08-10T14:54:29.587296+00:00",
->>>>>>> 02bee6a (Update Google Scholar citations and literature map)
  "papers": [
   {
    "title": "All about Delay-Tolerant Networking (DTN) Contributions to Future Internet",
@@ -676,11 +672,7 @@
      "venue": "Edge-Enabled 6G",
      "year": null,
      "citations": 0,
-<<<<<<< HEAD
-     "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=GUb1EQAAQBAJ&amp;oi=fnd&amp;pg=PA209&amp;ots=W4l3NyLSSX&amp;sig=wIX4_mXGovb_nf-0wL5OGlfK4LI"
-=======
      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=GUb1EQAAQBAJ&amp;oi=fnd&amp;pg=PA209&amp;ots=W4l3NAQTYX&amp;sig=ESs2MS1xJPcew8jHkk1QpGmEn1E"
->>>>>>> 02bee6a (Update Google Scholar citations and literature map)
     },
     {
      "id": "COaM-0HjmeAJ",
@@ -1084,30 +1076,10 @@
    ]
   },
   {
-<<<<<<< HEAD
-   "title": "Towards Scalable Federated Container Orchestration: The CODECO Approach",
-   "year": 2026,
-   "cluster": "6115034887473851773",
-   "cited_by": 2,
-   "citations": []
-  },
-  {
-   "title": "Trade-Offs in Kubernetes Security and Energy Consumption",
-   "year": 2026,
-   "cluster": "5192642429425254839",
-   "cited_by": 2,
-   "citations": []
-  },
-  {
-=======
->>>>>>> 02bee6a (Update Google Scholar citations and literature map)
    "title": "Satellite assisted disrupted communications in OMNeT++: Experiments and IoT Case Study",
    "year": 2022,
    "cluster": "1979407623313508841",
    "cited_by": 2,
-<<<<<<< HEAD
-   "citations": []
-=======
    "citations": [
     {
      "id": "VIPBaKMtVfwJ",
@@ -1128,7 +1100,6 @@
      "url": "https://ieeexplore.ieee.org/abstract/document/10010504/"
     }
    ]
->>>>>>> 02bee6a (Update Google Scholar citations and literature map)
   }
  ]
 }
