@@ -1,13 +1,13 @@
 {
  "scholar_id": "E2bGWsUAAAAJ",
  "source": "https://scholar.google.com/citations?user=E2bGWsUAAAAJ&hl=en",
- "fetched_at": "2026-08-10T14:54:29.587296+00:00",
+ "fetched_at": "2026-09-28T12:00:17.305969+00:00",
  "papers": [
   {
    "title": "All about Delay-Tolerant Networking (DTN) Contributions to Future Internet",
    "year": 2024,
    "cluster": "5987383161469789974",
-   "cited_by": 50,
+   "cited_by": 61,
    "citations": [
     {
      "id": "vqnV5AWXrjwJ",
@@ -15,7 +15,7 @@
      "authors": "AP Delladetsimas, S Papangelou, E Iosif, G Giaglis",
      "venue": "Computers",
      "year": 2024,
-     "citations": 24,
+     "citations": 26,
      "url": "https://www.mdpi.com/2073-431X/13/12/329"
     },
     {
@@ -24,13 +24,13 @@
      "authors": "S Duangsuwan, K Klubsuwan",
      "venue": "Drones (2504-446X)",
      "year": 2025,
-     "citations": 8,
+     "citations": 10,
      "url": "https://www.researchgate.net/profile/Sarun-Duangsuwan/publication/397489841_Underwater_Drone-Enabled_Wireless_Communication_Systems_for_Smart_Marine_Communications_A_Study_of_Enabling_Technologies_Opportunities_and_Challenges/links/691829681555db2ebd5db224/Underwater-Drone-Enabled-Wireless-Communication-Systems-for-Smart-Marine-Communications-A-Study-of-Enabling-Technologies-Opportunities-and-Challenges.pdf"
     },
     {
      "id": "uqtsHkwA5tEJ",
-     "title": "Towards Intelligent Caching in DSR Protocols: Route Compression, Hierarchical Structures, and Link-Aware Optimization in MANETs",
-     "authors": "AK Obaid, ME Rusli, S Yussof",
+     "title": "Toward Intelligent Caching in DSR Protocols: Route Compression, Hierarchical Structures, and Link-Aware Optimization in MANETs",
+     "authors": "AK Obaid, MEB Rusli, S Yussof",
      "venue": "IEEE Access",
      "year": 2025,
      "citations": 5,
@@ -60,7 +60,7 @@
      "authors": "MA Al Mamun, M Li, BK Pramanik",
      "venue": "IEEE Access",
      "year": 2024,
-     "citations": 9,
+     "citations": 10,
      "url": "https://ieeexplore.ieee.org/abstract/document/10756696/"
     },
     {
@@ -87,7 +87,7 @@
      "authors": "T Le",
      "venue": "Computer Communications",
      "year": 2026,
-     "citations": 1,
+     "citations": 2,
      "url": "https://www.sciencedirect.com/science/article/pii/S0140366426000228"
     },
     {
@@ -96,7 +96,7 @@
      "authors": "D Costa, EM Rocha, V Costa…",
      "venue": "Journal of Ambient",
      "year": 2026,
-     "citations": 1,
+     "citations": 2,
      "url": "https://journals.sagepub.com/doi/abs/10.1177/18761364251374713"
     },
     {
@@ -116,6 +116,24 @@
      "year": 2026,
      "citations": 0,
      "url": "https://ieeexplore.ieee.org/abstract/document/11481813/"
+    },
+    {
+     "id": "fJv0lguKZVEJ",
+     "title": "Adaptive Gravity Routing with Deadlock-Triggered Learning for VDTN",
+     "authors": "Z Xuemin, L Xin, S Shuangyuan, M Chuanxiang…",
+     "venue": "Journal of Signal",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://link.springer.com/article/10.1007/s11265-026-02015-7"
+    },
+    {
+     "id": "mVv0J8ZGxHkJ",
+     "title": "A Human-in-the-Loop Decision Framework for Sustainable and Resilient Livestock Systems Under Intermittent Connectivity",
+     "authors": "S Nikolaos, S Sarti, C Alexandros, C Dimitrios…",
+     "venue": "",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://search.proquest.com/openview/1fe68c5c3e9bc0da24d4602386fdf071/1?pq-origsite=gscholar&amp;cbl=2032327"
     },
     {
      "id": "7d2m2pXpvioJ",
@@ -145,12 +163,39 @@
      "url": "https://link.springer.com/article/10.1007/s11277-026-12171-5"
     },
     {
+     "id": "N76GRJdgFzsJ",
+     "title": "WiFi and BLE advertisement based communication for ephemeral interactions: A survey",
+     "authors": "M Issa, P Couderc, JM Bonnin",
+     "venue": "Peer-to-Peer Networking and Applications",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://link.springer.com/article/10.1007/s12083-026-02295-7"
+    },
+    {
+     "id": "iSVbzFbIUJcJ",
+     "title": "Robots in mine search and rescue operations: a review of platforms and design requirements",
+     "authors": "R Bakzadeh, V Androulakis, H Khaniani…",
+     "venue": "Frontiers in Robotics",
+     "year": 2026,
+     "citations": 3,
+     "url": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2026.1857704/full"
+    },
+    {
+     "id": "2R79uItKF78J",
+     "title": "Joint buffer admission and contact-window-aware scheduling for heterogeneous traffic in cislunar DTNs",
+     "authors": "J Zhang, X Xie, Z Yu, K Kang, S Cao",
+     "venue": "Computer Communications",
+     "year": 2026,
+     "citations": 2,
+     "url": "https://www.sciencedirect.com/science/article/pii/S0140366426002756"
+    },
+    {
      "id": "YjUEeZJiv-8J",
      "title": "A Modified PRoPHET Protocol for Energy and Buffer Optimization in Delay Tolerant Networks: Performance Evaluation for an IoT Smart City Scenario",
      "authors": "E Spaho, O Jaupi, K Toplana…",
      "venue": "International Journal of",
      "year": 2025,
-     "citations": 1,
+     "citations": 2,
      "url": "https://journals.tultech.eu/index.php/ijitis/article/view/320"
     },
     {
@@ -186,7 +231,7 @@
      "authors": "AL Arda, S Alam, A Agussalim…",
      "venue": "Electronics and Control",
      "year": 2026,
-     "citations": 2,
+     "citations": 0,
      "url": "https://telkomnika.uad.ac.id/index.php/TELKOMNIKA/article/view/27102"
     },
     {
@@ -224,6 +269,15 @@
      "year": 2024,
      "citations": 2,
      "url": "https://www.researchgate.net/profile/Tiken-Moirangthem/publication/384973001_An_Optimal_Auction-Based_Routing_Scheme_for_Detecting_and_Managing_Selfish_Nodes_in_Delay-Tolerant_Networks/links/67108db168ac3041499d3f2c/An-Optimal-Auction-Based-Routing-Scheme-for-Detecting-and-Managing-Selfish-Nodes-in-Delay-Tolerant-Networks.pdf"
+    },
+    {
+     "id": "HnijydYEP5QJ",
+     "title": "On the Robustness of Traveling Networks: Quantifying Operability, Observability, and Controllability and Designing Self-Healing Mechanisms",
+     "authors": "K Yokoyama, K Aoyama, S Inoue…",
+     "venue": "2026 IEEE 50th Annual",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11645524/"
     },
     {
      "id": "azAZTH-MeVoJ",
@@ -289,6 +343,15 @@
      "url": "https://ieeexplore.ieee.org/abstract/document/11213029/"
     },
     {
+     "id": "5v7j2jbDMi0J",
+     "title": "Mediation infrastructure for ephement interactions in smart environments",
+     "authors": "M Issa",
+     "venue": "",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://theses.hal.science/tel-05760963/"
+    },
+    {
      "id": "txsyreOqymAJ",
      "title": "Secure Data Recovery for Disruption-Resilient Decentralized Military Networks",
      "authors": "S Kumar, SA Shenoy, R Pinto, SK GM…",
@@ -303,7 +366,7 @@
      "authors": "M Manjunath, R Mishra, KS Vani",
      "venue": "International Conference on",
      "year": 2026,
-     "citations": 0,
+     "citations": 1,
      "url": "https://ieeexplore.ieee.org/abstract/document/11582611/"
     },
     {
@@ -334,6 +397,15 @@
      "url": "https://openurl.ebsco.com/contentitem/gcd:188637548?sid=ebsco:plink:crawler-gcd&amp;id=ebsco:gcd:188637548&amp;crl=c&amp;jrnl=09731318"
     },
     {
+     "id": "v8wfHjny_wYJ",
+     "title": "Architectural and functional organization of information technology for ensuring the survivability of an information system on a mobile platform",
+     "authors": "VM Tkachov, IV Ruban",
+     "venue": "PROBLEMS IN PROGRAMMING",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://pp.isofts.kiev.ua/index.php/ojs1/article/view/1052"
+    },
+    {
      "id": "LZXmolnY8_oJ",
      "title": "Information Sharing System during Disasters using Relocatable Edge Servers and NAMI Application",
      "authors": "T Ogino",
@@ -343,6 +415,15 @@
      "url": "https://ieeexplore.ieee.org/abstract/document/11274292/"
     },
     {
+     "id": "uVwsFYAqbsMJ",
+     "title": "STER-A+: Trust and Energy-Aware Routing for LEO CubeSat Delay-Tolerant Networks",
+     "authors": "SG Rahul",
+     "venue": "2026 IEEE 1st International Conference on",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11691856/"
+    },
+    {
      "id": "K3KdvUojTwkJ",
      "title": "CRA: Cost-Effective and Highly Reusable Architecture of Space-Air-Ground Integrated Network Based on TCP and DTN",
      "authors": "S Guo, L Ma, M Wang, L Liu…",
@@ -350,6 +431,15 @@
      "year": 2024,
      "citations": 0,
      "url": "https://ieeexplore.ieee.org/abstract/document/10913324/"
+    },
+    {
+     "id": "XOOSz2j1glQJ",
+     "title": "Latency and Reliability Assessment of MQTT over QUIC in High-Mobility Internet of Things Applications",
+     "authors": "S Colombo",
+     "venue": "",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://www.researchgate.net/profile/Prabu-Thia/publication/414367008_Latency_and_Reliability_Assessment_of_MQTT_over_QUIC_in_High-Mobility_Internet_of_Things_Applications/links/6aaa7af9b2a3ac5b9d89ac0d/Latency-and-Reliability-Assessment-of-MQTT-over-QUIC-in-High-Mobility-Internet-of-Things-Applications.pdf"
     },
     {
      "id": "cvrC3lIU8xcJ",
@@ -366,8 +456,17 @@
      "authors": "PL Paikrao, SJ Meshram",
      "venue": "ICTACT Journal on Communication",
      "year": 2024,
-     "citations": 1,
+     "citations": 0,
      "url": "https://ictactjournals.in/paper/IJCT_Vol_15_Iss_4_Paper_6_3366_3373.pdf"
+    },
+    {
+     "id": "lLvVK7d8iM0J",
+     "title": "DTN Key Management in a Security Context Agnostic Way",
+     "authors": "M Würbsa, L Baumgärtner, M Wallum",
+     "venue": "",
+     "year": 2025,
+     "citations": 0,
+     "url": "https://publications.spaceops.org/2025/SpaceOps2025_0108.pdf"
     },
     {
      "id": "cTct_fOqoxwJ",
@@ -447,7 +546,7 @@
      "authors": "RF Silva, MO Aguiar…",
      "venue": "Revista Principia",
      "year": 2025,
-     "citations": 0,
+     "citations": 1,
      "url": "https://periodicos.ifpb.edu.br/index.php/principia/article/view/8632"
     },
     {
@@ -491,7 +590,7 @@
      "authors": "LM Saini, P Ajmani, V Asha…",
      "venue": "and Informatics (IC3I",
      "year": 2024,
-     "citations": 8,
+     "citations": 11,
      "url": "https://ieeexplore.ieee.org/abstract/document/10828876/"
     },
     {
@@ -500,7 +599,7 @@
      "authors": "S Stanišić, M Vesković, O Ristić…",
      "venue": "2025 24th International",
      "year": 2025,
-     "citations": 6,
+     "citations": 8,
      "url": "https://ieeexplore.ieee.org/abstract/document/10959185/"
     },
     {
@@ -527,7 +626,7 @@
      "authors": "TM Giurgică, A Sârbu, B Klauer, L Găină",
      "venue": "Applied Sciences",
      "year": 2025,
-     "citations": 0,
+     "citations": 1,
      "url": "https://www.mdpi.com/2076-3417/15/24/12991"
     },
     {
@@ -572,7 +671,7 @@
      "authors": "S Chippagiri",
      "venue": "",
      "year": 2024,
-     "citations": 13,
+     "citations": 15,
      "url": ""
     },
     {
@@ -590,7 +689,7 @@
      "authors": "S Kaiser, O Alqaisi, AŞ Tosun…",
      "venue": "2025 IEEE 22nd",
      "year": 2025,
-     "citations": 0,
+     "citations": 1,
      "url": "https://ieeexplore.ieee.org/abstract/document/10976159/"
     },
     {
@@ -672,7 +771,7 @@
      "venue": "Edge-Enabled 6G",
      "year": null,
      "citations": 0,
-     "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=GUb1EQAAQBAJ&amp;oi=fnd&amp;pg=PA209&amp;ots=W4l3NAQTYX&amp;sig=ESs2MS1xJPcew8jHkk1QpGmEn1E"
+     "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=GUb1EQAAQBAJ&amp;oi=fnd&amp;pg=PA209&amp;ots=W4mZPDNP-U&amp;sig=k8KQdbQhT4ONXg35KP3B3KSUmsA"
     },
     {
      "id": "COaM-0HjmeAJ",
@@ -733,7 +832,7 @@
      "authors": "LF Bittencourt, R Rodrigues-Filho, J Spillner…",
      "venue": "Computer Science",
      "year": 2025,
-     "citations": 26,
+     "citations": 31,
      "url": "https://www.sciencedirect.com/science/article/pii/S1574013725000589"
     },
     {
@@ -742,7 +841,7 @@
      "authors": "RC Sofia, J Salomon, S Ferlin-Reiter…",
      "venue": "IEEE",
      "year": 2024,
-     "citations": 39,
+     "citations": 40,
      "url": "https://ieeexplore.ieee.org/abstract/document/10540390/"
     },
     {
@@ -778,7 +877,7 @@
      "authors": "I Dermentzis, G Koukis, V Tsaoussidis",
      "venue": "Urban Science",
      "year": 2026,
-     "citations": 2,
+     "citations": 3,
      "url": "https://www.mdpi.com/2413-8851/10/2/81"
     },
     {
@@ -787,7 +886,7 @@
      "authors": "RC Sofia, J Salomon, R Carrol, L Garcés-Erice…",
      "venue": "arXiv preprint arXiv",
      "year": 2026,
-     "citations": 2,
+     "citations": 4,
      "url": "https://arxiv.org/abs/2601.13351"
     },
     {
@@ -823,7 +922,7 @@
      "authors": "G Samaras, M Mertiri, ME Xezonaki…",
      "venue": "IEEE Symposium on",
      "year": 2024,
-     "citations": 2,
+     "citations": 3,
      "url": "https://ieeexplore.ieee.org/abstract/document/10733560/"
     },
     {
@@ -841,7 +940,7 @@
      "authors": "A Lalaguna, P Townend, B Ojaghi…",
      "venue": "2024 Mediterranean",
      "year": 2024,
-     "citations": 2,
+     "citations": 4,
      "url": "https://ieeexplore.ieee.org/abstract/document/10697004/"
     },
     {
@@ -868,7 +967,7 @@
      "authors": "PD Deshmukh",
      "venue": "",
      "year": 2025,
-     "citations": 0,
+     "citations": 1,
      "url": "https://norma.ncirl.ie/8092/"
     },
     {
@@ -894,7 +993,7 @@
      "authors": "I Dermentzis, G Koukis, V Tsaoussidis",
      "venue": "Urban Science",
      "year": 2026,
-     "citations": 2,
+     "citations": 3,
      "url": "https://www.mdpi.com/2413-8851/10/2/81"
     },
     {
@@ -903,7 +1002,7 @@
      "authors": "GNN Barbosa, M Andreoni, TMT Nguyen…",
      "venue": "Annals of",
      "year": 2026,
-     "citations": 0,
+     "citations": 3,
      "url": "https://link.springer.com/article/10.1007/s12243-026-01197-2"
     },
     {
@@ -974,7 +1073,7 @@
      "authors": "K Anastasiou, S Skaperas, L Mamatas",
      "venue": "Applied Soft Computing",
      "year": 2026,
-     "citations": 0,
+     "citations": 2,
      "url": "https://www.sciencedirect.com/science/article/pii/S1568494626005107"
     },
     {
@@ -985,6 +1084,58 @@
      "year": 2026,
      "citations": 0,
      "url": "https://asu-pa.nure.ua/article/view/363106"
+    }
+   ]
+  },
+  {
+   "title": "Towards Scalable Federated Container Orchestration: The CODECO Approach",
+   "year": 2026,
+   "cluster": "6115034887473851773",
+   "cited_by": 4,
+   "citations": [
+    {
+     "id": "Znp-TZ6noYoJ",
+     "title": "Building a Low-cost Network Digital Twin for the IoT-Edge-Cloud Continuum Using Open-Source Tooling",
+     "authors": "J Amaral, RC Sofia",
+     "venue": "arXiv preprint arXiv:2606.24853",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://arxiv.org/abs/2606.24853"
+    },
+    {
+     "id": "fFPLZyiohEAJ",
+     "title": "AI-driven resource and service management in the cloud-edge computing continuum, with emphasis on resource optimization and quality of experience",
+     "authors": "EG Paraskevoulakou",
+     "venue": "",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://dione.lib.unipi.gr/xmlui/handle/unipi/19553"
+    }
+   ]
+  },
+  {
+   "title": "Trade-Offs in Kubernetes Security and Energy Consumption",
+   "year": 2026,
+   "cluster": "5192642429425254839",
+   "cited_by": 3,
+   "citations": [
+    {
+     "id": "B68k8shXSaAJ",
+     "title": "Kerberos vs. Public Key Authentication in z/OS Environments: Performance, Scalability, and Security Trade-offs",
+     "authors": "RK Shaw",
+     "venue": "2026 9th International Conference on Computing",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11625111/"
+    },
+    {
+     "id": "wxY6dl2C3-4J",
+     "title": "RESOURCE FOOTPRINT VS SYSTEM STABILITY: TRADE-OFFS IN KUBERNETES API SECURITY",
+     "authors": "K Popow, A Mycek",
+     "venue": "",
+     "year": null,
+     "citations": 0,
+     "url": "https://www.researchgate.net/profile/Andrzej-Mycek/publication/408250324_Resource_Footprint_vs_System_Stability_Trade-Offs_in_Kubernetes_API_Security/links/6a43b9811681584dea2bffd0/Resource-Footprint-vs-System-Stability-Trade-Offs-in-Kubernetes-API-Security.pdf"
     }
    ]
   },
@@ -1020,58 +1171,6 @@
      "year": 2025,
      "citations": 0,
      "url": "https://publisher.uthm.edu.my/ojs/index.php/ijie/article/view/19830"
-    }
-   ]
-  },
-  {
-   "title": "Towards Scalable Federated Container Orchestration: The CODECO Approach",
-   "year": 2026,
-   "cluster": "6115034887473851773",
-   "cited_by": 2,
-   "citations": [
-    {
-     "id": "Znp-TZ6noYoJ",
-     "title": "Building a Low-cost Network Digital Twin for the IoT-Edge-Cloud Continuum Using Open-Source Tooling",
-     "authors": "J Amaral, RC Sofia",
-     "venue": "arXiv preprint arXiv:2606.24853",
-     "year": 2026,
-     "citations": 0,
-     "url": "https://arxiv.org/abs/2606.24853"
-    },
-    {
-     "id": "fFPLZyiohEAJ",
-     "title": "AI-driven resource and service management in the cloud-edge computing continuum, with emphasis on resource optimization and quality of experience",
-     "authors": "EG Paraskevoulakou",
-     "venue": "",
-     "year": 2026,
-     "citations": 0,
-     "url": "https://dione.lib.unipi.gr/xmlui/handle/unipi/19553"
-    }
-   ]
-  },
-  {
-   "title": "Trade-Offs in Kubernetes Security and Energy Consumption",
-   "year": 2026,
-   "cluster": "5192642429425254839",
-   "cited_by": 2,
-   "citations": [
-    {
-     "id": "B68k8shXSaAJ",
-     "title": "Kerberos vs. Public Key Authentication in z/OS Environments: Performance, Scalability, and Security Trade-offs",
-     "authors": "RK Shaw",
-     "venue": "2026 9th International Conference on Computing",
-     "year": 2026,
-     "citations": 0,
-     "url": "https://ieeexplore.ieee.org/abstract/document/11625111/"
-    },
-    {
-     "id": "wxY6dl2C3-4J",
-     "title": "RESOURCE FOOTPRINT VS SYSTEM STABILITY: TRADE-OFFS IN KUBERNETES API SECURITY",
-     "authors": "K Popow, A Mycek",
-     "venue": "",
-     "year": null,
-     "citations": 0,
-     "url": "https://www.researchgate.net/profile/Andrzej-Mycek/publication/408250324_Resource_Footprint_vs_System_Stability_Trade-Offs_in_Kubernetes_API_Security/links/6a43b9811681584dea2bffd0/Resource-Footprint-vs-System-Stability-Trade-Offs-in-Kubernetes-API-Security.pdf"
     }
    ]
   },
