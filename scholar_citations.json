@@ -1,14 +1,23 @@
 {
  "scholar_id": "E2bGWsUAAAAJ",
  "source": "https://scholar.google.com/citations?user=E2bGWsUAAAAJ&hl=en",
- "fetched_at": "2026-10-19T11:16:28.011474+00:00",
+ "fetched_at": "2026-11-16T14:59:41.225542+00:00",
  "papers": [
   {
    "title": "All about Delay-Tolerant Networking (DTN) Contributions to Future Internet",
    "year": 2024,
    "cluster": "5987383161469789974",
-   "cited_by": 62,
+   "cited_by": 65,
    "citations": [
+    {
+     "id": "vqnV5AWXrjwJ",
+     "title": "Integrating blockchains with the IoT: A review of architectures and marine use cases",
+     "authors": "AP Delladetsimas, S Papangelou, E Iosif, G Giaglis",
+     "venue": "Computers",
+     "year": 2024,
+     "citations": 28,
+     "url": "https://www.mdpi.com/2073-431X/13/12/329"
+    },
     {
      "id": "dNdbXe6jxaAJ",
      "title": "Underwater Drone-Enabled Wireless Communication Systems for Smart Marine Communications: A Study of Enabling Technologies, Opportunities, and …",
@@ -28,13 +37,22 @@
      "url": "https://ieeexplore.ieee.org/abstract/document/11127104/"
     },
     {
+     "id": "ZS4UQEizTbgJ",
+     "title": "Towards nomadic 6g communication networks: Implications on architecture, standardization, and regulatory aspects",
+     "authors": "D Lindenschmitt, MR Crippa…",
+     "venue": "2025 IEEE Conference",
+     "year": 2025,
+     "citations": 5,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11230722/?casa_token=vD_AnBDWFPYAAAAA:f2jTEy12wK1exlBa_DOG3KTblbfMjiNbO17Bg6rmHJmlTzJDIgwnozizy-5sCHA42W4QabWk"
+    },
+    {
      "id": "ZSvLyJgthAkJ",
      "title": "LTGAT: A lightweight temporal graph attention accelerator for deterministic routing in resource-constrained delay-tolerant non-terrestrial networks",
      "authors": "DI Elewaily, AI Saleh, HA Ali, MM Abdelsalam",
      "venue": "Computer Networks",
      "year": 2026,
-     "citations": 1,
-     "url": "https://www.sciencedirect.com/science/article/pii/S1389128626000472"
+     "citations": 2,
+     "url": "https://www.sciencedirect.com/science/article/pii/S1389128626000472?casa_token=hmHIdJXcFj0AAAAA:cC6LZqAFiK8T2QSpuIqZAp4cnpTco9vkS5pm_iuUq2vlc2sx6aWUK6JlFB-JsE7nXHXlxz3T"
     },
     {
      "id": "gyZMvuVTwrgJ",
@@ -55,13 +73,31 @@
      "url": "https://www.mdpi.com/2076-3417/15/16/9133"
     },
     {
+     "id": "hAsGndPUQ-4J",
+     "title": "DualSynNet: A Dual-Center Collaborative Space Network with Federated Graph Reinforcement Learning for Autonomous Task Optimization",
+     "authors": "X Niu, J Yuan, L Fan, K Zha",
+     "venue": "Aerospace",
+     "year": 2025,
+     "citations": 2,
+     "url": "https://www.mdpi.com/2226-4310/12/12/1051"
+    },
+    {
+     "id": "N76GRJdgFzsJ",
+     "title": "WiFi and BLE advertisement based communication for ephemeral interactions: A survey",
+     "authors": "M Issa, P Couderc, JM Bonnin",
+     "venue": "Peer-to-Peer Networking and Applications",
+     "year": 2026,
+     "citations": 1,
+     "url": "https://link.springer.com/article/10.1007/s12083-026-02295-7"
+    },
+    {
      "id": "tpnadr2Mqs0J",
      "title": "A unified utility-based framework for joint scheduling and buffer management in Delay Tolerant Networks",
      "authors": "T Le",
      "venue": "Computer Communications",
      "year": 2026,
-     "citations": 4,
-     "url": "https://www.sciencedirect.com/science/article/pii/S0140366426000228"
+     "citations": 5,
+     "url": "https://www.sciencedirect.com/science/article/pii/S0140366426000228?casa_token=JW9PTCAdxUUAAAAA:cxzGOncrGkeEXSj_am2pQIVdscS7sYJXlOAe6MRMxSK8Z3_B5WQm7IhcMAi-Ta4ur1k8nuYl"
     },
     {
      "id": "jRWEuvo-yPoJ",
@@ -69,7 +105,7 @@
      "authors": "D Costa, EM Rocha, V Costa…",
      "venue": "Journal of Ambient",
      "year": 2026,
-     "citations": 2,
+     "citations": 3,
      "url": "https://journals.sagepub.com/doi/abs/10.1177/18761364251374713"
     },
     {
@@ -82,13 +118,85 @@
      "url": "https://www.mdpi.com/2071-1050/18/17/8858"
     },
     {
+     "id": "sWgPUCyAsd4J",
+     "title": "A Review of Delay-Tolerant Networks for IoT: Multi-Dimensional Taxonomy and Deployment Perspectives",
+     "authors": "US Hachim, A Abu-Samah, NF Abdullah…",
+     "venue": "IEEE Internet of",
+     "year": 2026,
+     "citations": 2,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11622448/"
+    },
+    {
+     "id": "EELHUVCO_owJ",
+     "title": "GULL: Graph-guided Hierarchical Reinforcement Learning for Intelligent Aerial Ferry Routing in Digital Twins",
+     "authors": "J Fan, L Lei, S Cai, G Shen, Z Li",
+     "venue": "IEEE Transactions on",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11481813/"
+    },
+    {
      "id": "fJv0lguKZVEJ",
      "title": "Adaptive Gravity Routing with Deadlock-Triggered Learning for VDTN",
      "authors": "Z Xuemin, L Xin, S Shuangyuan, M Chuanxiang…",
      "venue": "Journal of Signal",
      "year": 2026,
      "citations": 0,
-     "url": "https://link.springer.com/article/10.1007/s11265-026-02015-7"
+     "url": "https://idp.springer.com/authorize/casa?redirect_uri=https://link.springer.com/article/10.1007/s11265-026-02015-7&amp;casa_token=WUZzd90PUCQAAAAA:rDzwERshfewziiUou_ej-I_-67ksC0Llog-oXfRXlVKRyytepQEHS4_qyUhcCiUDQdh4y2hDs4F7TdM"
+    },
+    {
+     "id": "7d2m2pXpvioJ",
+     "title": "Direct-to-satellite internet of things (DtS-IoT): a tutorial review on architectures, protocols, and future directions",
+     "authors": "S Akar, A Compagnoni, JA Fraire…",
+     "venue": "in Communications and",
+     "year": 2026,
+     "citations": 1,
+     "url": "https://www.frontiersin.org/journals/communications-and-networks/articles/10.3389/frcmn.2026.1750955/full"
+    },
+    {
+     "id": "stW0BzKXkVAJ",
+     "title": "VACA: A Variance-Aware Congestion Avoidance framework for heterogeneous delay tolerant networks",
+     "authors": "T Le",
+     "venue": "Ad Hoc Networks",
+     "year": 2026,
+     "citations": 2,
+     "url": "https://www.sciencedirect.com/science/article/pii/S1570870526001800?casa_token=Zkhey1DT3bgAAAAA:F1sGrzRh5wenhF9I--HqPLwUA1ZrW_vLIZguRvwxzwO_YlNKW6SKwpDX-ePytrCvDtnAB1G0"
+    },
+    {
+     "id": "My2L9K92y4QJ",
+     "title": "Ergonomic Opportunistic Networks: A Human-Centric Architecture for Adaptive Resource Orchestration",
+     "authors": "CB Avoussoukpo, A Camara, G Mwitende",
+     "venue": "Future Internet",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://www.mdpi.com/1999-5903/18/10/534"
+    },
+    {
+     "id": "EWsGuHYHZI4J",
+     "title": "A Comprehensive Review of Energy Efficient Routing Protocols in Delay Tolerant Networks: Categorization, Insights, Comparative and Empirical Evaluation",
+     "authors": "Savita, A Verma",
+     "venue": "Wireless Personal Communications",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://idp.springer.com/authorize/casa?redirect_uri=https://link.springer.com/article/10.1007/s11277-026-12171-5&amp;casa_token=MFhPsTjX1u4AAAAA:d83JcVmhzp_Ay9Cpgqdy0jlMl5Sq9UaBqqfYdcX8V8Qf6JczLN7wHduG-i_ohu3sf7jxuJUcOuTivgE"
+    },
+    {
+     "id": "YjUEeZJiv-8J",
+     "title": "A Modified PRoPHET Protocol for Energy and Buffer Optimization in Delay Tolerant Networks: Performance Evaluation for an IoT Smart City Scenario",
+     "authors": "E Spaho, O Jaupi, K Toplana…",
+     "venue": "International Journal of",
+     "year": 2025,
+     "citations": 2,
+     "url": "https://journals.tultech.eu/index.php/ijitis/article/view/320"
+    },
+    {
+     "id": "2R79uItKF78J",
+     "title": "Joint buffer admission and contact-window-aware scheduling for heterogeneous traffic in cislunar DTNs",
+     "authors": "J Zhang, X Xie, Z Yu, K Kang, S Cao",
+     "venue": "Computer Communications",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://www.sciencedirect.com/science/article/pii/S0140366426002756?casa_token=XhosrphkGkQAAAAA:PVr5wGvUZ0NBXxGR6UQue7BTryOEuN_uax_1KLr_s4TK4Kd4ZJ8jt-JzJ1K3AsWV6We9wimU"
     },
     {
      "id": "iSVbzFbIUJcJ",
@@ -100,49 +208,13 @@
      "url": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2026.1857704/full"
     },
     {
-     "id": "7d2m2pXpvioJ",
-     "title": "Direct-to-satellite internet of things (DtS-IoT): a tutorial review on architectures, protocols, and future directions",
-     "authors": "S Akar, A Compagnoni, JA Fraire…",
-     "venue": "in Communications and",
+     "id": "qbSV-ImGH0wJ",
+     "title": "A Relay Node Selection Scheme Based on Dynamic Redundancy Filtering and Multi-Agent Deep Reinforcement Learning for Opportunistic Networks",
+     "authors": "H Lei, S Jiang, J Duan, B Zhang",
+     "venue": "IEEE Access",
      "year": 2026,
      "citations": 0,
-     "url": "https://www.frontiersin.org/journals/communications-and-networks/articles/10.3389/frcmn.2026.1750955/full"
-    },
-    {
-     "id": "stW0BzKXkVAJ",
-     "title": "VACA: A Variance-Aware Congestion Avoidance framework for heterogeneous delay tolerant networks",
-     "authors": "T Le",
-     "venue": "Ad Hoc Networks",
-     "year": 2026,
-     "citations": 0,
-     "url": "https://www.sciencedirect.com/science/article/pii/S1570870526001800"
-    },
-    {
-     "id": "EWsGuHYHZI4J",
-     "title": "A Comprehensive Review of Energy Efficient Routing Protocols in Delay Tolerant Networks: Categorization, Insights, Comparative and Empirical Evaluation",
-     "authors": "Savita, A Verma",
-     "venue": "Wireless Personal Communications",
-     "year": 2026,
-     "citations": 0,
-     "url": "https://link.springer.com/article/10.1007/s11277-026-12171-5"
-    },
-    {
-     "id": "N76GRJdgFzsJ",
-     "title": "WiFi and BLE advertisement based communication for ephemeral interactions: A survey",
-     "authors": "M Issa, P Couderc, JM Bonnin",
-     "venue": "Peer-to-Peer Networking and Applications",
-     "year": 2026,
-     "citations": 0,
-     "url": "https://link.springer.com/article/10.1007/s12083-026-02295-7"
-    },
-    {
-     "id": "2R79uItKF78J",
-     "title": "Joint buffer admission and contact-window-aware scheduling for heterogeneous traffic in cislunar DTNs",
-     "authors": "J Zhang, X Xie, Z Yu, K Kang, S Cao",
-     "venue": "Computer Communications",
-     "year": 2026,
-     "citations": 0,
-     "url": "https://www.sciencedirect.com/science/article/pii/S0140366426002756"
+     "url": "https://ieeexplore.ieee.org/abstract/document/11769892/"
     },
     {
      "id": "S3IPBm0MRyYJ",
@@ -168,8 +240,17 @@
      "authors": "PK Gantayat, M Majhi",
      "venue": "Concurrency and Computation",
      "year": 2026,
-     "citations": 0,
-     "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/cpe.70633"
+     "citations": 1,
+     "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/cpe.70633?casa_token=Pdo0kkVrjiIAAAAA:jneCpzZRBivk34UGfmFXnnXgM661dMZSWfgQkdmYDtRDcddao9Vd3imqLLlLLOvCRjuvJypcSlYdOg"
+    },
+    {
+     "id": "3AqnGNxPw9AJ",
+     "title": "Multi-protocol optimization and cyber-secure IoT networking in dynamic contexts",
+     "authors": "ZN Rashid, SS Ahmed, SM Jihad…",
+     "venue": "Journal of Intelligent",
+     "year": 2025,
+     "citations": 1,
+     "url": "https://academicstaff.epu.edu.iq/directory/shadan.abdalwahid/research/2204_research_1_20260407100657674114.pdf"
     },
     {
      "id": "RkAaeay9XjAJ",
@@ -186,8 +267,8 @@
      "authors": "SR Rizvi, S Olariu, S El-Tawab",
      "venue": "2026 International Conference",
      "year": 2026,
-     "citations": 2,
-     "url": "https://ieeexplore.ieee.org/abstract/document/11614158/"
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11614158/?casa_token=kLRBov3BmLEAAAAA:tufLruz8y2YmFak4XCUaDxjKY1WuSRjBaiVXoI77PZGvPMWd5MvVYcQvadwXdZfFKxVfXBpy"
     },
     {
      "id": "ul6MiL8A5JwJ",
@@ -197,6 +278,15 @@
      "year": 2026,
      "citations": 0,
      "url": "https://ojs.aaai.org/index.php/AAAI-SS/article/view/42518"
+    },
+    {
+     "id": "Lj-5Y_9MzQsJ",
+     "title": "Experimental Evaluation of Spatio-Temporal Data Utilization on Floating Cyber-Physical System Platform",
+     "authors": "D Nobayashi, M Tanaka, N Tanaka…",
+     "venue": "Materials & Continua",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://www.sciopen.com/article/10.32604/cmc.2026.077008"
     },
     {
      "id": "aMstX5t7HB8J",
@@ -241,7 +331,7 @@
      "venue": "2026 IEEE 2nd",
      "year": 2026,
      "citations": 0,
-     "url": "https://ieeexplore.ieee.org/abstract/document/11545753/"
+     "url": "https://ieeexplore.ieee.org/abstract/document/11545753/?casa_token=pKY841HbICkAAAAA:qSgCRXyCATVBbDe9uy-z13Pm3vkjo7PbpzoNb27mz4pUHV3XjLaLy8oyyfLIWndduEZ4Tqr4"
     },
     {
      "id": "gYh1-r449UMJ",
@@ -250,7 +340,16 @@
      "venue": "2026 Systems of Signal Synchronization",
      "year": 2026,
      "citations": 0,
-     "url": "https://ieeexplore.ieee.org/abstract/document/11613232/"
+     "url": "https://ieeexplore.ieee.org/abstract/document/11613232/?casa_token=XL08mvNK8KkAAAAA:aihLb2hU76zkhzJML9z_NQhTWHPpT5SStDKpLuh0ivFx1ueQl4v5nV15HV4F0c-8WD5qmd9t"
+    },
+    {
+     "id": "YcBtNsB-8yAJ",
+     "title": "Using machine learning techniques to make packet delivery more reliable in opportunistic networks",
+     "authors": "SK Goudoungou",
+     "venue": "",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://inria.hal.science/tel-05803717/"
     },
     {
      "id": "WGNlaGMBy5MJ",
@@ -267,7 +366,7 @@
      "authors": "D Shanmugavel, D Rajinigirinath",
      "venue": "Informacije MIDEM",
      "year": 2025,
-     "citations": 0,
+     "citations": 1,
      "url": "http://212.235.187.51/index.php/InfMIDEM/article/view/2069"
     },
     {
@@ -304,7 +403,7 @@
      "venue": "International Conference on",
      "year": 2026,
      "citations": 0,
-     "url": "https://ieeexplore.ieee.org/abstract/document/11582611/"
+     "url": "https://ieeexplore.ieee.org/abstract/document/11582611/?casa_token=_08pMfVsscAAAAAA:NJnRn8oCTzBMoCfCBCLcmX0j1zDZndn9U-psTiF7ibxrc7tHzOr2IMQdBosgFFhzx2wFqwi5"
     },
     {
      "id": "Il350qEKg08J",
@@ -321,8 +420,8 @@
      "authors": "Z Hossain",
      "venue": "2026 IEEE 8th International Conference on",
      "year": 2026,
-     "citations": 0,
-     "url": "https://ieeexplore.ieee.org/abstract/document/11504561/"
+     "citations": 1,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11504561/?casa_token=zX5vVrMmg4sAAAAA:tWIMCOxNjAkfcKOzONjV5JSiMLWU1hpd0vlBUS1WlyK1WYayVvCXE6cJ83Br2u1jUjRwbe6m"
     },
     {
      "id": "tLfcVT6jAsQJ",
@@ -334,13 +433,85 @@
      "url": "https://openurl.ebsco.com/contentitem/gcd:188637548?sid=ebsco:plink:crawler-gcd&amp;id=ebsco:gcd:188637548&amp;crl=c&amp;jrnl=09731318"
     },
     {
+     "id": "uVwsFYAqbsMJ",
+     "title": "STER-A+: Trust and Energy-Aware Routing for LEO CubeSat Delay-Tolerant Networks",
+     "authors": "SG Rahul",
+     "venue": "2026 IEEE 1st International Conference on",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11691856/?casa_token=NnUiYR1v0VUAAAAA:c4nYR1uf1-3JrZJRUDqjYUld30CX8cqgJqJ194ZEKt5q7EU0qlDebfeJn2yJQ4yM9DyhldEX"
+    },
+    {
      "id": "v8wfHjny_wYJ",
      "title": "Architectural and functional organization of information technology for ensuring the survivability of an information system on a mobile platform",
      "authors": "VM Tkachov, IV Ruban",
      "venue": "PROBLEMS IN PROGRAMMING",
      "year": 2026,
-     "citations": 1,
+     "citations": 0,
      "url": "https://pp.isofts.kiev.ua/index.php/ojs1/article/view/1052"
+    },
+    {
+     "id": "LZXmolnY8_oJ",
+     "title": "Information Sharing System during Disasters using Relocatable Edge Servers and NAMI Application",
+     "authors": "T Ogino",
+     "venue": "2025 5th International Conference on Intelligent",
+     "year": 2025,
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11274292/?casa_token=aMtKucZkGqoAAAAA:UXEBiLwDABWVHUCztkKKjiF_1YvvsGITfi5-O-WD5ehnI5dBOYF2HCrWRVUVDaq6ZtLCKjtP"
+    },
+    {
+     "id": "K3KdvUojTwkJ",
+     "title": "CRA: Cost-Effective and Highly Reusable Architecture of Space-Air-Ground Integrated Network Based on TCP and DTN",
+     "authors": "S Guo, L Ma, M Wang, L Liu…",
+     "venue": "2024 6th International",
+     "year": 2024,
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10913324/"
+    },
+    {
+     "id": "XOOSz2j1glQJ",
+     "title": "Latency and Reliability Assessment of MQTT over QUIC in High-Mobility Internet of Things Applications",
+     "authors": "S Colombo",
+     "venue": "",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://www.researchgate.net/profile/Prabu-Thia/publication/414367008_Latency_and_Reliability_Assessment_of_MQTT_over_QUIC_in_High-Mobility_Internet_of_Things_Applications/links/6aaa7af9b2a3ac5b9d89ac0d/Latency-and-Reliability-Assessment-of-MQTT-over-QUIC-in-High-Mobility-Internet-of-Things-Applications.pdf"
+    },
+    {
+     "id": "cvrC3lIU8xcJ",
+     "title": "Devising an efficient routing protocol for vehicular delay tolerant networks",
+     "authors": "A Wahid, M Sanna, M Ilyas…",
+     "venue": "on Internet (ICONI",
+     "year": 2024,
+     "citations": 0,
+     "url": "https://research.birmingham.ac.uk/en/publications/devising-an-efficient-routing-protocol-for-vehicular-delay-tolera/"
+    },
+    {
+     "id": "cFzsikjlov0J",
+     "title": "DELAY/DISRUPTION-TOLERANT NETWORKING DEEP-SPACE RELAY NETWORK FOR SMALL SATELLITE COMMUNICATIONS WITH BETTER …",
+     "authors": "PL Paikrao, SJ Meshram",
+     "venue": "ICTACT Journal on Communication",
+     "year": 2024,
+     "citations": 0,
+     "url": "https://ictactjournals.in/paper/IJCT_Vol_15_Iss_4_Paper_6_3366_3373.pdf"
+    },
+    {
+     "id": "cTct_fOqoxwJ",
+     "title": "The Architecture of SpaceFibre Bridges, which Provides the Ability to Synchronize Time between Different Standards",
+     "authors": "E Suvorova, A Vinogradov",
+     "venue": "2024 Systems of Signal",
+     "year": 2024,
+     "citations": 1,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10617727/?casa_token=VI4Vp25tcD8AAAAA:myKG-e36x9SiKd9zp1kKdeT66Q5dKLPuTiiEN0dU3Jhyo_4uwMPgXbd4BK8RUllsJIrB64hJ"
+    },
+    {
+     "id": "lLvVK7d8iM0J",
+     "title": "DTN Key Management in a Security Context Agnostic Way",
+     "authors": "M Würbsa, L Baumgärtner, M Wallum",
+     "venue": "",
+     "year": 2025,
+     "citations": 0,
+     "url": "https://publications.spaceops.org/2025/SpaceOps2025_0108.pdf"
     },
     {
      "id": "5rkmAtUmgfwJ",
@@ -349,7 +520,7 @@
      "venue": "2025 IEEE International",
      "year": 2025,
      "citations": 0,
-     "url": "https://ieeexplore.ieee.org/abstract/document/11208117/"
+     "url": "https://ieeexplore.ieee.org/abstract/document/11208117/?casa_token=VReTeBqMwskAAAAA:yX1ptt3cHFCXkO1BnO_O1nq9kCVez2xkBO2iGRJxUMcMZ4dwQevA_mYchTUXBnlY3ROSt8hR"
     },
     {
      "id": "GsdI_hfHsqsJ",
@@ -359,6 +530,24 @@
      "year": 2026,
      "citations": 0,
      "url": "https://lup.lub.lu.se/student-papers/search/publication/9237054"
+    },
+    {
+     "id": "a4FiWqalfUMJ",
+     "title": "Avaliação da conectividade: força, tendência e regularidade em redes oportunistas",
+     "authors": "WC Rosa",
+     "venue": "",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://riu.ufam.edu.br/items/b9ad8ba3-2544-481f-854b-04924ca904a2"
+    },
+    {
+     "id": "PaJqVpiLkngJ",
+     "title": "Machine Learning-Driven Optimization of Delay-Tolerant Vehicular Network Deployment and Protocol Parameters in Sparse VANETs",
+     "authors": "M Alwadi, A Gawanmeh",
+     "venue": "",
+     "year": null,
+     "citations": 1,
+     "url": ""
     },
     {
      "id": "0dRUqL-L_h0J",
@@ -379,6 +568,15 @@
      "url": "https://semnas.iti.ac.id/tpx/index.php/c/article/view/376"
     },
     {
+     "id": "aKbsKaqFYkEJ",
+     "title": "SimDTN: um simulador de código aberto para redes móveis sem fio tolerantes a atrasos e desconexão",
+     "authors": "RF Silva, MO Aguiar…",
+     "venue": "Revista Principia",
+     "year": 2025,
+     "citations": 0,
+     "url": "https://periodicos.ifpb.edu.br/index.php/principia/en/article/download/8632/2639/31282"
+    },
+    {
      "id": "EBM9G_7mwdcJ",
      "title": "Evaluasi Kinerja Protokol Routing DTN untuk Skenario Smart Environment di Makassar",
      "authors": "AL Fakhirah, A Salim, AL Arda",
@@ -393,15 +591,6 @@
      "authors": "A Agussalim, HE Wahanani, AN Sihananto",
      "venue": "",
      "year": 2026,
-     "citations": 0,
-     "url": ""
-    },
-    {
-     "id": "a4FiWqalfUMJ",
-     "title": "Avaliação da conectividade: força, tendência e regularidade em redes oportunistas",
-     "authors": "WC Rosa",
-     "venue": "",
-     "year": 2026,
      "citations": 1,
      "url": ""
     }
@@ -411,8 +600,26 @@
    "title": "Performance Evaluation of Kubernetes Networking Approaches across Constraint Edge Environments",
    "year": 2024,
    "cluster": "6573213558240473207",
-   "cited_by": 30,
+   "cited_by": 34,
    "citations": [
+    {
+     "id": "0wI7fvkqQjMJ",
+     "title": "An open-source experimentation framework for the edge cloud continuum",
+     "authors": "G Koukis, S Skaperas, IA Kapetanidou…",
+     "venue": "IEEE Conference on",
+     "year": 2024,
+     "citations": 18,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10620846/?casa_token=Qca9hcfdCDwAAAAA:YL8WIawJ4bjsY7AYGyTUsyCWV0hGJ1f0daAMeaOzuqZqpTc1rxtTPIgh2KQGNqe7EPtzx1uk"
+    },
+    {
+     "id": "ztQaQWszv3AJ",
+     "title": "A comprehensive benchmark of flannel cni in sdn/non-sdn enabled cloud-native environments",
+     "authors": "J Santos, BV Ninan, B Volckaert…",
+     "venue": "on Network and",
+     "year": 2025,
+     "citations": 3,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11141400/"
+    },
     {
      "id": "bmDEoU81CcsJ",
      "title": "KubeEdge for scalable IoT applications",
@@ -420,7 +627,16 @@
      "venue": "and Informatics (IC3I",
      "year": 2024,
      "citations": 12,
-     "url": "https://ieeexplore.ieee.org/abstract/document/10828876/"
+     "url": "https://ieeexplore.ieee.org/abstract/document/10828876/?casa_token=VGxFwfd2KooAAAAA:yiKXVsG9fBXuuLL1x4c6fuI5H08JFpvKJtR5qThBrZtC3k2m1i6blseGzvpeU_z-Umw8gwO1"
+    },
+    {
+     "id": "rUXpWRz0bDEJ",
+     "title": "Security aspects of container orchestration in kubernetes environments",
+     "authors": "S Stanišić, M Vesković, O Ristić…",
+     "venue": "2025 24th International",
+     "year": 2025,
+     "citations": 8,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10959185/?casa_token=f-5nb7dER8EAAAAA:teE7v13IMHScwjjQTwfAxD2itQJv6dNxraNxMpWWirzi0tjTysV861xFuN1KqtHufFvBZVDt"
     },
     {
      "id": "rhkBV-i-YtgJ",
@@ -439,6 +655,24 @@
      "year": 2026,
      "citations": 0,
      "url": "https://www.mdpi.com/2079-9292/15/20/4604"
+    },
+    {
+     "id": "V3MlD4WMko0J",
+     "title": "Evaluating cni plugins features & tradeoffs for edge cloud applications",
+     "authors": "G Koukis, S Skaperas, IA Kapetanidou…",
+     "venue": "IEEE Symposium on",
+     "year": 2024,
+     "citations": 6,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10733657/?casa_token=CnZXSBpb54AAAAAA:VnYwAVPgXJeNX4QUFf5emeMItnThaETUpmWmHXpXyVw4yk4FQ4u1TopFHGtTmcQc5r-xgmuA"
+    },
+    {
+     "id": "s7p3W1qWPIIJ",
+     "title": "Field-Deployable Kubernetes Cluster for Enhanced Computing Capabilities in Remote Environments",
+     "authors": "TM Giurgică, A Sârbu, B Klauer, L Găină",
+     "venue": "Applied Sciences",
+     "year": 2025,
+     "citations": 1,
+     "url": "https://www.mdpi.com/2076-3417/15/24/12991"
     },
     {
      "id": "Fuv3nG8AKNEJ",
@@ -464,8 +698,26 @@
      "authors": "G Alves, HKS Rubinsztejn, MA Stefanes",
      "venue": "Proceedings of the 18th IEEE",
      "year": 2025,
-     "citations": 0,
+     "citations": 1,
      "url": "https://dl.acm.org/doi/abs/10.1145/3773274.3774259"
+    },
+    {
+     "id": "-Nt23aaKIAkJ",
+     "title": "Optimizing Kubernetes Network Performance: A study of container network interfaces and system tuning profiles",
+     "authors": "S Chippagiri",
+     "venue": "",
+     "year": 2024,
+     "citations": 19,
+     "url": ""
+    },
+    {
+     "id": "xu3l0068d_gJ",
+     "title": "Performance Evaluation of Container Network Interfaces in OpenShift for Industrial Real-Time Workloads",
+     "authors": "A Shahraki, S Lindner, D Schulz",
+     "venue": "2026 IEEE 31st International",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11724825/?casa_token=4vuO6rtaz64AAAAA:WdhiVn8sVpqu3UlF1VHatc3uMticj22n250Lzc81XHAXYHWXIG_OhOKrGoyDfS-DeZsUJC0I"
     },
     {
      "id": "N7RED_hMbA4J",
@@ -477,6 +729,33 @@
      "url": "https://www.researchgate.net/profile/Albert-Lysko/publication/384801122_A_Brief_Performance_Comparison_of_Bare-Metal_and_Kubernetes_Deployments_for_5G_Core_Control_Plane_Network_Functions_using_Open5GS/links/67c1b9d8207c0c20fa9bc4be/A-Brief-Performance-Comparison-of-Bare-Metal-and-Kubernetes-Deployments-for-5G-Core-Control-Plane-Network-Functions-using-Open5GS.pdf"
     },
     {
+     "id": "6PWFJYr0nOsJ",
+     "title": "Observability and Provenance for Distributed Microservices over Edge-Enabled 6G Networks",
+     "authors": "S Chakrabarti, U Satapathy, S Chakraborty",
+     "venue": "Edge-Enabled 6G",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://link.springer.com/chapter/10.1007/978-3-032-19042-0_9"
+    },
+    {
+     "id": "y5yzU-wz0YwJ",
+     "title": "Benchmarking Container Orchestrations for ARM-Powered Edge Computing",
+     "authors": "S Kaiser, O Alqaisi, AŞ Tosun…",
+     "venue": "2025 IEEE 22nd",
+     "year": 2025,
+     "citations": 1,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10976159/?casa_token=NIGCx4Pp6HgAAAAA:-l_Xo6pvKvlm8pXnkVEYzj0LNo56lqURpewGMlOEcxX4Bfnq1gQl6-10qfuZUUUSuc3GCQ0R"
+    },
+    {
+     "id": "ejNGamB-d9oJ",
+     "title": "A Comprehensive Benchmark of Flannel CNI in SDN/Non-SDN Enabled Cloud-Native Environments",
+     "authors": "JP Pereira dos Santos, BV Ninan, B Volckaert…",
+     "venue": "",
+     "year": 2025,
+     "citations": 0,
+     "url": "https://imec-publications.be/bitstreams/d3cbd54f-3a8c-4f56-aee5-7cf5384a67e8/download"
+    },
+    {
      "id": "3rdqiF8juGgJ",
      "title": "Implementing Network Policies in Kubernetes",
      "authors": "S Stanisic, V Mladenovic",
@@ -486,13 +765,49 @@
      "url": "https://conference.alfatech.rs/wp-content/uploads/2025/09/Implementing-Network-Policies-in-Kubernetes.pdf"
     },
     {
+     "id": "OKJfvxa_BYYJ",
+     "title": "On the Benefits of Predictable Traffic in Virtual Switches: A Case Study",
+     "authors": "E Ståhl, M Chiesa, S Ferlin, E Chaudron",
+     "venue": "Proceedings of the 2025",
+     "year": 2025,
+     "citations": 0,
+     "url": "https://dl.acm.org/doi/abs/10.1145/3744200.3744762"
+    },
+    {
      "id": "p9jqJ6u5IJoJ",
      "title": "Design, Implementation, and Evaluation of a Cloud-Native Real-Time Distributed System Using Kubernetes and AWS",
      "authors": "N Mane, K Jadhav",
      "venue": "SoutheastCon 2026",
      "year": 2026,
+     "citations": 2,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11476324/?casa_token=GZWLIGWOXb0AAAAA:sqRiBeTZaxhthNKf_Q8-SI3u0ALi1QhbVbbZDMbhh3zYZZd4DiN7blkntzK3dknxjRtOsFpa"
+    },
+    {
+     "id": "xncRKl84CF0J",
+     "title": "Comparative Stress Testing of Kubernetes Distributions and CNI Plugins",
+     "authors": "G Koukis, S Skaperas, L Mamatas…",
+     "venue": "2025 8th International",
+     "year": 2025,
      "citations": 0,
-     "url": "https://ieeexplore.ieee.org/abstract/document/11476324/"
+     "url": "https://ieeexplore.ieee.org/abstract/document/11185952/"
+    },
+    {
+     "id": "WRLDTdGugbwJ",
+     "title": "Implementing Zero Trust Network Security in Kubernetes Clusters",
+     "authors": "KVV Vijayakumar, NK Pathi…",
+     "venue": "Conference on Next-Gen",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11736768/?casa_token=5FBfu9CPob0AAAAA:GrpsIlOL-jOZVdQchDrDuPqg7DVhjFCfPBFqbE0-b7_RO_NO-DRiwGAdrS6NUbq9fsfzKwtf"
+    },
+    {
+     "id": "lspvOl00GooJ",
+     "title": "Comparative Study Between Popular Container Orchestrators: Kubernetes, K3s, and Docker Swarm",
+     "authors": "MA Abdala, TE Ali, RS Majeed, FI Ali, S Hekmat…",
+     "venue": "Conference on Recent",
+     "year": 2024,
+     "citations": 0,
+     "url": "https://link.springer.com/chapter/10.1007/978-981-96-6034-6_35"
     },
     {
      "id": "baf1unsnRtsJ",
@@ -519,7 +834,7 @@
      "venue": "Edge-Enabled 6G",
      "year": null,
      "citations": 0,
-     "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=GUb1EQAAQBAJ&amp;oi=fnd&amp;pg=PA209&amp;ots=W4m-NEOXZW&amp;sig=hayEOGUxapoXX0bEXwLFWiyZNyg"
+     "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=GUb1EQAAQBAJ&amp;oi=fnd&amp;pg=PA209&amp;ots=W4m1SxQXVU&amp;sig=GNJAPTthy7JFt72-h8SoTd6EZVA"
     },
     {
      "id": "zrztjIxBS_UJ",
@@ -531,12 +846,66 @@
      "url": "https://iaeme.in/Home/article_id/IJRCAIT_08_01_234"
     },
     {
+     "id": "COaM-0HjmeAJ",
+     "title": "Analiza și optimizarea performanței și securității infrastructurilor Cloud-Native bazate pe Kubernetes și CNI",
+     "authors": "D NIRCA",
+     "venue": "",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://repository.utm.md/handle/5014/35604"
+    },
+    {
+     "id": "QDURG5kKktgJ",
+     "title": "Design and implementation of multi-dimensional situational awareness system for cloud network environment",
+     "authors": "C Xiao",
+     "venue": "",
+     "year": 2024,
+     "citations": 0,
+     "url": "https://lutpub.lut.fi/handle/10024/167731"
+    },
+    {
+     "id": "SAy2CweKy60J",
+     "title": "Net-Zero self-adaptive activation of distributed self-resilient augmented services",
+     "authors": "RMM Mowla",
+     "venue": "",
+     "year": null,
+     "citations": 0,
+     "url": "https://natwork-project.eu/sites/default/files/2025-11/%5BNATWORK%5D%20D3.5%20Pre-Deployment%20Security%20per%20Construction%20Measures.r1%20(TSS).pdf"
+    },
+    {
+     "id": "eXNbEfa6D0oJ",
+     "title": "Optimización integral de redes kubernetes: comparativa de CNI, automatización de networkpolicies y reducción de sobredimensionamientos",
+     "authors": "HA Alba Castro, DE Sierra Guerrero",
+     "venue": "",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://repository.udistrital.edu.co/server/api/core/bitstreams/d097cb50-1bbb-4e87-9774-2beb51a69646/content"
+    },
+    {
+     "id": "db4HrQPGB3UJ",
+     "title": "Evaluating Lightweight Kubernetes Distributions for Deploying 5G Core at the Network Edge: An Experimental Comparative Study Against Vanilla Kubernetes",
+     "authors": "A Mostafa",
+     "venue": "",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://www.diva-portal.org/smash/record.jsf?pid=diva2:2114680"
+    },
+    {
      "id": "npIRkmz8iL4J",
      "title": "Implementación de entorno de experimentación para el despliegue de servicios de red virtualizados sobre kubernetes. Trabajo de grado",
      "authors": "S Vélez Arboleda",
      "venue": "",
      "year": 2025,
      "citations": 0,
+     "url": ""
+    },
+    {
+     "id": "1WyO2yn5DD4J",
+     "title": "Implementación de entorno de experimentación para el Despliegue de Servicios de Red Virtualizados sobre Kubernetes",
+     "authors": "SV Arboleda",
+     "venue": "",
+     "year": 2025,
+     "citations": 1,
      "url": ""
     }
    ]
@@ -545,7 +914,7 @@
    "title": "An Open-Source Experimentation Framework for the Edge Cloud Continuum",
    "year": 2024,
    "cluster": "3693561895450247891",
-   "cited_by": 17,
+   "cited_by": 18,
    "citations": [
     {
      "id": "TMfBOQJX_jAJ",
@@ -553,8 +922,35 @@
      "authors": "LF Bittencourt, R Rodrigues-Filho, J Spillner…",
      "venue": "Computer Science",
      "year": 2025,
-     "citations": 33,
-     "url": "https://www.sciencedirect.com/science/article/pii/S1574013725000589"
+     "citations": 34,
+     "url": "https://www.sciencedirect.com/science/article/pii/S1574013725000589?casa_token=xqDCrp6QTksAAAAA:hXu1HDcnkmtxsb5zXTgljKzJmz96Zn3jy-ruVSgiAKPxfP8lYTM6vfVJEC2_y5-H802eVAWy"
+    },
+    {
+     "id": "m_Urew6XxTcJ",
+     "title": "A framework for cognitive, decentralized container orchestration",
+     "authors": "RC Sofia, J Salomon, S Ferlin-Reiter…",
+     "venue": "IEEE",
+     "year": 2024,
+     "citations": 44,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10540390/"
+    },
+    {
+     "id": "d3C0o-e-OFsJ",
+     "title": "Performance evaluation of kubernetes networking approaches across constraint edge environments",
+     "authors": "G Koukis, S Skaperas, IA Kapetanidou…",
+     "venue": "IEEE Symposium on",
+     "year": 2024,
+     "citations": 34,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10733726/?casa_token=AlHCiGbDomgAAAAA:TGCj2eJQe1h2BCpBsQPIMlFabRQN4pWrvUFRim0yS1EwRPJz3gilAE6_MAnyXlB2LmAUuC_R"
+    },
+    {
+     "id": "R6lqGoQxbBMJ",
+     "title": "Service placement in the computing continuum for delay-sensitive iot/iiot applications",
+     "authors": "N Banavase Venkategowda, LF Bittencourt",
+     "venue": "Journal of Network and",
+     "year": 2025,
+     "citations": 6,
+     "url": "https://idp.springer.com/authorize/casa?redirect_uri=https://link.springer.com/article/10.1007/s10922-025-09964-7&amp;casa_token=4qiMfq0_MZ8AAAAA:2HO7ciSC0FQMS8DVWfbXpY7TY5N-zCjW-tT5lraQ1146PfnTc2txJUrBWwz3gBZQl1U-5AqsYgLHAdo"
     },
     {
      "id": "Yl24TQj53I8J",
@@ -566,13 +962,49 @@
      "url": "https://www.sciencedirect.com/science/article/pii/S1383762126000706"
     },
     {
+     "id": "nK3PM7nbxUwJ",
+     "title": "The Trade-Offs of Intelligent Orchestration in Kubernetes: A Multi-Infrastructure Case Study with the CODECO Toolkit",
+     "authors": "G Koukis, I Dermentzis, V Tsaoussidis, J Lenke…",
+     "venue": "Applied Sciences",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://www.mdpi.com/2076-3417/16/21/10988"
+    },
+    {
+     "id": "t4GDG8f4D0gJ",
+     "title": "Trade-Offs in Kubernetes Security and Energy Consumption",
+     "authors": "I Dermentzis, G Koukis, V Tsaoussidis",
+     "venue": "Urban Science",
+     "year": 2026,
+     "citations": 3,
+     "url": "https://www.mdpi.com/2413-8851/10/2/81"
+    },
+    {
+     "id": "fe3_0NT33FQJ",
+     "title": "Towards Scalable Federated Container Orchestration: The CODECO Approach",
+     "authors": "RC Sofia, J Salomon, R Carrol, L Garcés-Erice…",
+     "venue": "arXiv preprint arXiv",
+     "year": 2026,
+     "citations": 4,
+     "url": "https://arxiv.org/abs/2601.13351"
+    },
+    {
      "id": "V3MlD4WMko0J",
      "title": "Evaluating cni plugins features & tradeoffs for edge cloud applications",
      "authors": "G Koukis, S Skaperas, IA Kapetanidou…",
      "venue": "IEEE Symposium on",
      "year": 2024,
-     "citations": 5,
-     "url": "https://ieeexplore.ieee.org/abstract/document/10733657/"
+     "citations": 6,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10733657/?casa_token=beCEwAPFxj4AAAAA:Wjf5OwCX35YctgJ7R-9NzjGEvU5NFSW8d22yS1U1HOxiTMTBdh3L04kB4N7vdSRxPAF4WLtu"
+    },
+    {
+     "id": "EvsXU3MOYNUJ",
+     "title": "Unlocking the path towards AI-native networks with optimized lightweight large language models",
+     "authors": "G Samaras, M Mertiri, ME Xezonaki…",
+     "venue": "2024 IEEE",
+     "year": 2024,
+     "citations": 6,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10621076/?casa_token=5DOYM4tIn5YAAAAA:x1Uu6UuxE8409GgSueR5MgmI0c1CMSvtPnbULs5BoOrKeeFOOFogOWQ-jbu92hdOuNBcZUQX"
     },
     {
      "id": "ubvNLVwKzggJ",
@@ -581,7 +1013,43 @@
      "venue": "2026 IEEE 26th",
      "year": 2026,
      "citations": 1,
-     "url": "https://ieeexplore.ieee.org/abstract/document/11617666/"
+     "url": "https://ieeexplore.ieee.org/abstract/document/11617666/?casa_token=IiOrf_0eaOcAAAAA:2efP9vo-eWHev5arKvZEc0gQyVJSEyXlh6UEbzQLN0CxCfTVgOybaZ8Zyg7WK9uNru864HBk"
+    },
+    {
+     "id": "PCOyvIajnwEJ",
+     "title": "Towards an API-driven approach for universal and lightweight cloud-edge orchestration",
+     "authors": "S Böhm, G Wirtz",
+     "venue": "2024 IEEE International Conference on",
+     "year": 2024,
+     "citations": 3,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10685337/?casa_token=uJcN6WGvH4UAAAAA:osPTJnNEzEBYgao-F9v_qMN9Z8OSi6hhbw5bVIjMhzaUbyG5YBYEd0x2PSwBajWsqKKwL3Xx"
+    },
+    {
+     "id": "6YDpptpswCMJ",
+     "title": "Democratizing Predictive Analytics with Generative Artificial Intelligence towards AI-Native Networks",
+     "authors": "G Samaras, M Mertiri, ME Xezonaki…",
+     "venue": "IEEE Symposium on",
+     "year": 2024,
+     "citations": 4,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10733560/?casa_token=Sw-823fYrkoAAAAA:f1gwe9vNJexQ2vj9VUmCM6qk0MxroTOi86VgcSgYHfzqCwed9FrWLQJPDwQHi6jgrEmsiA4V"
+    },
+    {
+     "id": "gUdxEbiedXcJ",
+     "title": "Performance Evaluation of Automated Multi-Service Deployment in Edge-Cloud Environments with the CODECO Toolkit",
+     "authors": "G Koukis, I Dermentzis, V Tsaoussidis, J Lenke…",
+     "venue": "arXiv preprint arXiv",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://arxiv.org/abs/2603.07621"
+    },
+    {
+     "id": "JRXSLrWq3SkJ",
+     "title": "Cooperative and connected mobility services in the cloud-edge continuum with function as a service technology and AI-enabled orchestration",
+     "authors": "A Lalaguna, P Townend, B Ojaghi…",
+     "venue": "2024 Mediterranean",
+     "year": 2024,
+     "citations": 4,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10697004/?casa_token=hzRvWqOXvUgAAAAA:rF-j2u_GAi7giftj6MkeZSgVdakgzi6cej6i2duqFAnL5kImL5t_NYQsfQ_maq3D195fzzcY"
     },
     {
      "id": "xncRKl84CF0J",
@@ -616,7 +1084,7 @@
    "title": "Evaluating CNI Plugins Features & Tradeoffs for Edge Cloud Applications",
    "year": 2024,
    "cluster": "10201370609060246359",
-   "cited_by": 5,
+   "cited_by": 6,
    "citations": [
     {
      "id": "t4GDG8f4D0gJ",
@@ -633,8 +1101,17 @@
      "authors": "GNN Barbosa, M Andreoni, TMT Nguyen…",
      "venue": "Annals of",
      "year": 2026,
-     "citations": 3,
+     "citations": 5,
      "url": "https://link.springer.com/article/10.1007/s12243-026-01197-2"
+    },
+    {
+     "id": "xu3l0068d_gJ",
+     "title": "Performance Evaluation of Container Network Interfaces in OpenShift for Industrial Real-Time Workloads",
+     "authors": "A Shahraki, S Lindner, D Schulz",
+     "venue": "2026 IEEE 31st International",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11724825/?casa_token=zWK6PZgC9hwAAAAA:gKCbnNZfAU_KNJsPv1U3HiLHYfN4OeExU-drZGUIVoJ6lgq2uAIKP70-H5A16FSYcr3PIMla"
     },
     {
      "id": "MpFxAWhfg7QJ",
@@ -643,7 +1120,7 @@
      "venue": "ICC 2026-IEEE",
      "year": 2026,
      "citations": 0,
-     "url": "https://ieeexplore.ieee.org/abstract/document/11587014/"
+     "url": "https://ieeexplore.ieee.org/abstract/document/11587014/?casa_token=MOI3WOWwlIwAAAAA:ylCA5pavq5V1C_ZvO0VkMYLZ1RF3zYaDZUZTbGkDcYrpkIshrseq1rMjLp_Ej_EsMkrh7lAQ"
     },
     {
      "id": "xncRKl84CF0J",
@@ -669,7 +1146,7 @@
    "title": "A pragmatical approach to anomaly detection evaluation in edge cloud systems",
    "year": 2024,
    "cluster": "13853930539440399489",
-   "cited_by": 5,
+   "cited_by": 6,
    "citations": [
     {
      "id": "0wI7fvkqQjMJ",
@@ -677,8 +1154,8 @@
      "authors": "G Koukis, S Skaperas, IA Kapetanidou…",
      "venue": "IEEE Conference on",
      "year": 2024,
-     "citations": 17,
-     "url": "https://ieeexplore.ieee.org/abstract/document/10620846/"
+     "citations": 18,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10620846/?casa_token=B1wYvcgFzvYAAAAA:IC9ylGE-cmkwGprh6vpPPozBuYoJlmjkSjW8iHmkdby_25Q1gl_Vdes3zSNsVGL1Hu4KNOEfpmHX"
     },
     {
      "id": "zCiV00Gc42MJ",
@@ -696,7 +1173,7 @@
      "venue": "2024 IEEE/ACM 17th",
      "year": 2024,
      "citations": 10,
-     "url": "https://ieeexplore.ieee.org/abstract/document/10971830/"
+     "url": "https://ieeexplore.ieee.org/abstract/document/10971830/?casa_token=dyuDyPeHC-gAAAAA:HiEQjvo1J5Yxm7_lY5ueVUvO46_Ar9utlj4KjVt9nwi-9sr4G_ki901u0yqYjUCn2SkMlJNKQR8H"
     },
     {
      "id": "eipj8vfAF7EJ",
@@ -706,6 +1183,15 @@
      "year": 2026,
      "citations": 2,
      "url": "https://www.sciencedirect.com/science/article/pii/S1568494626005107"
+    },
+    {
+     "id": "47xCaBJQC0sJ",
+     "title": "PACE: A Platform-Agnostic Change Point Detection Framework for the Cloud-Edge Continuum",
+     "authors": "V Mahajan, T Szydlo, R Xue…",
+     "venue": "2026 IEEE Symposium",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11740080/?casa_token=JeTxkiNY-fMAAAAA:Un2HmDHuf_OfzwkxVRvTdLLgV6P7Q5uE_N2x20liuO697r5Prh8mwY2JXLca5v8lr3sJ9baCEf98"
     },
     {
      "id": "ffDLx0oWHNQJ",
@@ -725,6 +1211,24 @@
    "cited_by": 4,
    "citations": [
     {
+     "id": "g92UX05HZGgJ",
+     "title": "White paper: A perspective on civilian-to-defence research transfer to SDD",
+     "authors": "RC Sofia, D Mendez, S Barner, H Shen…",
+     "venue": "arXiv preprint arXiv",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://arxiv.org/abs/2608.09349"
+    },
+    {
+     "id": "s7pjZFFqzR4J",
+     "title": "Semantic-Aware Communications in Industrial IoT: What Can Be Tested Today, and What Is Missing?",
+     "authors": "RC Sofia",
+     "venue": "arXiv preprint arXiv:2611.12391",
+     "year": 2026,
+     "citations": 0,
+     "url": "https://arxiv.org/abs/2611.12391"
+    },
+    {
      "id": "Znp-TZ6noYoJ",
      "title": "Building a Low-cost Network Digital Twin for the IoT-Edge-Cloud Continuum Using Open-Source Tooling",
      "authors": "J Amaral, RC Sofia",
@@ -734,13 +1238,13 @@
      "url": "https://arxiv.org/abs/2606.24853"
     },
     {
-     "id": "fFPLZyiohEAJ",
-     "title": "AI-driven resource and service management in the cloud-edge computing continuum, with emphasis on resource optimization and quality of experience",
-     "authors": "EG Paraskevoulakou",
-     "venue": "",
+     "id": "bq9qfbkqn9cJ",
+     "title": "Federated Data Residency Enforcement in Hybrid OpenShift",
+     "authors": "SKR Vanama, RKK Lingamgunta…",
+     "venue": "2026 10th International",
      "year": 2026,
      "citations": 0,
-     "url": "https://dione.lib.unipi.gr/xmlui/handle/unipi/19553"
+     "url": "https://ieeexplore.ieee.org/abstract/document/11681113/?casa_token=4Er2ovK42cAAAAAA:X0bIfBywDQehxBP7Q-McWaWiHAsYDbJv0J-DmxBtqFrjfbvm7TjsAjosTlz68cTW5jIVwRXJJ1Hx"
     }
    ]
   },
@@ -756,8 +1260,17 @@
      "authors": "RK Shaw",
      "venue": "2026 9th International Conference on Computing",
      "year": 2026,
+     "citations": 3,
+     "url": "https://ieeexplore.ieee.org/abstract/document/11625111/?casa_token=GKkn8dXYgLYAAAAA:zVnN5nR4WDsnqFTRzIjWO2zuAlerp1WSNqAVWkrAdnuqTLSG1YyZ7qCPepAVpElVMxIEhIrQpZc_"
+    },
+    {
+     "id": "65Dj2vtFwMIJ",
+     "title": "Microservices-Based Software Architecture for Implementing Digital Twins in Real-Time Industrial Process Control",
+     "authors": "S Lascano Rivera, ML Rivera, O Quimbita",
+     "venue": "Processes",
+     "year": 2026,
      "citations": 0,
-     "url": "https://ieeexplore.ieee.org/abstract/document/11625111/"
+     "url": "https://www.mdpi.com/2227-9717/14/16/2584"
     },
     {
      "id": "wxY6dl2C3-4J",
@@ -782,7 +1295,7 @@
      "authors": "Q Chen, Z Guo, W Meng, S Han, C Li…",
      "venue": "Surveys & Tutorials",
      "year": 2024,
-     "citations": 169,
+     "citations": 201,
      "url": "https://ieeexplore.ieee.org/abstract/document/10579820/"
     },
     {
@@ -791,7 +1304,7 @@
      "authors": "J Zhang, L Zhong, Y Yang, J Schulz…",
      "venue": "Proceedings of the 10th",
      "year": 2024,
-     "citations": 6,
+     "citations": 8,
      "url": "https://dl.acm.org/doi/abs/10.1145/3661810.3663470"
     },
     {
@@ -800,7 +1313,7 @@
      "authors": "I Mujahiddin, BB Subagio…",
      "venue": "International",
      "year": 2025,
-     "citations": 0,
+     "citations": 1,
      "url": "https://publisher.uthm.edu.my/ojs/index.php/ijie/article/view/19830"
     }
    ]
@@ -817,7 +1330,7 @@
      "authors": "Q Chen, Z Guo, W Meng, S Han, C Li…",
      "venue": "Surveys & Tutorials",
      "year": 2024,
-     "citations": 169,
+     "citations": 201,
      "url": "https://ieeexplore.ieee.org/abstract/document/10579820/"
     },
     {
@@ -826,8 +1339,8 @@
      "authors": "N Mohammed, RA Kadhim",
      "venue": "2022 Iraqi International",
      "year": 2022,
-     "citations": 3,
-     "url": "https://ieeexplore.ieee.org/abstract/document/10010504/"
+     "citations": 5,
+     "url": "https://ieeexplore.ieee.org/abstract/document/10010504/?casa_token=3uSMd5dB7aAAAAAA:1N2gk2W0EXmI9Kcbu4sFBqvDCXTEPZ0z5oXUw9qm7jtRo_c3IGo0rTF68oAzZNDo034eUVd5h5rd"
     }
    ]
   }

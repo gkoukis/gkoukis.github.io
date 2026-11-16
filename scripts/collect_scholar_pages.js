@@ -115,7 +115,17 @@
             stats.cached++;
             return { html: resume[url], cached: true };
         }
-        const response = await fetch(url, { credentials: 'include' });
+        let response;
+        try {
+            response = await fetch(url, { credentials: 'include' });
+        } catch (error) {
+            // A signed-in session gets bounced through www.google.com/sgsync to
+            // sync the login; fetch() may not follow a cross-origin redirect, so
+            // it surfaces as a bare TypeError. A real click does the sync once.
+            throw new Error(`${error.message} - Scholar redirected to google.com to sync ` +
+                'your sign-in. Click any "Cited by" link on the profile once, come back, ' +
+                'and run this again (or use a signed-out Incognito window)');
+        }
         const html = await response.text();
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         if (BLOCKED.test(html)) throw new Error('Scholar served a robot check');
