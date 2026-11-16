@@ -69,7 +69,15 @@ FROM_DATE = "2019-01-01"
 
 # Works to force out of / into the core layer, by DOI (lowercase, no prefix).
 EXCLUDE_DOIS: set[str] = set()
-EXTRA_DOIS: set[str] = set()
+# OpenAlex holds these, but with no author id on the Koukis authorship, so the
+# author.id filter above never returns them. Without this the map silently lost
+# its most-cited paper (DTN, Future Internet 2024) and every citation of it.
+EXTRA_DOIS: set[str] = {
+    "10.3390/fi16040129",            # All about Delay-Tolerant Networking (DTN) ...
+    "10.3390/electronics13010027",   # Satellite-Assisted Disrupted Communications
+    "10.48550/arxiv.2207.01436",     # ... its OMNeT++ preprint (see MERGE_GROUPS)
+    "10.3390/urbansci10020081",      # Trade-Offs in Kubernetes Security and Energy
+}
 
 # Records that are the same piece of work but whose titles differ too much for
 # the automatic preprint/published merge to catch. Each group collapses into one
@@ -229,6 +237,24 @@ def title_key(title: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", unescape(title or "").lower()).strip()
 
 
+def compact_key(title: str) -> str:
+    """Letters and digits only, so a line-break hyphen ("Communica-tion") or a
+    stray space no longer separates two copies of one title."""
+    return re.sub(r"[^a-z0-9]+", "", unescape(title or "").lower())
+
+
+def truncated_prefix(title: str) -> str:
+    """Compact key of a title Scholar cut short with an ellipsis, else "".
+
+    Too short a prefix could match an unrelated paper, so only long ones count.
+    """
+    text = unescape(title or "").rstrip()
+    if not (text.endswith("…") or text.endswith("...")):
+        return ""
+    prefix = compact_key(text.rstrip(".…"))
+    return prefix if len(prefix) >= 40 else ""
+
+
 def is_preprint(work: dict) -> bool:
     doi = clean_doi(work)
     return work.get("type") == "preprint" or doi.startswith(PREPRINT_PREFIXES)
@@ -311,6 +337,23 @@ def node_from_scholar(entry: dict, group: str) -> dict:
         "topic": "",
         "doi": "",
         "url": url,
+    }
+
+
+def node_from_scholar_core(paper: dict) -> dict:
+    """A core node for a Scholar paper absent from OpenAlex."""
+    title = unescape(paper.get("title") or "")
+    return {
+        "id": "GSCORE" + str(paper.get("cluster") or title_key(title)),
+        "group": "core",
+        "title": title,
+        "author": "Georgios Koukis",
+        "year": paper.get("year"),
+        "venue": "",
+        "citations": paper.get("cited_by") or 0,
+        "topic": "",
+        "doi": "",
+        "url": f"https://scholar.google.com/scholar?q={quote_plus(title)}" if title else "",
     }
 
 
@@ -485,6 +528,7 @@ class Graph:
         self.nodes: dict[str, dict] = {}
         self.by_doi: dict[str, str] = {}
         self.by_title: dict[str, str] = {}
+        self.by_compact: dict[str, str] = {}
         self.edges: set[tuple[str, str]] = set()
 
     def resolve(self, *, node_id: str = "", doi: str = "", title: str = "") -> str | None:
@@ -492,9 +536,24 @@ class Graph:
             return node_id
         if doi and doi in self.by_doi:
             return self.by_doi[doi]
-        if title and title_key(title) in self.by_title:
+        if not title:
+            return None
+        if title_key(title) in self.by_title:
             return self.by_title[title_key(title)]
+        if compact_key(title) in self.by_compact:
+            return self.by_compact[compact_key(title)]
+        # Scholar elides long titles ("... Opportunities, and …"); accept the
+        # one known title that starts the same way, but never guess between two.
+        prefix = truncated_prefix(title)
+        if prefix:
+            hits = {nid for key, nid in self.by_compact.items() if key.startswith(prefix)}
+            if len(hits) == 1:
+                return hits.pop()
         return None
+
+    def _index_title(self, title: str, node_id: str) -> None:
+        self.by_title.setdefault(title_key(title), node_id)
+        self.by_compact.setdefault(compact_key(title), node_id)
 
     def add(self, node: dict) -> str:
         """Insert a node, merging it into an existing one when it is the same paper."""
@@ -513,14 +572,14 @@ class Graph:
         self.nodes[node["id"]] = node
         if node["doi"]:
             self.by_doi[node["doi"]] = node["id"]
-        self.by_title.setdefault(title_key(node["title"]), node["id"])
+        self._index_title(node["title"], node["id"])
         return node["id"]
 
     def alias(self, node_id: str, titles: list[str]) -> None:
         """Also recognise `node_id` under these titles (e.g. its preprint's)."""
         for title in titles:
             if title:
-                self.by_title.setdefault(title_key(title), node_id)
+                self._index_title(title, node_id)
 
     def link(self, source: str, target: str) -> None:
         if source and target and source != target:
@@ -550,9 +609,9 @@ def add_scholar(graph: Graph, papers: list[dict]) -> int:
     for paper in papers:
         anchor = graph.resolve(title=paper.get("title") or "")
         if not anchor:
-            # A profile entry with no counterpart in OpenAlex: a deliverable, a
-            # demo, or a paper indexed nowhere else. Nothing to attach to.
-            continue
+            # Scholar also indexes deliverables and DOI-less proceedings that
+            # OpenAlex does not know about. Keep their citation edges visible.
+            anchor = graph.add(node_from_scholar_core(paper))
 
         # Scholar's own per-paper count is the most complete one there is.
         core_node = graph.nodes[anchor]
